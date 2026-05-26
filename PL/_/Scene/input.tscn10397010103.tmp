@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://d1rnmnm8ty32v"]
+
+[ext_resource type="Script" uid="uid://clmp2d5os0s0q" path="res://addons/ToolCarsGodot/PL/_/Script/input.gd" id="1_0iauc"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wwsow"]
+
+[node name="Node3D" type="Node3D" unique_id=490690257]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=384105089]
+mesh = SubResource("BoxMesh_wwsow")
+
+[node name="Code" type="Node" parent="MeshInstance3D" unique_id=118608457]
+script = ExtResource("1_0iauc")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1142835891]
+transform = Transform3D(1, 0, 0, 0, 0.8334859, 0.5525408, 0, -0.5525408, 0.8334859, 0, 1.8600771, 2.3799407)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1545970374]
+transform = Transform3D(1, 0, 0, 0, 0.8987903, 0.43837884, 0, -0.43837884, 0.8987903, 0, 3.6671844, 4.6676707)
+spot_range = 4.625134
+spot_angle = 55.292892
