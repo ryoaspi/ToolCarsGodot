@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c16up6irrh737"]
+
+[ext_resource type="PackedScene" uid="uid://dwrdxl1ubyl5i" path="res://addons/ToolCarsGodot/DF/scenes/KS_4036.tscn" id="1_av8ud"]
+[ext_resource type="Script" uid="uid://bha8luwbcgskl" path="res://addons/ToolCarsGodot/TT/Scripts/tt_move_car_joystick.gd" id="1_xngha"]
+
+[node name="Car" type="Node3D" unique_id=1034042815]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1095113279]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.23627731, 0.39627388)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=938162904]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.37860677, 0.412692)
+
+[node name="MoveCar" type="Node3D" parent="." unique_id=1906629047 node_paths=PackedStringArray("car")]
+script = ExtResource("1_xngha")
+car = NodePath("KS_4036")
+
+[node name="KS_4036" parent="MoveCar" unique_id=1781070975 instance=ExtResource("1_av8ud")]
