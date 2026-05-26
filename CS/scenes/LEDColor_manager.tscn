@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cw835ge6v17mp"]
+
+[ext_resource type="Script" uid="uid://j377ubn6qbm5" path="res://ToolCarsGodot/CS/Scripts/CSLEDColor_manager.gd" id="1_rwhmd"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_60woe"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uydf5"]
+albedo_color = Color(1, 0, 0, 1)
+
+[node name="Node3D" type="Node3D" unique_id=435053006]
+
+[node name="SphereTest" type="MeshInstance3D" parent="." unique_id=1937055449]
+mesh = SubResource("SphereMesh_60woe")
+surface_material_override/0 = SubResource("StandardMaterial3D_uydf5")
+script = ExtResource("1_rwhmd")
+color_selection = Array[Color]([Color(1, 0, 0, 1), Color(0.8107799, 0.40979996, 1.92523e-07, 1), Color(0, 1, 0, 1)])
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1499211447]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.7455171)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=203954208]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.525394, 0.915298)
+light_energy = 5.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1984350964]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1223646201]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 0, 0, 1)
+
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=472653366]
+offset_left = 170.0
+offset_right = 250.0
+offset_bottom = 36.0
+
+[connection signal="color_changed" from="SphereTest" to="CanvasLayer/ColorRect" method="set_color"]
+[connection signal="button_down" from="CanvasLayer/Button" to="SphereTest" method="set_selection" binds= [2]]
