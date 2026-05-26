@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://s7hjnp11e6ag"
+path="res://.godot/imported/ultra_sonic_sensor.obj-98ba14e0be601ad0dd1640aedd98985b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ultra_sonic_sensor.obj-98ba14e0be601ad0dd1640aedd98985b.mesh"]
+
+source_file="res://addons/ToolCarsGodot/NC/content/ultra_sonic_sensor/ultra_sonic_sensor.obj"
+dest_files=["res://.godot/imported/ultra_sonic_sensor.obj-98ba14e0be601ad0dd1640aedd98985b.mesh", "res://.godot/imported/ultra_sonic_sensor.obj-98ba14e0be601ad0dd1640aedd98985b.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

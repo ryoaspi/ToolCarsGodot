@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dymdmq4qs3hn8"]
+
+[ext_resource type="Texture2D" uid="uid://b2pya8751e1kl" path="res://addons/ToolCarsGodot/NC/content/ultra_sonic_sensor/ultra_sonic_sensor_uv_color.png" id="1_phses"]
+[ext_resource type="ArrayMesh" uid="uid://s7hjnp11e6ag" path="res://addons/ToolCarsGodot/NC/content/ultra_sonic_sensor/ultra_sonic_sensor.obj" id="2_wls08"]
+[ext_resource type="Script" uid="uid://cyyoy2rnpexgv" path="res://addons/ToolCarsGodot/NC/script/dn_calculate_distance_in_meter.gd" id="3_wls08"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k6wcc"]
+albedo_texture = ExtResource("1_phses")
+
+[node name="UltraSonicSensorNode" type="Node3D" unique_id=171773783]
+
+[node name="UltraSonicSize" type="Node3D" parent="." unique_id=1629980050]
+
+[node name="UltraSonicSensorMesh" type="MeshInstance3D" parent="UltraSonicSize" unique_id=1398773578]
+material_override = SubResource("StandardMaterial3D_k6wcc")
+mesh = ExtResource("2_wls08")
+
+[node name="RaycastSensorForward" type="RayCast3D" parent="UltraSonicSize/UltraSonicSensorMesh" unique_id=1514926579]
+target_position = Vector3(0, 0, -1)
+
+[node name="Code" type="Node" parent="." unique_id=149674593]
+
+[node name="RayCastDistance" type="Node" parent="Code" unique_id=2110100761 node_paths=PackedStringArray("raycast_sensor_forward", "ultra_sonic_sensor_node")]
+script = ExtResource("3_wls08")
+raycast_sensor_forward = NodePath("../../UltraSonicSize/UltraSonicSensorMesh/RaycastSensorForward")
+ultra_sonic_sensor_node = NodePath("../..")
+
+[node name="RayCastSendObject" type="Node" parent="Code" unique_id=672380516]
+
+[node name="RayCastSendFilteredObject" type="Node" parent="Code" unique_id=2001227612]
