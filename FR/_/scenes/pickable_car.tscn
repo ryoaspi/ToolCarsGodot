@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://ckgfx8ts1x4hj"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_7dhvl"]
+[ext_resource type="PackedScene" uid="uid://dwrdxl1ubyl5i" path="res://addons/ToolCarsGodot/DF/scenes/KS_4036.tscn" id="2_2vcuu"]
+[ext_resource type="PackedScene" uid="uid://ce7vysyvondf8" path="res://addons/godot-xr-tools/objects/snap_zone.tscn" id="3_2vcuu"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="4_1loa5"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="5_f0god"]
+[ext_resource type="Animation" uid="uid://s1vqcxyqcvea" path="res://addons/godot-xr-tools/hands/animations/right/Grip 5.res" id="5_s3kjq"]
+[ext_resource type="Script" uid="uid://dvobm6vcfnqe8" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="6_wip2f"]
+[ext_resource type="Animation" uid="uid://bediglpx0rj7i" path="res://addons/godot-xr-tools/hands/animations/left/Grip 5.res" id="8_q0i7n"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aquy1"]
+
+[sub_resource type="Resource" id="Resource_uwnmj"]
+script = ExtResource("6_wip2f")
+closed_pose = ExtResource("5_s3kjq")
+metadata/_custom_type_script = "uid://dvobm6vcfnqe8"
+
+[sub_resource type="Resource" id="Resource_fcku8"]
+script = ExtResource("6_wip2f")
+closed_pose = ExtResource("8_q0i7n")
+metadata/_custom_type_script = "uid://dvobm6vcfnqe8"
+
+[node name="PickableObject" unique_id=1133500505 instance=ExtResource("1_7dhvl")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+shape = SubResource("BoxShape3D_aquy1")
+
+[node name="Car" parent="." index="1" unique_id=1781070975 instance=ExtResource("2_2vcuu")]
+
+[node name="MicroBitSnapZone" parent="Car" index="1" unique_id=34156475 instance=ExtResource("3_2vcuu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06920338, -0.10150811)
+snap_require = "MicroBit"
+
+[node name="GrabPointHandRight" parent="." index="2" unique_id=2044526487 instance=ExtResource("4_1loa5")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.039889485, 0.028315626, -0.08045155)
+hand_pose = SubResource("Resource_uwnmj")
+
+[node name="GrabPointHandLeft" parent="." index="3" unique_id=1402483526 instance=ExtResource("5_f0god")]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.0398895, 0.0283156, -0.0804515)
+hand_pose = SubResource("Resource_fcku8")
