@@ -1,3 +1,7 @@
 [gd_scene format=3 uid="uid://duce26bql6smr"]
 
-[node name="Node3D" type="Node3D" unique_id=1371747064]
+[ext_resource type="PackedScene" uid="uid://dwrdxl1ubyl5i" path="res://addons/ToolCarsGodot/DF/scenes/KS_4036.tscn" id="1_8bok4"]
+
+[node name="Car" type="Node3D" unique_id=1371747064]
+
+[node name="KS_4036" parent="." unique_id=1781070975 instance=ExtResource("1_8bok4")]
