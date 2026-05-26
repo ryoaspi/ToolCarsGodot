@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ca410f0jb4yvp"
+path="res://.godot/imported/ks_4036_body.obj-e32e05e35a787a5f2e097cae1bad7ab6.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ks_4036_body.obj-e32e05e35a787a5f2e097cae1bad7ab6.mesh"]
+
+source_file="res://addons/ToolCarsGodot/FR/_/assets/ks_4036/3d/top/ks_4036_body.obj"
+dest_files=["res://.godot/imported/ks_4036_body.obj-e32e05e35a787a5f2e097cae1bad7ab6.mesh", "res://.godot/imported/ks_4036_body.obj-e32e05e35a787a5f2e097cae1bad7ab6.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
