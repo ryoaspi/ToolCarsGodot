@@ -4,30 +4,42 @@
 
 [sub_resource type="SphereMesh" id="SphereMesh_60woe"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uydf5"]
-albedo_color = Color(1, 0, 0, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rwhmd"]
+albedo_color = Color(0.8107799, 0.40979996, 1.92523e-07, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rwhmd"]
 
 [node name="Node3D" type="Node3D" unique_id=435053006]
 
 [node name="SphereTest" type="MeshInstance3D" parent="." unique_id=1937055449]
 mesh = SubResource("SphereMesh_60woe")
-surface_material_override/0 = SubResource("StandardMaterial3D_uydf5")
+surface_material_override/0 = SubResource("StandardMaterial3D_rwhmd")
 script = ExtResource("1_rwhmd")
-color_selection = Array[Color]([Color(1, 0, 0, 1), Color(0.8107799, 0.40979996, 1.92523e-07, 1), Color(0, 1, 0, 1)])
+led_color = 1
+color_selection = Array[Color]([Color(1, 0, 0, 1), Color(0.8107799, 0.40979996, 1.92523e-07, 1), Color(0, 1, 0, 1), Color(1, 1, 0, 1), Color(0, 0, 1, 1)])
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1248168855]
+transform = Transform3D(3.0892174, 0, 0, 0, 1.0000006, 0, 0, 0, 2.4788394, 0, -0.5644595, 0)
+mesh = SubResource("PlaneMesh_rwhmd")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1499211447]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.7455171)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=203954208]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.525394, 0.915298)
-light_energy = 5.0
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1606806331]
+transform = Transform3D(0.48956883, 0.4564064, -0.7429775, 0, 0.85207295, 0.5234231, 0.87196463, -0.25625163, 0.41714835, 0, 1.4654937, 0)
+shadow_enabled = true
+shadow_opacity = 0.5
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=107584070]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+omni_range = 4.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1984350964]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1223646201]
 offset_right = 40.0
 offset_bottom = 40.0
-color = Color(1, 0, 0, 1)
+color = Color(0.8107799, 0.40979996, 1.92523e-07, 1)
 
 [node name="Button" type="Button" parent="CanvasLayer" unique_id=472653366]
 offset_left = 170.0
