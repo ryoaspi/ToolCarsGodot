@@ -9,14 +9,14 @@
 [node name="TestScene" type="Node3D" unique_id=2118547976]
 
 [node name="UltraSonicSensorNode" parent="." unique_id=171773783 instance=ExtResource("1_ocll4")]
-transform = Transform3D(0.6984152, 0, -0.7156927, 0, 1, 0, 0.7156927, 0, 0.6984152, 0, 0, 0.25)
+transform = Transform3D(0.2703821, 0, -0.96275294, 0, 1, 0, 0.96275294, 0, 0.2703821, 0, 0, 0.25)
 
 [node name="UltraSonicSize" parent="UltraSonicSensorNode" index="0" unique_id=1629980050]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -0.074618936, 0, -0.114362605)
 
 [node name="RayCastDistance" parent="UltraSonicSensorNode/Code" parent_id_path=PackedInt32Array(171773783, 149674593) index="0" unique_id=2110100761 node_paths=PackedStringArray("sensor")]
 sensor = NodePath("../..")
-raycast_max_distance = 4.0
+raycast_max_distance = 10.0
 
 [node name="Cube" type="Node3D" parent="." unique_id=640197589]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0686554, 0, -0.795669)

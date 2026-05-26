@@ -20,11 +20,6 @@ target_position = Vector3(0, 0, -1)
 
 [node name="Code" type="Node" parent="." unique_id=149674593]
 
-[node name="RayCastDistance" type="Node" parent="Code" unique_id=2110100761 node_paths=PackedStringArray("raycast_sensor_forward", "ultra_sonic_sensor_node")]
+[node name="RayCastDistance" type="Node" parent="Code" unique_id=2110100761 node_paths=PackedStringArray("raycast_sensor_forward")]
 script = ExtResource("3_wls08")
 raycast_sensor_forward = NodePath("../../UltraSonicSize/UltraSonicSensorMesh/RaycastSensorForward")
-ultra_sonic_sensor_node = NodePath("../..")
-
-[node name="RayCastSendObject" type="Node" parent="Code" unique_id=672380516]
-
-[node name="RayCastSendFilteredObject" type="Node" parent="Code" unique_id=2001227612]
