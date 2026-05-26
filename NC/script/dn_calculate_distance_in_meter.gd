@@ -61,7 +61,7 @@ func _calculate_distance() -> float:
 		return -1
 	var collider_hit: Object = raycast_sensor_forward.get_collider()
 	var target_hit_point: Vector3 = raycast_sensor_forward.get_collision_point()
-	var my_position: Vector3 = sensor.position
+	var my_position: Vector3 = sensor.global_position
 	var distance_in_vector3: Vector3 = target_hit_point - my_position;
 	var distance_in_meter: float = distance_in_vector3.length()
 	return distance_in_meter
