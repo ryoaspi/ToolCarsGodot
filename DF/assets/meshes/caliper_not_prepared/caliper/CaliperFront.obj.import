@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://bvd1dj2k43kpc"
-path="res://.godot/imported/CaliperFront.obj-c672a870ed3fc3aa4aa02a6b16c6af95.mesh"
+path="res://.godot/imported/CaliperFront.obj-340e47c20745cb2f34b59efed698949a.mesh"
 
 [deps]
 
-files=["res://.godot/imported/CaliperFront.obj-c672a870ed3fc3aa4aa02a6b16c6af95.mesh"]
+files=["res://.godot/imported/CaliperFront.obj-340e47c20745cb2f34b59efed698949a.mesh"]
 
-source_file="res://_/assets/meshes/caliper_not_prepared/caliper/CaliperFront.obj"
-dest_files=["res://.godot/imported/CaliperFront.obj-c672a870ed3fc3aa4aa02a6b16c6af95.mesh", "res://.godot/imported/CaliperFront.obj-c672a870ed3fc3aa4aa02a6b16c6af95.mesh"]
+source_file="res://addons/ToolCarsGodot/DF/assets/meshes/caliper_not_prepared/caliper/CaliperFront.obj"
+dest_files=["res://.godot/imported/CaliperFront.obj-340e47c20745cb2f34b59efed698949a.mesh", "res://.godot/imported/CaliperFront.obj-340e47c20745cb2f34b59efed698949a.mesh"]
 
 [params]
 

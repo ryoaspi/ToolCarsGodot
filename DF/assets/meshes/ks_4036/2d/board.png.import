@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://boqrb1432pf6h"
-path.s3tc="res://.godot/imported/board.png-9a316102431d7d92fc366a78a3b1b848.s3tc.ctex"
+path.s3tc="res://.godot/imported/board.png-946b058cabafea23740ff549bd6863c0.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://_/assets/meshes/ks_4036/2d/board.png"
-dest_files=["res://.godot/imported/board.png-9a316102431d7d92fc366a78a3b1b848.s3tc.ctex"]
+source_file="res://addons/ToolCarsGodot/DF/assets/meshes/ks_4036/2d/board.png"
+dest_files=["res://.godot/imported/board.png-946b058cabafea23740ff549bd6863c0.s3tc.ctex"]
 
 [params]
 
