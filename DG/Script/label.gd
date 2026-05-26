@@ -1,26 +1,25 @@
-extends Label
-
-
+@tool
+extends Node
+signal on_typing_text (text : String)
+signal new_text (text : String)
 var echo:bool
 var unicode: int
+@export var wait_time:float = 1.5
+@export var text_scan:String
+var time_count:float
 
-func _unhandled_input(event):
-	if event is InputEventKey:
-		if event.pressed or event.scancode
-			print(event.as_text_keycode())
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if time_count > 0.0 :
+		time_count -= delta
+		if time_count < 0:
+			new_text.emit(text_scan)
+			text_scan = ""
 
 func _input(event):
-	if event is InputEventKey:
-		var keycode = DisplayServer.keyboard_get_keycode_from_physical(event.physical_keycode)
-		var label = DisplayServer.keyboard_get_label_from_physical(event.physical_keycode)
-		print(OS.get_keycode_string(keycode))
-		print(OS.get_keycode_string(label))
+	if event is InputEventKey and event.pressed:
+		var unicode_key_int :int =event.unicode
+		if unicode_key_int!=0:
+			time_count = wait_time
+			var unicode = char(event.unicode)
+			text_scan += unicode
+			on_typing_text.emit(text_scan)
