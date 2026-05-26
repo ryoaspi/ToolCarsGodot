@@ -12,13 +12,13 @@ func _input(event: InputEvent) -> void:
 			print("I'm UP key")
 
 		elif name_for_down == event.as_text_key_label():
-			print("I'm DOWN Key")
+			print("I'm DOWN key")
 
 		elif name_for_left == event.as_text_key_label():
-			print("I'm LEFT Key")
+			print("I'm LEFT key")
 
 		elif name_for_right == event.as_text_key_label():
-			print("I'm RIGHT Key")
+			print("I'm RIGHT key")
 
 		else:
 			print("I don`t arrow key !")
