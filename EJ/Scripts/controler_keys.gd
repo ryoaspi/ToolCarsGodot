@@ -1,41 +1,30 @@
-extends Node3D
+extends CharacterBody3D
 
-func _input(event: InputEvent) -> void:
-	move_forward(event)
-	move_backward(event)
-	turn_left(event)
-	turn_right(event)
-	
-func move_forward(event: InputEvent) -> void:
-	if event is InputEventJoypadMotion:
-		if event.axis == JOY_AXIS_LEFT_Y and event.axis_value <= -0.1:
-			print_debug("Forward")
+@export var SPEED : float = 4
+@export var TURN_SPEED : float = 3.0
 
-func move_backward(event: InputEvent) -> void:
-	if event is InputEventJoypadMotion:
-		if event.axis == JOY_AXIS_LEFT_Y and event.axis_value >= 0.1:
-			print_debug("Backward")
-			
-func turn_left(event: InputEvent) -> void:
-	if event is InputEventJoypadMotion:
-		if event.axis == JOY_AXIS_RIGHT_X and event.axis_value <= -0.1:
-			print_debug("Left")
+var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-func turn_right(event: InputEvent) -> void:
-	if event is InputEventJoypadMotion:
-		if event.axis == JOY_AXIS_RIGHT_X and event.axis_value >= 0.1:
-			print_debug("Right")
-	
-	
-	
-#if Input.is_action_pressed("move_forward"):
-		#print_debug("Forward")
-		
-	#if Input.is_action_pressed("move_backward"):
-		#print_debug("Backward")
-		
-	#if Input.is_action_pressed("turn_left"):
-		#print_debug("left")
-		
-	#if Input.is_action_pressed("turn_right"):
-		#print_debug("right")
+func _physics_process(delta: float) -> void:
+	if not is_on_floor():
+		velocity.y -= gravity * delta
+
+	var forward_back = Input.get_joy_axis(0, JOY_AXIS_LEFT_Y)
+	var left_right = Input.get_joy_axis(0, JOY_AXIS_RIGHT_X)
+
+#Left/Right
+	if abs(left_right) > 0.1:
+		rotate_y(-left_right * TURN_SPEED * delta)
+#Forward/Backward
+	var direction = Vector3.ZERO
+	if abs(forward_back) > 0.1:
+		direction = -transform.basis.z * forward_back
+
+	if direction.length() > 0:
+		velocity.x = direction.x * SPEED
+		velocity.z = direction.z * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED * delta)
+		velocity.z = move_toward(velocity.z, 0, SPEED * delta)
+
+	move_and_slide()
