@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://djy77k8esnj6g"]
+
+[ext_resource type="Texture2D" uid="uid://db4maxos2n7wf" path="res://addons/ToolCarsGodot/ND/content/remote_controller_ir/remote_controller_ir_uv_color.png" id="1_fpx5x"]
+[ext_resource type="ArrayMesh" uid="uid://bhpt35v5rkiw0" path="res://addons/ToolCarsGodot/ND/content/remote_controller_ir/remote_controller_ir.obj" id="2_vo7mv"]
+[ext_resource type="PackedScene" uid="uid://c4p6h6rupud1f" path="res://addons/ToolCarsGodot/ND/scene/infrarouge_receiver_node.tscn" id="3_vo7mv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bxl4q"]
+albedo_texture = ExtResource("1_fpx5x")
+
+[node name="IRRemoteNode" type="Node3D" unique_id=1940414179]
+
+[node name="IRRemoteSize" type="Node3D" parent="." unique_id=1187355338]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="IRRemoteSize" unique_id=150013756]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.022796027)
+material_override = SubResource("StandardMaterial3D_bxl4q")
+mesh = ExtResource("2_vo7mv")
+
+[node name="Code" type="Node" parent="." unique_id=1067747813]
+
+[node name="InfrarougeReceiverNode" parent="." unique_id=1654538949 instance=ExtResource("3_vo7mv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.077310234)
+
+[editable path="InfrarougeReceiverNode"]

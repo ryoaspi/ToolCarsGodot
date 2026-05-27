@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bhqephwffqxho"]
+
+[ext_resource type="Script" uid="uid://ogdih81kpr1w" path="res://addons/ToolCarsGodot/DG/Script/label.gd" id="1_vl21q"]
+[ext_resource type="Script" uid="uid://dedilnv25s2fm" path="res://addons/ToolCarsGodot/DG/Script/DGopenURL.gd" id="2_pwrrt"]
+[ext_resource type="Resource" uid="uid://cgasgpnaueok0" path="res://addons/ToolCarsGodot/DG/Resources/student_code_url.tres" id="3_pwrrt"]
+
+[node name="Node3D" type="Node3D" unique_id=441727631]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1398017323]
+
+[node name="Label" type="LineEdit" parent="CanvasLayer" unique_id=1184472009]
+offset_right = 680.0
+offset_bottom = 209.0
+theme_override_font_sizes/font_size = 75
+text = "
+"
+
+[node name="Node" type="Node" parent="CanvasLayer/Label" unique_id=1242609417]
+script = ExtResource("1_vl21q")
+wait_time = 0.5
+
+[node name="ontyping" type="Label" parent="CanvasLayer" unique_id=909222253]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="OpenURL" type="Node" parent="." unique_id=2061080298]
+script = ExtResource("2_pwrrt")
+my_dict = ExtResource("3_pwrrt")
+
+[connection signal="new_text" from="CanvasLayer/Label/Node" to="CanvasLayer/Label" method="set_text"]
+[connection signal="new_text" from="CanvasLayer/Label/Node" to="OpenURL" method="open_scan_from_text"]
+[connection signal="new_text" from="CanvasLayer/Label/Node" to="OpenURL" method="open_url_from_text"]
+[connection signal="on_typing_text" from="CanvasLayer/Label/Node" to="CanvasLayer/ontyping" method="set_text"]
