@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://b8j266buh42i5"
-path="res://.godot/imported/micro_bit_shape.obj-b6ab854fb9d8ac1b7b2e5ec1c5aec18a.mesh"
+path="res://.godot/imported/micro_bit_shape.obj-086a2c368c81e0259c4fb4e4d2fb2acc.mesh"
 
 [deps]
 
-files=["res://.godot/imported/micro_bit_shape.obj-b6ab854fb9d8ac1b7b2e5ec1c5aec18a.mesh"]
+files=["res://.godot/imported/micro_bit_shape.obj-086a2c368c81e0259c4fb4e4d2fb2acc.mesh"]
 
-source_file="res://addons/ToolCarsGodot/FR/_/assets/ks_4036/3d/microbit/micro_bit_shape.obj"
-dest_files=["res://.godot/imported/micro_bit_shape.obj-b6ab854fb9d8ac1b7b2e5ec1c5aec18a.mesh", "res://.godot/imported/micro_bit_shape.obj-b6ab854fb9d8ac1b7b2e5ec1c5aec18a.mesh"]
+source_file="res://addons/ToolCarsGodot/FR/_/Assets/ks_4036/3d/microbit/micro_bit_shape.obj"
+dest_files=["res://.godot/imported/micro_bit_shape.obj-086a2c368c81e0259c4fb4e4d2fb2acc.mesh", "res://.godot/imported/micro_bit_shape.obj-086a2c368c81e0259c4fb4e4d2fb2acc.mesh"]
 
 [params]
 

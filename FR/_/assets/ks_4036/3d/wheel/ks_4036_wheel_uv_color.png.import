@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d7nlflcl8l13"
-path.s3tc="res://.godot/imported/ks_4036_wheel_uv_color.png-5351c9f2e7d50d5dcb4e88b39842b530.s3tc.ctex"
+path.s3tc="res://.godot/imported/ks_4036_wheel_uv_color.png-da19c130cfa4a43a90d89f6b684fa4e4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://addons/ToolCarsGodot/FR/_/assets/ks_4036/3d/wheel/ks_4036_wheel_uv_color.png"
-dest_files=["res://.godot/imported/ks_4036_wheel_uv_color.png-5351c9f2e7d50d5dcb4e88b39842b530.s3tc.ctex"]
+source_file="res://addons/ToolCarsGodot/FR/_/Assets/ks_4036/3d/wheel/ks_4036_wheel_uv_color.png"
+dest_files=["res://.godot/imported/ks_4036_wheel_uv_color.png-da19c130cfa4a43a90d89f6b684fa4e4.s3tc.ctex"]
 
 [params]
 

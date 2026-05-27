@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cvnbnjvu2i1e7"
-path.s3tc="res://.godot/imported/ks_4036_top_platform_uv_color.png-044c9992a7926127473aa6b538dc28fa.s3tc.ctex"
+path.s3tc="res://.godot/imported/ks_4036_top_platform_uv_color.png-9bc65f1dd7d5b4b203f63946fb24c6f9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://addons/ToolCarsGodot/FR/_/assets/ks_4036/3d/top/ks_4036_top_platform_uv_color.png"
-dest_files=["res://.godot/imported/ks_4036_top_platform_uv_color.png-044c9992a7926127473aa6b538dc28fa.s3tc.ctex"]
+source_file="res://addons/ToolCarsGodot/FR/_/Assets/ks_4036/3d/top/ks_4036_top_platform_uv_color.png"
+dest_files=["res://.godot/imported/ks_4036_top_platform_uv_color.png-9bc65f1dd7d5b4b203f63946fb24c6f9.s3tc.ctex"]
 
 [params]
 
