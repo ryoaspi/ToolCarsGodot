@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ogdih81kpr1w" path="res://addons/ToolCarsGodot/DG/Script/label.gd" id="1_vl21q"]
 [ext_resource type="Script" uid="uid://dedilnv25s2fm" path="res://addons/ToolCarsGodot/DG/Script/DGopenURL.gd" id="2_pwrrt"]
+[ext_resource type="Resource" uid="uid://cgasgpnaueok0" path="res://addons/ToolCarsGodot/DG/Resources/student_code_url.tres" id="3_pwrrt"]
 
 [node name="Node3D" type="Node3D" unique_id=441727631]
 
@@ -22,11 +23,11 @@ wait_time = 0.5
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="Node2D" type="Node2D" parent="." unique_id=102159973]
-
-[node name="Node" type="Node" parent="." unique_id=2061080298]
+[node name="OpenURL" type="Node" parent="." unique_id=2061080298]
 script = ExtResource("2_pwrrt")
+my_dict = ExtResource("3_pwrrt")
 
-[connection signal="new_text" from="CanvasLayer/Label/Node" to="Node" method="open_url_from_text"]
 [connection signal="new_text" from="CanvasLayer/Label/Node" to="CanvasLayer/Label" method="set_text"]
+[connection signal="new_text" from="CanvasLayer/Label/Node" to="OpenURL" method="open_scan_from_text"]
+[connection signal="new_text" from="CanvasLayer/Label/Node" to="OpenURL" method="open_url_from_text"]
 [connection signal="on_typing_text" from="CanvasLayer/Label/Node" to="CanvasLayer/ontyping" method="set_text"]
