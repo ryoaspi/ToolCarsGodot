@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bqub1kemoyfhv"]
+
+[ext_resource type="Texture2D" uid="uid://dog7ygixvm07f" path="res://addons/ToolCarsGodot/CN/Texture/2D_writable_texture.png" id="1_oppmx"]
+
+[resource]
+albedo_texture = ExtResource("1_oppmx")

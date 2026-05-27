@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://dol2gsstpkkew"]
 
 [ext_resource type="PackedScene" uid="uid://076s1kkcshx4" path="res://addons/ToolCarsGodot/CN/Scene/rgb_from_raycast.tscn" id="1_mrgsb"]
-[ext_resource type="Texture2D" uid="uid://brrkcc4wq8ab2" path="res://addons/ToolCarsGodot/CN/Texture/TXT_mockup_texture.jpg" id="1_ndsvm"]
+[ext_resource type="Material" uid="uid://bqub1kemoyfhv" path="res://addons/ToolCarsGodot/CN/Material/MAT_ground.tres" id="1_ndsvm"]
+[ext_resource type="Texture2D" uid="uid://b60e8y2fg0s77" path="res://addons/ToolCarsGodot/CN/Texture/2D_mockup.png" id="2_dsljn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vkc1n"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -15,46 +16,16 @@ background_mode = 2
 sky = SubResource("Sky_ndsvm")
 tonemap_mode = 2
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xcb6h"]
-albedo_color = Color(0, 0, 0, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_xcb6h"]
-material = SubResource("StandardMaterial3D_xcb6h")
-size = Vector3(5, 0.1, 5)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vkc1n"]
-albedo_texture = ExtResource("1_ndsvm")
+[sub_resource type="QuadMesh" id="QuadMesh_vkc1n"]
+material = ExtResource("1_ndsvm")
+size = Vector2(5, 5)
+orientation = 1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vkc1n"]
 size = Vector3(5, 0.1, 5)
 
-[sub_resource type="QuadMesh" id="QuadMesh_ndsvm"]
-size = Vector2(5, 5)
-orientation = 1
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mrgsb"]
-albedo_texture = ExtResource("1_ndsvm")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1uj66"]
-albedo_texture = ExtResource("1_ndsvm")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pvnrk"]
-albedo_texture = ExtResource("1_ndsvm")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_203l2"]
-albedo_texture = ExtResource("1_ndsvm")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jb2lr"]
-albedo_texture = ExtResource("1_ndsvm")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j4e0h"]
-albedo_texture = ExtResource("1_ndsvm")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6xu7u"]
-albedo_texture = ExtResource("1_ndsvm")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ercle"]
-albedo_texture = ExtResource("1_ndsvm")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3oov0"]
+albedo_texture = ExtResource("2_dsljn")
 
 [node name="DemoScene" type="Node3D" unique_id=1931849418]
 
@@ -69,8 +40,7 @@ shadow_enabled = true
 
 [node name="White" type="MeshInstance3D" parent="Background" unique_id=532995011]
 layers = 3
-mesh = SubResource("BoxMesh_xcb6h")
-surface_material_override/0 = SubResource("StandardMaterial3D_vkc1n")
+mesh = SubResource("QuadMesh_vkc1n")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Background/White" unique_id=1333100430]
 collision_layer = 3
@@ -81,8 +51,8 @@ shape = SubResource("BoxShape3D_vkc1n")
 [node name="Green" type="MeshInstance3D" parent="Background" unique_id=218490867]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
 layers = 3
-mesh = SubResource("QuadMesh_ndsvm")
-surface_material_override/0 = SubResource("StandardMaterial3D_mrgsb")
+mesh = SubResource("QuadMesh_vkc1n")
+surface_material_override/0 = SubResource("StandardMaterial3D_3oov0")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Background/Green" unique_id=248846998]
 collision_layer = 3
@@ -93,8 +63,7 @@ shape = SubResource("BoxShape3D_vkc1n")
 [node name="Yellow" type="MeshInstance3D" parent="Background" unique_id=520984776]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -5)
 layers = 3
-mesh = SubResource("BoxMesh_xcb6h")
-surface_material_override/0 = SubResource("StandardMaterial3D_1uj66")
+mesh = SubResource("QuadMesh_vkc1n")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Background/Yellow" unique_id=1965387093]
 collision_layer = 3
@@ -105,8 +74,7 @@ shape = SubResource("BoxShape3D_vkc1n")
 [node name="Orange" type="MeshInstance3D" parent="Background" unique_id=1682447536]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
 layers = 3
-mesh = SubResource("BoxMesh_xcb6h")
-surface_material_override/0 = SubResource("StandardMaterial3D_pvnrk")
+mesh = SubResource("QuadMesh_vkc1n")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Background/Orange" unique_id=1574740395]
 collision_layer = 3
@@ -117,8 +85,7 @@ shape = SubResource("BoxShape3D_vkc1n")
 [node name="Red" type="MeshInstance3D" parent="Background" unique_id=1011513099]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -5)
 layers = 3
-mesh = SubResource("BoxMesh_xcb6h")
-surface_material_override/0 = SubResource("StandardMaterial3D_203l2")
+mesh = SubResource("QuadMesh_vkc1n")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Background/Red" unique_id=1681533774]
 collision_layer = 3
@@ -129,8 +96,7 @@ shape = SubResource("BoxShape3D_vkc1n")
 [node name="Pink" type="MeshInstance3D" parent="Background" unique_id=2058401237]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
 layers = 3
-mesh = SubResource("BoxMesh_xcb6h")
-surface_material_override/0 = SubResource("StandardMaterial3D_jb2lr")
+mesh = SubResource("QuadMesh_vkc1n")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Background/Pink" unique_id=1476833845]
 collision_layer = 3
@@ -141,8 +107,7 @@ shape = SubResource("BoxShape3D_vkc1n")
 [node name="Purple" type="MeshInstance3D" parent="Background" unique_id=1295872804]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 5)
 layers = 3
-mesh = SubResource("BoxMesh_xcb6h")
-surface_material_override/0 = SubResource("StandardMaterial3D_j4e0h")
+mesh = SubResource("QuadMesh_vkc1n")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Background/Purple" unique_id=999363083]
 collision_layer = 3
@@ -153,8 +118,7 @@ shape = SubResource("BoxShape3D_vkc1n")
 [node name="Blue" type="MeshInstance3D" parent="Background" unique_id=1805288006]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
 layers = 3
-mesh = SubResource("BoxMesh_xcb6h")
-surface_material_override/0 = SubResource("StandardMaterial3D_6xu7u")
+mesh = SubResource("QuadMesh_vkc1n")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Background/Blue" unique_id=1083987260]
 collision_layer = 3
@@ -165,8 +129,7 @@ shape = SubResource("BoxShape3D_vkc1n")
 [node name="Cyan" type="MeshInstance3D" parent="Background" unique_id=243756211]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5)
 layers = 3
-mesh = SubResource("BoxMesh_xcb6h")
-surface_material_override/0 = SubResource("StandardMaterial3D_ercle")
+mesh = SubResource("QuadMesh_vkc1n")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Background/Cyan" unique_id=1561096925]
 collision_layer = 3
@@ -178,7 +141,7 @@ shape = SubResource("BoxShape3D_vkc1n")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16744614, 0.16292936, 0)
 
 [node name="MoveRaycast" parent="RGBFromRaycast" index="0" unique_id=1618982129]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.538335, 0, 0.64376116)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.72429, 0, 0.64376116)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=107024022]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 10.382868, 0)
