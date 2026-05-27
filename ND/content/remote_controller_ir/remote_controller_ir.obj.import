@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://bhpt35v5rkiw0"
-path="res://.godot/imported/remote_controller_ir.obj-ed55d931961be9a18203159ffcd8b12d.mesh"
+path="res://.godot/imported/remote_controller_ir.obj-23d0616a1286dbeff9b6c0c40eed8eaf.mesh"
 
 [deps]
 
-files=["res://.godot/imported/remote_controller_ir.obj-ed55d931961be9a18203159ffcd8b12d.mesh"]
+files=["res://.godot/imported/remote_controller_ir.obj-23d0616a1286dbeff9b6c0c40eed8eaf.mesh"]
 
-source_file="res://addons/ToolCarsGodot/ND/content/remote_controller_ir/remote_controller_ir.obj"
-dest_files=["res://.godot/imported/remote_controller_ir.obj-ed55d931961be9a18203159ffcd8b12d.mesh", "res://.godot/imported/remote_controller_ir.obj-ed55d931961be9a18203159ffcd8b12d.mesh"]
+source_file="res://ToolCarsGodot/ND/content/remote_controller_ir/remote_controller_ir.obj"
+dest_files=["res://.godot/imported/remote_controller_ir.obj-23d0616a1286dbeff9b6c0c40eed8eaf.mesh", "res://.godot/imported/remote_controller_ir.obj-23d0616a1286dbeff9b6c0c40eed8eaf.mesh"]
 
 [params]
 
