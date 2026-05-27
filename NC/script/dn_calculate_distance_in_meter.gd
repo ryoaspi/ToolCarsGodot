@@ -33,6 +33,7 @@ func _process(delta: float) -> void:
 	
 	if(distance_in_meter > 0 && distance_in_meter != old_distance):
 		calculate_distance_on_raycast_touch_collider.emit(distance_in_meter)
+		print(str(distance_in_meter) + "m")
 		old_distance = distance_in_meter
 
 	if(collider_hit):

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dko4bi4d4g52q"]
 
-[ext_resource type="PackedScene" uid="uid://dymdmq4qs3hn8" path="res://addons/ToolCarsGodot/NC/scene/ultra_sonic_sensor_node.tscn" id="1_ocll4"]
+[ext_resource type="PackedScene" uid="uid://dymdmq4qs3hn8" path="res://ToolCarsGodot/NC/scene/ultra_sonic_sensor_node.tscn" id="1_ocll4"]
+[ext_resource type="PackedScene" uid="uid://cw835ge6v17mp" path="res://ToolCarsGodot/CS/scenes/LEDColor_manager.tscn" id="2_lgc56"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ryqdh"]
 
@@ -9,7 +10,7 @@
 [node name="TestScene" type="Node3D" unique_id=2118547976]
 
 [node name="UltraSonicSensorNode" parent="." unique_id=171773783 instance=ExtResource("1_ocll4")]
-transform = Transform3D(0.2703821, 0, -0.96275294, 0, 1, 0, 0.96275294, 0, 0.2703821, 0, 0, 0.25)
+transform = Transform3D(0.69362855, 0, -0.720333, 0, 1, 0, 0.720333, 0, 0.69362855, 0, 0, 0.25)
 
 [node name="UltraSonicSize" parent="UltraSonicSensorNode" index="0" unique_id=1629980050]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -0.074618936, 0, -0.114362605)
@@ -46,4 +47,8 @@ transform = Transform3D(1, 0, 0, 0, 0.9840965, 0.17763439, 0, -0.17763439, 0.984
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=73785400]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.2328498)
 
+[node name="Node3D" parent="." unique_id=435053006 instance=ExtResource("2_lgc56")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9472121, 0, 0)
+
 [editable path="UltraSonicSensorNode"]
+[editable path="Node3D"]
