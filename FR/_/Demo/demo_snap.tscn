@@ -5,37 +5,37 @@
 [ext_resource type="PackedScene" uid="uid://njx823gyk04n" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_hand.tscn" id="3_mkn00"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="4_nefvc"]
 [ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="5_ddf52"]
-[ext_resource type="PackedScene" uid="uid://hpc3w72ihfb5" path="res://addons/ToolCarsGodot/FR/_/Scenes/micro_bit_pickable_snap.tscn" id="6_5syxk"]
-[ext_resource type="PackedScene" uid="uid://dwrdxl1ubyl5i" path="res://addons/ToolCarsGodot/DF/scenes/KS_4036.tscn" id="7_rurjr"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_25n1l"]
-animation = &"Grip"
+[ext_resource type="PackedScene" uid="uid://hpc3w72ihfb5" path="res://addons/ToolCarsGodot/FR/_/scenes/micro_bit_pickable_snap.tscn" id="6_5syxk"]
+[ext_resource type="PackedScene" uid="uid://665tcfdvtukw" path="res://addons/ToolCarsGodot/FR/_/scenes/car.tscn" id="7_25n1l"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ifbnp"]
 animation = &"Grip"
 
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_jsb5a"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jsb5a"]
+animation = &"Grip"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_mkn00"]
 filter_enabled = true
 filters = ["Armature/Skeleton3D:Little_Distal_L", "Armature/Skeleton3D:Little_Intermediate_L", "Armature/Skeleton3D:Little_Metacarpal_L", "Armature/Skeleton3D:Little_Proximal_L", "Armature/Skeleton3D:Middle_Distal_L", "Armature/Skeleton3D:Middle_Intermediate_L", "Armature/Skeleton3D:Middle_Metacarpal_L", "Armature/Skeleton3D:Middle_Proximal_L", "Armature/Skeleton3D:Ring_Distal_L", "Armature/Skeleton3D:Ring_Intermediate_L", "Armature/Skeleton3D:Ring_Metacarpal_L", "Armature/Skeleton3D:Ring_Proximal_L", "Armature/Skeleton3D:Thumb_Distal_L", "Armature/Skeleton3D:Thumb_Metacarpal_L", "Armature/Skeleton3D:Thumb_Proximal_L", "Armature/Skeleton:Little_Distal_L", "Armature/Skeleton:Little_Intermediate_L", "Armature/Skeleton:Little_Proximal_L", "Armature/Skeleton:Middle_Distal_L", "Armature/Skeleton:Middle_Intermediate_L", "Armature/Skeleton:Middle_Proximal_L", "Armature/Skeleton:Ring_Distal_L", "Armature/Skeleton:Ring_Intermediate_L", "Armature/Skeleton:Ring_Proximal_L", "Armature/Skeleton:Thumb_Distal_L", "Armature/Skeleton:Thumb_Proximal_L"]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mkn00"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nefvc"]
 animation = &"Grip 5"
 
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_nefvc"]
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_ddf52"]
 filter_enabled = true
 filters = ["Armature/Skeleton3D:Index_Distal_L", "Armature/Skeleton3D:Index_Intermediate_L", "Armature/Skeleton3D:Index_Metacarpal_L", "Armature/Skeleton3D:Index_Proximal_L", "Armature/Skeleton:Index_Distal_L", "Armature/Skeleton:Index_Intermediate_L", "Armature/Skeleton:Index_Proximal_L"]
 
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ddf52"]
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_5syxk"]
 graph_offset = Vector2(-536, 11)
-nodes/ClosedHand1/node = SubResource("AnimationNodeAnimation_25n1l")
+nodes/ClosedHand1/node = SubResource("AnimationNodeAnimation_ifbnp")
 nodes/ClosedHand1/position = Vector2(-600, 300)
-nodes/ClosedHand2/node = SubResource("AnimationNodeAnimation_ifbnp")
+nodes/ClosedHand2/node = SubResource("AnimationNodeAnimation_jsb5a")
 nodes/ClosedHand2/position = Vector2(-360, 300)
-nodes/Grip/node = SubResource("AnimationNodeBlend2_jsb5a")
+nodes/Grip/node = SubResource("AnimationNodeBlend2_mkn00")
 nodes/Grip/position = Vector2(0, 20)
-nodes/OpenHand/node = SubResource("AnimationNodeAnimation_mkn00")
+nodes/OpenHand/node = SubResource("AnimationNodeAnimation_nefvc")
 nodes/OpenHand/position = Vector2(-600, 100)
-nodes/Trigger/node = SubResource("AnimationNodeBlend2_nefvc")
+nodes/Trigger/node = SubResource("AnimationNodeBlend2_ddf52")
 nodes/Trigger/position = Vector2(-360, 20)
 node_connections = [&"output", 0, &"Grip", &"Grip", 0, &"Trigger", &"Grip", 1, &"ClosedHand2", &"Trigger", 0, &"OpenHand", &"Trigger", 1, &"ClosedHand1"]
 
@@ -91,7 +91,7 @@ bones/23/rotation = Quaternion(0.006871769, -0.0035727466, -0.21195254, 0.977249
 
 [node name="AnimationTree" parent="XROrigin3D/XR_LeftHand/XRToolsCollisionHand/LeftHand" index="1"]
 root_node = NodePath("../Hand_Nails_L")
-tree_root = SubResource("AnimationNodeBlendTree_ddf52")
+tree_root = SubResource("AnimationNodeBlendTree_5syxk")
 
 [node name="FunctionPickup" parent="XROrigin3D/XR_LeftHand/XRToolsCollisionHand" unique_id=136528699 instance=ExtResource("4_nefvc")]
 
@@ -120,18 +120,14 @@ mesh = SubResource("BoxMesh_a8vq6")
 surface_material_override/0 = SubResource("StandardMaterial3D_a8vq6")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=264396750]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5882679)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.58611834, 0.5882679)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=892493996]
 shape = SubResource("WorldBoundaryShape3D_a8vq6")
 
-[node name="Car" parent="." unique_id=1781070975 instance=ExtResource("7_rurjr")]
-transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -0.10195273, 0.5075259, -0.55919135)
-
-[connection signal="body_entered" from="Car/SlotSpot/Size/MicroBitSnapZone" to="MicroBit" method="request_highlight" binds= [true]]
-[connection signal="body_exited" from="Car/SlotSpot/Size/MicroBitSnapZone" to="MicroBit" method="request_highlight" binds= [false]]
-[connection signal="has_picked_up" from="Car/SlotSpot/Size/MicroBitSnapZone" to="MicroBit" method="request_highlight" binds= [false]]
+[node name="KS_4036" parent="." unique_id=1781070975 instance=ExtResource("7_25n1l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16376935, 0.51365507, -0.50271964)
 
 [editable path="XROrigin3D/XR_LeftHand/XRToolsCollisionHand/LeftHand"]
 [editable path="XROrigin3D/XR_LeftHand/XRToolsCollisionHand/LeftHand/Hand_Nails_L"]
-[editable path="Car"]
+[editable path="KS_4036"]
