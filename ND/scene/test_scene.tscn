@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dko4bi4d4g52q"]
 
-[ext_resource type="PackedScene" uid="uid://dymdmq4qs3hn8" path="res://addons/ToolCarsGodot/NC/scene/ultra_sonic_sensor_node.tscn" id="1_ocll4"]
+[ext_resource type="PackedScene" uid="uid://dymdmq4qs3hn8" path="res://addons/ToolCarsGodot/ND/scene/ultra_sonic_sensor_node.tscn" id="1_ocll4"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ryqdh"]
 
