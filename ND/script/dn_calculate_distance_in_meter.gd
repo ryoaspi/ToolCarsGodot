@@ -1,4 +1,4 @@
-class_name Dn_Calculate_Distance_In_Meter
+class_name DNCalculateDistanceInMeter
 
 extends Node
 
