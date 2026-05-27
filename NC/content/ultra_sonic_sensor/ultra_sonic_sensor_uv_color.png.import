@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b2pya8751e1kl"
-path.s3tc="res://.godot/imported/ultra_sonic_sensor_uv_color.png-943edca9b015d5cd607540a1d65c81e6.s3tc.ctex"
+path.s3tc="res://.godot/imported/ultra_sonic_sensor_uv_color.png-8d999aa9759ff0e4c9198b0e2a5ab886.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://addons/ToolCarsGodot/NC/content/ultra_sonic_sensor/ultra_sonic_sensor_uv_color.png"
-dest_files=["res://.godot/imported/ultra_sonic_sensor_uv_color.png-943edca9b015d5cd607540a1d65c81e6.s3tc.ctex"]
+source_file="res://ToolCarsGodot/NC/content/ultra_sonic_sensor/ultra_sonic_sensor_uv_color.png"
+dest_files=["res://.godot/imported/ultra_sonic_sensor_uv_color.png-8d999aa9759ff0e4c9198b0e2a5ab886.s3tc.ctex"]
 
 [params]
 
