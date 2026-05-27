@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://cw835ge6v17mp"]
 
 [ext_resource type="Script" uid="uid://j377ubn6qbm5" path="res://ToolCarsGodot/CS/Scripts/CSLEDColor_manager.gd" id="1_rwhmd"]
+[ext_resource type="Script" uid="uid://bkvhvsvykspi5" path="res://ToolCarsGodot/CS/Scripts/CSBlinkLedSelecor.gd" id="2_uydf5"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_60woe"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rwhmd"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uydf5"]
 albedo_color = Color(0.8107799, 0.40979996, 1.92523e-07, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_rwhmd"]
@@ -13,7 +14,7 @@ albedo_color = Color(0.8107799, 0.40979996, 1.92523e-07, 1)
 
 [node name="SphereTest" type="MeshInstance3D" parent="." unique_id=1937055449]
 mesh = SubResource("SphereMesh_60woe")
-surface_material_override/0 = SubResource("StandardMaterial3D_rwhmd")
+surface_material_override/0 = SubResource("StandardMaterial3D_uydf5")
 script = ExtResource("1_rwhmd")
 led_color = 1
 color_selection = Array[Color]([Color(1, 0, 0, 1), Color(0.8107799, 0.40979996, 1.92523e-07, 1), Color(0, 1, 0, 1), Color(1, 1, 0, 1), Color(0, 0, 1, 1)])
@@ -30,7 +31,7 @@ transform = Transform3D(0.48956883, 0.4564064, -0.7429775, 0, 0.85207295, 0.5234
 shadow_enabled = true
 shadow_opacity = 0.5
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=107584070]
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=107584070]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 omni_range = 4.0
 
@@ -45,6 +46,11 @@ color = Color(0.8107799, 0.40979996, 1.92523e-07, 1)
 offset_left = 170.0
 offset_right = 250.0
 offset_bottom = 36.0
+
+[node name="Is Blinking" type="Node" parent="." unique_id=1272974879 node_paths=PackedStringArray("led_to_affect")]
+script = ExtResource("2_uydf5")
+led_to_affect = NodePath("../SphereTest")
+blink_speed = 1.0
 
 [connection signal="color_changed" from="SphereTest" to="CanvasLayer/ColorRect" method="set_color"]
 [connection signal="button_down" from="CanvasLayer/Button" to="SphereTest" method="set_selection" binds= [2]]
