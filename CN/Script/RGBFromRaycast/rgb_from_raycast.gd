@@ -9,8 +9,6 @@ var pixel_position : Vector2i
 
 signal on_rgba_from_raycast(rgba : Vector4i)
 
-
-
 func _physics_process(delta: float) -> void:
 	if raycast.is_colliding() :
 		var collider = raycast.get_collider()
@@ -21,7 +19,7 @@ func _physics_process(delta: float) -> void:
 		var mesh_size = object.mesh.size
 		mesh_size = Vector3(mesh_size.x,0,mesh_size.y)
 		var corner_position = object.global_position - mesh_size * 0.5
-		var hit_position = raycast.get_collision_point() - corner_position
+		var hit_position =  - corner_position - raycast.get_collision_point()
 		var pixelX : int = remap(hit_position.x,0,mesh_size.x,0,1) * 512
 		var pixelY : int = remap(hit_position.z,0,mesh_size.z,0,1) * 512
 		pixel_position = Vector2i(pixelX,pixelY)

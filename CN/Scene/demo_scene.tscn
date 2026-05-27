@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://dol2gsstpkkew"]
 
-[ext_resource type="PackedScene" uid="uid://076s1kkcshx4" path="res://addons/ToolCarsGodot/CN/Scene/rgb_from_raycast.tscn" id="1_mrgsb"]
 [ext_resource type="Material" uid="uid://bqub1kemoyfhv" path="res://addons/ToolCarsGodot/CN/Material/MAT_ground.tres" id="1_ndsvm"]
-[ext_resource type="Texture2D" uid="uid://b60e8y2fg0s77" path="res://addons/ToolCarsGodot/CN/Texture/2D_mockup.png" id="2_dsljn"]
+[ext_resource type="PackedScene" uid="uid://bh5rpcsrbcpvb" path="res://addons/ToolCarsGodot/CN/Scene/draw_with_raycast.tscn" id="3_dsljn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vkc1n"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -23,9 +22,6 @@ orientation = 1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vkc1n"]
 size = Vector3(5, 0.1, 5)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3oov0"]
-albedo_texture = ExtResource("2_dsljn")
 
 [node name="DemoScene" type="Node3D" unique_id=1931849418]
 
@@ -52,7 +48,6 @@ shape = SubResource("BoxShape3D_vkc1n")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
 layers = 3
 mesh = SubResource("QuadMesh_vkc1n")
-surface_material_override/0 = SubResource("StandardMaterial3D_3oov0")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Background/Green" unique_id=248846998]
 collision_layer = 3
@@ -137,13 +132,10 @@ collision_layer = 3
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Background/Cyan/StaticBody3D" unique_id=1164805020]
 shape = SubResource("BoxShape3D_vkc1n")
 
-[node name="RGBFromRaycast" parent="." unique_id=194767905 instance=ExtResource("1_mrgsb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16744614, 0.16292936, 0)
-
-[node name="MoveRaycast" parent="RGBFromRaycast" index="0" unique_id=1618982129]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.72429, 0, 0.64376116)
-
 [node name="Camera3D" type="Camera3D" parent="." unique_id=107024022]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 10.382868, 0)
 
-[editable path="RGBFromRaycast"]
+[node name="Draw" parent="." unique_id=2002528441 instance=ExtResource("3_dsljn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47473735, 0)
+
+[editable path="Draw"]

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bh5rpcsrbcpvb"]
+
+[ext_resource type="Script" uid="uid://caqw7h2bxv82" path="res://addons/ToolCarsGodot/CN/Scene/draw_with_raycast.gd" id="1_hptux"]
+[ext_resource type="Script" uid="uid://c685o0q2ttr7" path="res://addons/ToolCarsGodot/CN/Scene/debug_move.gd" id="2_i7twf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i7twf"]
+albedo_color = Color(0, 0.470304, 0.10059256, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_i7twf"]
+material = SubResource("StandardMaterial3D_i7twf")
+top_radius = 0.25
+bottom_radius = 0.01
+
+[node name="Draw" type="Node3D" unique_id=2002528441]
+script = ExtResource("1_hptux")
+
+[node name="Move" type="Node3D" parent="." unique_id=1513872658]
+script = ExtResource("2_i7twf")
+
+[node name="RayCast3D" type="RayCast3D" parent="Move" unique_id=1865566437]
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Move" unique_id=1974699843]
+mesh = SubResource("CylinderMesh_i7twf")
+
+[connection signal="on_space_pressed" from="Move" to="." method="_send_raycast_to_get_pixel_and_draw"]
