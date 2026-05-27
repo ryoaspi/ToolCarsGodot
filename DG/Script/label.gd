@@ -1,11 +1,13 @@
 @tool
+
 extends Node
+
 signal on_typing_text (text : String)
 signal new_text (text : String)
-var echo:bool
-var unicode: int
+
 @export var wait_time:float = 1.5
 @export var text_scan:String
+
 var time_count:float
 
 func _process(delta: float) -> void:
@@ -13,7 +15,7 @@ func _process(delta: float) -> void:
 		time_count -= delta
 		if time_count < 0:
 			new_text.emit(text_scan)
-			text_scan = ""
+			text_scan = "" #Reset the script to blank
 
 func _input(event):
 	if event is InputEventKey and event.pressed:
