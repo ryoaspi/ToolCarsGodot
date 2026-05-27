@@ -1,17 +1,23 @@
+class_name EjDemoCarWithJoystick
 extends CharacterBody3D
 
 @export var speed : float = 4
 @export var turn_speed : float = 3.0
-@export var jump_impulse = 5
+@export var jump_impulse = 3
+
+@export var forward_back : float
+@export var left_right : float
 
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
+
+
+func set_move_with_joystick(joystick: Vector2) :
+	forward_back = joystick.x
+	left_right = joystick.y
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-
-	var forward_back = Input.get_joy_axis(0, JOY_AXIS_LEFT_Y)
-	var left_right = Input.get_joy_axis(0, JOY_AXIS_RIGHT_X)
 
 #Left/Right
 	if abs(left_right) > 0.1:
