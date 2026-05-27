@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dwrdxl1ubyl5i" path="res://addons/ToolCarsGodot/DF/scenes/KS_4036.tscn" id="4_e2mqp"]
 [ext_resource type="Script" uid="uid://bdpn67jc75y0y" path="res://addons/ToolCarsGodot/DF/scripts/car_movement.gd" id="6_utcj0"]
 [ext_resource type="Script" uid="uid://co1niehwd3nvm" path="res://addons/ToolCarsGodot/DF/scenes/xr_inputs.gd" id="8_konn1"]
+[ext_resource type="Script" uid="uid://kt004hmwmtln" path="res://addons/ToolCarsGodot/DF/scenes/wheels_rotation.gd" id="9_1vatx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y7w32"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -88,5 +89,13 @@ right_controller = NodePath("../../XROrigin3D/XRController_Right_Hand")
 script = ExtResource("8_konn1")
 left_controller = NodePath("../../XROrigin3D/XRController_Left_Hand")
 right_controller = NodePath("../../XROrigin3D/XRController_Right_Hand")
+
+[node name="wheels_rotation" type="Node" parent="Code" unique_id=891045571]
+script = ExtResource("9_1vatx")
+
+[connection signal="left_wheel_rotation" from="Code/car_movement" to="Code/wheels_rotation" method="set_rotation_with_degrees"]
+[connection signal="right_wheel_rotation" from="Code/car_movement" to="Code/wheels_rotation" method="set_rotation_with_degrees"]
+[connection signal="left_hand_joystick_update" from="Code/xr_inputs" to="Code/car_movement" method="set_joystick_inputs_vector2"]
+[connection signal="right_hand_joystick_update" from="Code/xr_inputs" to="Code/car_movement" method="set_joystick_inputs_vector2"]
 
 [editable path="KS_4036"]
