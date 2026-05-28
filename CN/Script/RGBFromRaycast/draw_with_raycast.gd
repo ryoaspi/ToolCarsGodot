@@ -9,7 +9,7 @@ enum PENCIL {
 	DIAMOND,
 }
 @export var pencil_type : PENCIL
-var cross = [
+var cross : Array[Vector2i] = [
 		Vector2i(0, 0),
 		Vector2i(-1, 0),
 		Vector2i(1, 0),
@@ -17,7 +17,7 @@ var cross = [
 		Vector2i(0, -1),
 		]
 		
-var diamond = [
+var diamond : Array[Vector2i] =[
 	Vector2i(0, -3),
 
 	Vector2i(-1, -2),
@@ -51,9 +51,31 @@ var diamond = [
 	Vector2i(0, 3),
 ]
 
+var draw : bool
+var erase : bool
+
 signal on_draw_called(image:Image)
 
-func _send_raycast_to_get_pixel_and_draw(color:Color) -> void:
+func axbutton_press_to_raycast_and_draw(name : String)-> void:
+	if name == "ax_button":
+		draw = true
+	if name == "by_button":
+		erase = true
+
+func axbutton_release_to_raycast_and_draw(name : String)-> void:
+	if name == "ax_button":
+		draw = false
+	if name == "by_button":
+		erase = false
+
+
+func _physics_process(delta: float) -> void:
+	if draw  and not erase:
+		send_raycast_to_get_pixel_and_draw(Color.BLACK)
+	elif not draw and erase:
+		send_raycast_to_get_pixel_and_draw(Color.WHITE)
+
+func send_raycast_to_get_pixel_and_draw(color:Color) -> void:
 	if raycast.is_colliding():
 		var collider = raycast.get_collider()
 		var object :Node3D = collider.get_parent()
@@ -86,6 +108,7 @@ func _send_raycast_to_get_pixel_and_draw(color:Color) -> void:
 				_draw(pixel_position,image,color,material, cross)
 			PENCIL.DIAMOND:
 				_draw(pixel_position,image,color,material, diamond)
+	print ("no collision")
 
 
 func _draw(pixel_position : Vector2i,image : Image, color : Color, material : StandardMaterial3D, pencil: Array[Vector2i]) -> void:
@@ -97,3 +120,4 @@ func _draw(pixel_position : Vector2i,image : Image, color : Color, material : St
 			new_texture.update(image)
 	on_draw_called.emit(image)
 	material.albedo_texture = new_texture
+	print("draw done")
