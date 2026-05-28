@@ -1,4 +1,4 @@
-class_name EJDownloadWebPage
+class_name EJDownloadWebPageBis
 extends Node
 
 signal on_text_downloaded(text:String)
@@ -10,7 +10,7 @@ signal on_download_failed_message(code_text:String)
 @export var use_debug_print:bool=false
 @onready var http:HTTPRequest = HTTPRequest.new()
 
-func set_webpage_and_download_directly(url_page:String):
+func set_web_page_and_download_directly(url_page:String):
 	set_web_page_to_download_from(url_page)
 	download()
 
