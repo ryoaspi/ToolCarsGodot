@@ -1,90 +1,27 @@
 [gd_scene format=3 uid="uid://duce26bql6smr"]
 
-[ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="1_c5qqj"]
-[ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="2_puupq"]
-[ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="3_puupq"]
 [ext_resource type="PackedScene" uid="uid://dwrdxl1ubyl5i" path="res://addons/ToolCarsGodot/DF/scenes/KS_4036.tscn" id="4_e2mqp"]
 [ext_resource type="Script" uid="uid://bdpn67jc75y0y" path="res://addons/ToolCarsGodot/DF/scripts/car_movement.gd" id="6_utcj0"]
 [ext_resource type="Script" uid="uid://co1niehwd3nvm" path="res://addons/ToolCarsGodot/DF/scenes/xr_inputs.gd" id="8_konn1"]
 [ext_resource type="Script" uid="uid://kt004hmwmtln" path="res://addons/ToolCarsGodot/DF/scenes/wheels_rotation.gd" id="9_1vatx"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y7w32"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-
-[sub_resource type="Sky" id="Sky_8bok4"]
-sky_material = SubResource("ProceduralSkyMaterial_y7w32")
-
-[sub_resource type="Environment" id="Environment_c5qqj"]
-background_mode = 2
-sky = SubResource("Sky_8bok4")
-tonemap_mode = 2
-
-[sub_resource type="QuadMesh" id="QuadMesh_c5qqj"]
-size = Vector2(10, 10)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_puupq"]
-albedo_color = Color(0.3628292, 0.3628296, 0.36282927, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_c5qqj"]
-size = Vector3(1, 0.01, 1)
-
 [node name="Main" type="Node3D" unique_id=1371747064]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=659769082]
-environment = SubResource("Environment_c5qqj")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=317440943]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-shadow_enabled = true
-
-[node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=814516700]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2346352, 0.9053935)
-
-[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=2000549239]
-
-[node name="XRController_Left_Hand" type="XRController3D" parent="XROrigin3D" unique_id=790614423]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0, 0)
-tracker = &"left_hand"
-
-[node name="LeftHand" parent="XROrigin3D/XRController_Left_Hand" unique_id=620266751 instance=ExtResource("1_c5qqj")]
-script = null
-
-[node name="XRController_Right_Hand" type="XRController3D" parent="XROrigin3D" unique_id=1226386437]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, 0)
-tracker = &"right_hand"
-
-[node name="RightHand" parent="XROrigin3D/XRController_Right_Hand" unique_id=1287348859 instance=ExtResource("2_puupq")]
-script = null
-
-[node name="Ground" type="StaticBody3D" parent="." unique_id=1444765715]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=1317778774]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.0013473034, 5.9604645e-08, 0.0016431212)
-mesh = SubResource("QuadMesh_c5qqj")
-surface_material_override/0 = SubResource("StandardMaterial3D_puupq")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=1644468327]
-shape = SubResource("BoxShape3D_c5qqj")
-debug_fill = false
 
 [node name="KS_4036" parent="." unique_id=1781070975 instance=ExtResource("4_e2mqp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.029777646, -0.0016297922, 0.030339003)
 
 [node name="Code" type="Node" parent="." unique_id=2145258064]
 
-[node name="xr_setup" parent="Code" unique_id=1327407391 instance=ExtResource("3_puupq")]
-
 [node name="car_movement" type="Node" parent="Code" unique_id=1560538840 node_paths=PackedStringArray("character", "left_controller", "right_controller")]
 script = ExtResource("6_utcj0")
 character = NodePath("../../KS_4036/KS_4036")
-left_controller = NodePath("../../XROrigin3D/XRController_Left_Hand")
-right_controller = NodePath("../../XROrigin3D/XRController_Right_Hand")
+left_controller = NodePath("")
+right_controller = NodePath("")
 
 [node name="xr_inputs" type="Node" parent="Code" unique_id=665007475 node_paths=PackedStringArray("left_controller", "right_controller")]
 script = ExtResource("8_konn1")
-left_controller = NodePath("../../XROrigin3D/XRController_Left_Hand")
-right_controller = NodePath("../../XROrigin3D/XRController_Right_Hand")
+left_controller = NodePath("")
+right_controller = NodePath("")
 
 [node name="wheels_rotation" type="Node" parent="Code" unique_id=891045571 node_paths=PackedStringArray("pivot")]
 script = ExtResource("9_1vatx")
