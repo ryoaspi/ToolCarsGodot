@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://cle2gnxktb1fd"
-path="res://.godot/imported/ks4036_front_led.obj-dc26a0500facda1ca9f8390d152e54b9.mesh"
+path="res://.godot/imported/ks4036_front_led.obj-ff85bdd8d2bae58c1a6e9b623473e7e4.mesh"
 
 [deps]
 
-files=["res://.godot/imported/ks4036_front_led.obj-dc26a0500facda1ca9f8390d152e54b9.mesh"]
+files=["res://.godot/imported/ks4036_front_led.obj-ff85bdd8d2bae58c1a6e9b623473e7e4.mesh"]
 
-source_file="res://ToolCarsGodot/DF/assets/meshes/ks_4036/3d/led/ks4036_front_led.obj"
-dest_files=["res://.godot/imported/ks4036_front_led.obj-dc26a0500facda1ca9f8390d152e54b9.mesh", "res://.godot/imported/ks4036_front_led.obj-dc26a0500facda1ca9f8390d152e54b9.mesh"]
+source_file="res://addons/ToolCarsGodot/DF/assets/meshes/ks_4036/3d/led/ks4036_front_led.obj"
+dest_files=["res://.godot/imported/ks4036_front_led.obj-ff85bdd8d2bae58c1a6e9b623473e7e4.mesh", "res://.godot/imported/ks4036_front_led.obj-ff85bdd8d2bae58c1a6e9b623473e7e4.mesh"]
 
 [params]
 
