@@ -31,7 +31,7 @@ func _process(delta: float) -> void:
 	var collider_hit: Node3D = _get_object_touched()
 	var filtered_collider_hit = _get_filtered_object_touched(groups_to_collide_with)
 	
-	if(distance_in_meter > 0 && distance_in_meter != old_distance):
+	if(distance_in_meter != old_distance):
 		calculate_distance_on_raycast_touch_collider.emit(distance_in_meter)
 		old_distance = distance_in_meter
 

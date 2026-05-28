@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dko4bi4d4g52q"]
+
+[ext_resource type="PackedScene" uid="uid://dymdmq4qs3hn8" path="res://addons/ToolCarsGodot/ND/Features/UltraSensor/Scene/ultra_sonic_sensor_node.tscn" id="1_ocll4"]
+[ext_resource type="Script" uid="uid://cpn1b70jqd5rj" path="res://addons/ToolCarsGodot/ND/Features/UltraSensor/Script/dn_write_on_label.gd" id="2_n7kjc"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wrr20"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v04l5"]
+
+[node name="DemoSensorScene" type="Node3D" unique_id=2118547976]
+
+[node name="UltraSonicSensorNode" parent="." unique_id=171773783 instance=ExtResource("1_ocll4")]
+transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 0.9999998, 0, 0, 0.25)
+
+[node name="UltraSonicSize" parent="UltraSonicSensorNode" index="0" unique_id=1629980050]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -0.074618936, 0, -0.114362605)
+
+[node name="RayCastDistance" parent="UltraSonicSensorNode/Code" parent_id_path=PackedInt32Array(171773783, 149674593) index="0" unique_id=2110100761 node_paths=PackedStringArray("sensor")]
+sensor = NodePath("../..")
+raycast_max_distance = 10.0
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=392928779]
+transform = Transform3D(1, 0, 0, 0, 0.9840965, 0.17763439, 0, -0.17763439, 0.9840965, 0, 0.27019274, 0.91263556)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=73785400]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.2328498)
+
+[node name="Cube" type="Node3D" parent="." unique_id=927911170]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.48304957, 0, -0.8360368)
+
+[node name="CubeMesh" type="MeshInstance3D" parent="Cube" unique_id=1920647615]
+mesh = SubResource("BoxMesh_wrr20")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube/CubeMesh" unique_id=362395529]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube/CubeMesh/StaticBody3D" unique_id=1863351772]
+shape = SubResource("BoxShape3D_v04l5")
+
+[node name="DebugLayer" type="CanvasLayer" parent="." unique_id=1029376321]
+
+[node name="Label" type="Label" parent="DebugLayer" unique_id=1536893940]
+offset_right = 382.0
+offset_bottom = 75.0
+text = "DEBUG"
+script = ExtResource("2_n7kjc")
+
+[connection signal="calculate_distance_on_raycast_touch_collider" from="UltraSonicSensorNode/Code/RayCastDistance" to="DebugLayer/Label" method="set_text_meter"]
+
+[editable path="UltraSonicSensorNode"]
