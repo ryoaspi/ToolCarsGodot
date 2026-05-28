@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="DGScanDictionary" format=3 uid="uid://cgasgpnaueok0"]
+
+[ext_resource type="Script" uid="uid://btqocc4e3xral" path="res://addons/ToolCarsGodot/DG/Features/ScanOrTypeCode/Script/dg_scan_dictionary.gd" id="1_gfsnp"]
+
+[resource]
+script = ExtResource("1_gfsnp")
+scan_to_text = Dictionary[String, String]({
+"03554611": "https://github.com/ryoaspi/ToolCarsGodot/blob/DEV/_Main/Gist/BB/hello_world.gd",
+"21653252": "https://github.com/ryoaspi/ToolCarsGodot/blob/DEV/_Main/Gist/TT/hello_world.gd",
+"22211780": "https://github.com/ryoaspi/ToolCarsGodot/blob/DEV/_Main/Gist/SE/hello_world.gd",
+"22261700": "https://github.com/ryoaspi/ToolCarsGodot/blob/DEV/_Main/Gist/FR/hello_world.gd",
+"22263748": "https://github.com/ryoaspi/ToolCarsGodot/blob/DEV/_Main/Gist/EJ/hello_world.gd",
+"22308708": "https://github.com/ryoaspi/ToolCarsGodot/blob/DEV/_Main/Gist/DG/hello_world.gd",
+"22310756": "https://github.com/ryoaspi/ToolCarsGodot/blob/DEV/_Main/Gist/ND/hello_world.gd",
+"22558116": "https://github.com/ryoaspi/ToolCarsGodot/blob/DEV/_Main/Gist/default_gist_hello_world.gd",
+"22803588": "https://github.com/ryoaspi/ToolCarsGodot/tree/DEV/_Main/Gist/SC",
+"23854851": "https://github.com/ryoaspi/ToolCarsGodot/blob/DEV/_Main/Gist/DF/hello_world.gd",
+"24547108": "https://github.com/ryoaspi/ToolCarsGodot/blob/DEV/_Main/Gist/PL/hello_world.gd",
+"25043411": "https://github.com/ryoaspi/ToolCarsGodot/blob/DEV/_Main/Gist/CN/hello_world.gd",
+"à\"(('§&&": "https://github.com/ryoaspi/ToolCarsGodot/blob/DEV/_Main/Gist/BB/hello_world.gd",
+"é\"!('!(&": "https://github.com/ryoaspi/ToolCarsGodot/blob/DEV/_Main/Gist/DF/hello_world.gd",
+"é\"''§(ç§": "Two Of Clubs",
+"é&§(\"é(é": "https://github.com/ryoaspi/ToolCarsGodot/blob/DEV/_Main/Gist/TT/hello_world.gd",
+"é&ç\"!§§à": "Ten Of Spades",
+"é''é\"((§": "Jack Of Club",
+"é''é&è§'": "Ace Of Clubs",
+"é'(\"&'çé": "Ten Of Diamonds",
+"é'('è&à!": "https://github.com/ryoaspi/ToolCarsGodot/blob/DEV/_Main/Gist/PL/hello_world.gd",
+"é'(éàçç§": "Jack Of Spades",
+"é'(éàéé!": "Ace Of Spades",
+"é'(ééè!!": "Queen Of Spades",
+"é(à'\"'&&": "https://github.com/ryoaspi/ToolCarsGodot/blob/DEV/_Main/Gist/CN/hello_world.gd",
+"éà'''éçé": "Queen Of Diamonds",
+"éà''§\"'à": "Jack Of Diamonds",
+"éà''éé''": "King Of Diamonds",
+"éà('!&\"é": "Ace Of Diamonds",
+"éé!à\"(!!": "https://github.com/ryoaspi/ToolCarsGodot/tree/DEV/_Main/Gist/SC",
+"éé\"&àè(§": "https://github.com/ryoaspi/ToolCarsGodot/blob/DEV/_Main/Gist/ND/hello_world.gd",
+"éé\"à!èà!": "https://github.com/ryoaspi/ToolCarsGodot/blob/DEV/_Main/Gist/DG/hello_world.gd",
+"éé\"à§§§à": "King Of Spades",
+"éé((!&&§": "https://github.com/ryoaspi/ToolCarsGodot/blob/DEV/_Main/Gist/default_gist_hello_world.gd",
+"ééé&&è!à": "https://github.com/ryoaspi/ToolCarsGodot/blob/DEV/_Main/Gist/SE/hello_world.gd",
+"ééé§\"è'!": "https://github.com/ryoaspi/ToolCarsGodot/blob/DEV/_Main/Gist/EJ/hello_world.gd",
+"ééé§&èàà": "https://github.com/ryoaspi/ToolCarsGodot/blob/DEV/_Main/Gist/FR/hello_world.gd",
+"éééààèèé": "Ten Of Clubs"
+})
+metadata/_custom_type_script = "uid://btqocc4e3xral"

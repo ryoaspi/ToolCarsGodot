@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dhhbu4pxic58t"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qu66g"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_qu66g"]
+
+[node name="SeGroupCheck" type="Node3D" unique_id=683842576]
+
+[node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=1897551348]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=1993294883]
+
+[node name="XRController3DRight" type="XRController3D" parent="XROrigin3D" unique_id=706602559]
+tracker = &"left_hand"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/XRController3DRight" unique_id=1675319133]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, 0, 0)
+mesh = SubResource("BoxMesh_qu66g")
+
+[node name="XRController3DLeft" type="XRController3D" parent="XROrigin3D" unique_id=1312914933]
+tracker = &"right_hand"
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="XROrigin3D/XRController3DLeft" unique_id=784502072]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, 0, 0)
+mesh = SubResource("BoxMesh_qu66g")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=699274395]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=16051323]
+shape = SubResource("WorldBoundaryShape3D_qu66g")

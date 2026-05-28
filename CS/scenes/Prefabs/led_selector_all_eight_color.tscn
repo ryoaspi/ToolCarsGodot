@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bnsfwvo8e5f28"]
+
+[ext_resource type="Script" uid="uid://j377ubn6qbm5" path="res://ToolCarsGodot/CS/Scripts/CSLEDColorSelection.gd" id="1_7kthk"]
+
+[node name="LEDSelectAllEightColor" type="Node" unique_id=1145040916]
+script = ExtResource("1_7kthk")
+color_list = Array[Color]([Color(0, 0, 0, 1), Color(1, 0, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(1, 1, 0, 1), Color(0, 1, 1, 1), Color(1, 0, 1, 1), Color(1, 1, 1, 1)])
+metadata/_custom_type_script = "uid://j377ubn6qbm5"

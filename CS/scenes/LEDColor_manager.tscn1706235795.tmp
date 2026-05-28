@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://cw835ge6v17mp"]
+
+[ext_resource type="Script" uid="uid://j377ubn6qbm5" path="res://ToolCarsGodot/CS/Scripts/CSLEDColorSelection.gd" id="1_rwhmd"]
+[ext_resource type="Script" uid="uid://dvk3tfoupbwmm" path="res://ToolCarsGodot/CS/Scripts/CSSetMeshIntanceColor.gd" id="3_iuqyd"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_uydf5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uydf5"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rwhmd"]
+
+[node name="Node3D" type="Node3D" unique_id=435053006]
+
+[node name="SphereTest" type="MeshInstance3D" parent="." unique_id=1937055449]
+mesh = SubResource("SphereMesh_uydf5")
+surface_material_override/0 = SubResource("StandardMaterial3D_uydf5")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1499211447]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.7455171)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1248168855]
+transform = Transform3D(4.2252784, 0, 0, 0, 1.0000006, 0, 0, 0, 4.3426504, 0, -0.5644595, -3.502324)
+mesh = SubResource("PlaneMesh_rwhmd")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1606806331]
+transform = Transform3D(0.48956883, 0.4564064, -0.7429775, 0, 0.85207295, 0.5234231, 0.87196463, -0.25625163, 0.41714835, 0, 1.4654937, 0)
+shadow_enabled = true
+shadow_opacity = 0.5
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=107584070]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+light_energy = 0.0
+omni_range = 4.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1984350964]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1223646201]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0.69411767, 0, 1)
+
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=472653366]
+offset_left = 170.0
+offset_right = 250.0
+offset_bottom = 36.0
+
+[node name="Is Blinking" type="Node" parent="." unique_id=1475735335]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=661143658]
+light_color = Color(0.8107799, 0.40979996, 1.92523e-07, 1)
+light_energy = 50.0
+spot_range = 8.0
+
+[node name="Light" type="Node" parent="." unique_id=743725000 node_paths=PackedStringArray("spot_light", "mesh")]
+script = ExtResource("1_rwhmd")
+led_color = 1
+color_selection = Array[Color]([Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 0.49019608, 0, 1)])
+spot_light = NodePath("../SpotLight3D")
+mesh = NodePath("../SphereTest")
+
+[node name="CSSetMeshInstanceColor" type="Node" parent="Light" unique_id=2106200951 node_paths=PackedStringArray("meshes")]
+script = ExtResource("3_iuqyd")
+meshes = [NodePath("../../SphereTest")]
+metadata/_custom_type_script = "uid://dvk3tfoupbwmm"
+
+[connection signal="color_changed" from="Light" to="CanvasLayer/ColorRect" method="set_color"]
+[connection signal="color_changed" from="Light" to="Light/CSSetMeshInstanceColor" method="set_color"]

@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bvd1dj2k43kpc"
+path="res://.godot/imported/CaliperFront.obj-a9a07e71a232e30a21ebb1eefab661c4.mesh"
+
+[deps]
+
+files=["res://.godot/imported/CaliperFront.obj-a9a07e71a232e30a21ebb1eefab661c4.mesh"]
+
+source_file="res://ToolCarsGodot/DF/assets/meshes/caliper_not_prepared/caliper/CaliperFront.obj"
+dest_files=["res://.godot/imported/CaliperFront.obj-a9a07e71a232e30a21ebb1eefab661c4.mesh", "res://.godot/imported/CaliperFront.obj-a9a07e71a232e30a21ebb1eefab661c4.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

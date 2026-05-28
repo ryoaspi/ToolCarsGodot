@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://bhqephwffqxho"]
+
+[ext_resource type="Script" uid="uid://dedilnv25s2fm" path="res://addons/ToolCarsGodot/DG/Features/ScanOrTypeCode/Script/dg_open_url.gd" id="1_2jm5q"]
+[ext_resource type="Resource" uid="uid://cgasgpnaueok0" path="res://addons/ToolCarsGodot/DG/Features/ScanOrTypeCode/Resources/dg_student_code_url.tres" id="2_2cdc6"]
+[ext_resource type="Script" uid="uid://ogdih81kpr1w" path="res://addons/ToolCarsGodot/DG/Features/ScanOrTypeCode/Script/dg_scan_code_from_keyboard.gd" id="3_asgm2"]
+
+[node name="Node3D" type="Node3D" unique_id=441727631]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1398017323]
+
+[node name="Label" type="LineEdit" parent="CanvasLayer" unique_id=1184472009]
+anchors_preset = -1
+anchor_top = 0.108
+anchor_right = 0.59800005
+anchor_bottom = 0.349
+offset_top = 0.01599884
+offset_right = 0.10394287
+offset_bottom = -0.15200806
+theme_override_font_sizes/font_size = 55
+text = "
+"
+
+[node name="ontyping" type="Label" parent="CanvasLayer" unique_id=909222253]
+anchors_preset = -1
+anchor_left = 0.041
+anchor_right = 0.58100003
+anchor_bottom = 0.035
+offset_left = -6.2320023
+offset_right = -0.31201172
+offset_bottom = 0.3199997
+
+[node name="Infos" type="Label" parent="CanvasLayer" unique_id=1142436898]
+anchors_preset = -1
+anchor_top = 0.35500002
+anchor_bottom = 0.35500002
+offset_left = 1.0
+offset_top = -0.040008545
+offset_right = 677.0
+offset_bottom = 60.95999
+text = "Scan a card, a badge or enter a knowing code with the numpad 
+If it's opening a URL, you have to focus back in this program to have a new scan"
+horizontal_alignment = 1
+
+[node name="TextFind" type="Label" parent="CanvasLayer" unique_id=1809512660]
+anchors_preset = -1
+anchor_left = 0.011000001
+anchor_top = 0.647
+anchor_right = 0.326
+anchor_bottom = 0.68500006
+offset_left = -6.672001
+offset_top = -0.25601196
+offset_right = -0.55200195
+offset_bottom = 0.1199646
+
+[node name="ScanResult" type="Label" parent="CanvasLayer" unique_id=547091494]
+anchors_preset = -1
+anchor_right = 0.048
+anchor_bottom = 0.035
+offset_right = -15.296001
+offset_bottom = 0.3199997
+text = "Scan"
+
+[node name="UrlFind" type="Label" parent="CanvasLayer" unique_id=232356376]
+anchors_preset = -1
+anchor_left = 0.003
+anchor_top = 0.75100005
+anchor_right = 0.45600003
+anchor_bottom = 0.76900005
+offset_left = -0.4560001
+offset_top = -11.648041
+offset_right = -6.3120117
+offset_bottom = -0.31204224
+
+[node name="Code" type="Node" parent="." unique_id=418158596]
+
+[node name="OpenURLorText" type="Node" parent="Code" unique_id=2061080298]
+script = ExtResource("1_2jm5q")
+my_dict = ExtResource("2_2cdc6")
+
+[node name="OpenURLorText2" type="Node" parent="Code" unique_id=1784346970]
+script = ExtResource("1_2jm5q")
+my_dict = ExtResource("2_2cdc6")
+
+[node name="RFIDScan" type="Node" parent="Code" unique_id=1242609417]
+script = ExtResource("3_asgm2")
+wait_time = 0.5
+
+[connection signal="fail_to_load_a_key" from="Code/OpenURLorText" to="CanvasLayer/UrlFind" method="set_text" unbinds=1 binds= ["Fail to load an Url"]]
+[connection signal="find_a_not_url_text" from="Code/OpenURLorText" to="CanvasLayer/UrlFind" method="set_text" unbinds=1 binds= ["It's not an url"]]
+[connection signal="find_a_valid_text" from="Code/OpenURLorText" to="CanvasLayer/TextFind" method="set_text"]
+[connection signal="find_an_url" from="Code/OpenURLorText" to="CanvasLayer/UrlFind" method="set_text"]
+[connection signal="fail_to_load_a_key" from="Code/OpenURLorText2" to="CanvasLayer/UrlFind" method="set_text" binds= ["Fail to load an Url"]]
+[connection signal="find_a_not_url_text" from="Code/OpenURLorText2" to="CanvasLayer/UrlFind" method="set_text" binds= ["It's not an url"]]
+[connection signal="find_a_valid_text" from="Code/OpenURLorText2" to="CanvasLayer/TextFind" method="set_text"]
+[connection signal="find_an_url" from="Code/OpenURLorText2" to="CanvasLayer/UrlFind" method="set_text"]
+[connection signal="new_text" from="Code/RFIDScan" to="CanvasLayer/Label" method="set_text"]
+[connection signal="new_text" from="Code/RFIDScan" to="Code/OpenURLorText" method="emit_value_of_the_given_key"]
+[connection signal="on_typing_text" from="Code/RFIDScan" to="CanvasLayer/ontyping" method="set_text"]
