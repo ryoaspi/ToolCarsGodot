@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://s7hjnp11e6ag"
-path="res://.godot/imported/ultra_sonic_sensor.obj-2b5acb7066fbaf99a15476fe4e04ad2d.mesh"
+path="res://.godot/imported/ultra_sonic_sensor.obj-51c0bb449b962f54fd53f972ba7ea671.mesh"
 
 [deps]
 
-files=["res://.godot/imported/ultra_sonic_sensor.obj-2b5acb7066fbaf99a15476fe4e04ad2d.mesh"]
+files=["res://.godot/imported/ultra_sonic_sensor.obj-51c0bb449b962f54fd53f972ba7ea671.mesh"]
 
-source_file="res://ToolCarsGodot/ND/content/ultra_sonic_sensor/ultra_sonic_sensor.obj"
-dest_files=["res://.godot/imported/ultra_sonic_sensor.obj-2b5acb7066fbaf99a15476fe4e04ad2d.mesh", "res://.godot/imported/ultra_sonic_sensor.obj-2b5acb7066fbaf99a15476fe4e04ad2d.mesh"]
+source_file="res://addons/ToolCarsGodot/ND/content/ultra_sonic_sensor/ultra_sonic_sensor.obj"
+dest_files=["res://.godot/imported/ultra_sonic_sensor.obj-51c0bb449b962f54fd53f972ba7ea671.mesh", "res://.godot/imported/ultra_sonic_sensor.obj-51c0bb449b962f54fd53f972ba7ea671.mesh"]
 
 [params]
 

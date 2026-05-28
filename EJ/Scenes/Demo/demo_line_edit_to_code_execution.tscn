@@ -14,6 +14,7 @@ anchor_right = 0.998
 anchor_bottom = 0.201
 offset_right = 0.30395508
 offset_bottom = -0.2480011
+text = "https://github.com/ryoaspi/ToolCarsGodot/blob/DEV/_Main/Gist/EJ/hello_world.gd"
 
 [connection signal="text_submitted" from="CanvasLayer/LineEdit" to="EJModRunTextFromWeb/EJDownloadWebPage" method="set_webpage_and_download_directly"]
 

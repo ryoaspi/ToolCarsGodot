@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dog7ygixvm07f"
-path="res://.godot/imported/2D_writable_texture.png-54381c64b31dbc17de5c8bbbcc036b3e.ctex"
+path="res://.godot/imported/2D_writable_texture.png-8f796dda7b6f653b97532f8e4a5388e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ToolCarsGodot/CN/Texture/2D_writable_texture.png"
-dest_files=["res://.godot/imported/2D_writable_texture.png-54381c64b31dbc17de5c8bbbcc036b3e.ctex"]
+source_file="res://addons/ToolCarsGodot/CN/Texture/2D_writable_texture.png"
+dest_files=["res://.godot/imported/2D_writable_texture.png-8f796dda7b6f653b97532f8e4a5388e1.ctex"]
 
 [params]
 
