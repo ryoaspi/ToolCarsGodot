@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dlm4q4s4qv77c" path="res://addons/ToolCarsGodot/EJ/Features/SingleJoystick/Capture d'écran 2026-05-27 094238.png" id="1_w5gfc"]
 [ext_resource type="Script" uid="uid://cp8lvld88cwsr" path="res://addons/ToolCarsGodot/EJ/Features/SingleJoystick/Scripts/ej_demo_car_with_joystick.gd" id="2_d8pdl"]
+[ext_resource type="Script" uid="uid://yo7r7wle5rhx" path="res://addons/ToolCarsGodot/EJ/Features/SingleJoystick/Scripts/ej_restart.gd" id="2_lyf7f"]
 [ext_resource type="Texture2D" uid="uid://d7nlflcl8l13" path="res://addons/ToolCarsGodot/DF/assets/meshes/ks_4036/3d/wheel/ks_4036_wheel_uv_color.png" id="3_lyf7f"]
 [ext_resource type="Texture2D" uid="uid://boqrb1432pf6h" path="res://addons/ToolCarsGodot/DF/assets/meshes/ks_4036/2d/board.png" id="4_y1023"]
 [ext_resource type="ArrayMesh" uid="uid://dfwvieaagj7g0" path="res://addons/ToolCarsGodot/DF/assets/meshes/ks_4036/3d/body/ks_4036_body.obj" id="5_eh65m"]
@@ -51,6 +52,7 @@ shape = SubResource("BoxShape3D_w50kd")
 debug_color = Color(0.66887367, 0.5024584, 0.25345153, 0.41960785)
 
 [node name="Car" type="Node3D" parent="." unique_id=933864590]
+script = ExtResource("2_lyf7f")
 
 [node name="KS_4036" type="CharacterBody3D" parent="Car" unique_id=1800954672]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1494139, 0)
@@ -106,5 +108,3 @@ script = ExtResource("8_u6xhj")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=289932778]
 transform = Transform3D(1, 0, 0, 0, -0.14749865, 0.98906225, 0, -0.98906225, -0.14749865, 0, 4.585331, 0)
-
-[connection signal="left_joystick_updated" from="Car/KS_4036/EjGamepadFromJoystick" to="Car/KS_4036" method="set_move_with_joystick"]
