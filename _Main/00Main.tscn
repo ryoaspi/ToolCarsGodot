@@ -1,16 +1,19 @@
 [gd_scene format=3 uid="uid://dkva8wqh1d5it"]
 
+[ext_resource type="Script" uid="uid://b2a5lh0qmhgqk" path="res://addons/ToolCarsGodot/CN/Script/XRInitialise/xr_initialise.gd" id="1_e5i5v"]
 [ext_resource type="PackedScene" uid="uid://dbl3ucrlcrj1a" path="res://addons/ToolCarsGodot/FR/_/Demo/Prefabs/xr_essentials_origin_godot.tscn" id="1_hqv82"]
-[ext_resource type="Script" path="res://addons/ToolCarsGodot/CN/Script/xr_initialise.gd" id="1_p5lgh"]
 [ext_resource type="PackedScene" uid="uid://duce26bql6smr" path="res://addons/ToolCarsGodot/DF/scenes/move_car.tscn" id="2_omg0t"]
 [ext_resource type="PackedScene" uid="uid://hpc3w72ihfb5" path="res://addons/ToolCarsGodot/FR/_/scenes/micro_bit_pickable_snap.tscn" id="3_30ruo"]
 [ext_resource type="PackedScene" uid="uid://bffprj0yp4qrq" path="res://addons/ToolCarsGodot/_Main/scene/ground.tscn" id="3_qfek0"]
 [ext_resource type="PackedScene" uid="uid://duppob6rc0hbq" path="res://addons/ToolCarsGodot/FR/_/scenes/snape_zone.tscn" id="4_p5lgh"]
+[ext_resource type="Material" uid="uid://bqub1kemoyfhv" path="res://addons/ToolCarsGodot/CN/Material/MAT_ground.tres" id="6_eoim2"]
 [ext_resource type="PackedScene" uid="uid://bnsfwvo8e5f28" path="res://addons/ToolCarsGodot/CS/scenes/Prefabs/led_selector_all_eight_color.tscn" id="7_e5i5v"]
 [ext_resource type="Script" uid="uid://j377ubn6qbm5" path="res://addons/ToolCarsGodot/CS/Scripts/CSLEDColorSelection.gd" id="8_du1lo"]
 [ext_resource type="Script" uid="uid://dvk3tfoupbwmm" path="res://addons/ToolCarsGodot/CS/Scripts/CSSetMeshIntanceColor.gd" id="9_21twa"]
 [ext_resource type="Script" uid="uid://dgxj33piipv14" path="res://addons/ToolCarsGodot/CS/Scripts/CSSetLightsColor.gd" id="10_eoim2"]
 [ext_resource type="Script" uid="uid://bkvhvsvykspi5" path="res://addons/ToolCarsGodot/CS/Scripts/CSLEDBlinker.gd" id="11_8qwl6"]
+[ext_resource type="PackedScene" path="res://addons/ToolCarsGodot/CN/Scene/draw_with_raycast.tscn" id="12_21twa"]
+[ext_resource type="PackedScene" uid="uid://076s1kkcshx4" path="res://addons/ToolCarsGodot/CN/Scene/rgb_from_raycast.tscn" id="13_eoim2"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e5i5v"]
 animation = &"Grip"
@@ -51,12 +54,17 @@ albedo_color = Color(1, 0, 1, 1)
 resource_name = "Steel_-_Satin"
 albedo_color = Color(1, 0, 0, 1)
 
+[sub_resource type="QuadMesh" id="QuadMesh_8qwl6"]
+material = ExtResource("6_eoim2")
+size = Vector2(25, 25)
+orientation = 1
+
 [sub_resource type="BoxMesh" id="BoxMesh_e5i5v"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_du1lo"]
 
 [node name="00Main" type="Node3D" unique_id=1478093040]
-script = ExtResource("1_p5lgh")
+script = ExtResource("1_e5i5v")
 
 [node name="XREssentialsOriginGodot" parent="." unique_id=291553779 instance=ExtResource("1_hqv82")]
 
@@ -65,6 +73,12 @@ script = null
 
 [node name="AnimationTree" parent="XREssentialsOriginGodot/XROrigin3D/XR_LeftHand/XRToolsCollisionHand/LeftHand" parent_id_path=PackedInt32Array(291553779, 1415449023) index="1"]
 tree_root = SubResource("AnimationNodeBlendTree_2vjf7")
+
+[node name="DrawWithRaycast" parent="XREssentialsOriginGodot/XROrigin3D/XR_RightHand" parent_id_path=PackedInt32Array(291553779, 1805883055) index="1" unique_id=2002528441 instance=ExtResource("12_21twa")]
+
+[node name="RayCast3D" parent="XREssentialsOriginGodot/XROrigin3D/XR_RightHand/DrawWithRaycast/Move" parent_id_path=PackedInt32Array(2002528441, 1513872658) index="0" unique_id=1865566437]
+target_position = Vector3(0, 0, -3)
+debug_shape_custom_color = Color(0.27969277, 0.5785862, 0.87144154, 1)
 
 [node name="Car" parent="." unique_id=1371747064 instance=ExtResource("2_omg0t")]
 
@@ -82,6 +96,12 @@ surface_material_override/0 = SubResource("StandardMaterial3D_7q5qn")
 [node name="SnapZone" parent="Car/KS_4036/KS_4036" parent_id_path=PackedInt32Array(1371747064, 1781070975, 941570093) index="2" unique_id=1188029589 instance=ExtResource("4_p5lgh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.10600464)
 
+[node name="RGBFromRaycast" parent="Car/KS_4036/KS_4036" parent_id_path=PackedInt32Array(1371747064, 1781070975, 941570093) index="3" unique_id=194767905 instance=ExtResource("13_eoim2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.029777646, -0.04839491, -0.030339003)
+
+[node name="RayCast3D" parent="Car/KS_4036/KS_4036/RGBFromRaycast/MoveRaycast" parent_id_path=PackedInt32Array(194767905, 1618982129) index="0" unique_id=1856603597]
+target_position = Vector3(0, -0.15, 0)
+
 [node name="car_movement" parent="Car/Code" parent_id_path=PackedInt32Array(1371747064, 2145258064) index="0" unique_id=1560538840 node_paths=PackedStringArray("left_controller", "right_controller")]
 left_controller = NodePath("../../../XREssentialsOriginGodot/XROrigin3D/XR_LeftHand")
 right_controller = NodePath("../../../XREssentialsOriginGodot/XROrigin3D/XR_RightHand")
@@ -93,6 +113,9 @@ right_controller = NodePath("../../../XREssentialsOriginGodot/XROrigin3D/XR_Righ
 
 [node name="Background" parent="." unique_id=1075719900 instance=ExtResource("3_qfek0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0031535625, 0, -0.0005135536)
+
+[node name="White" parent="Background" index="0" unique_id=1344825906]
+mesh = SubResource("QuadMesh_8qwl6")
 
 [node name="MicroBit" parent="." unique_id=480497665 instance=ExtResource("3_30ruo")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.6723043, 0, 0)
@@ -142,6 +165,9 @@ mesh = SubResource("BoxMesh_e5i5v")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D" unique_id=1056521494]
 shape = SubResource("BoxShape3D_du1lo")
 
+[connection signal="button_pressed" from="XREssentialsOriginGodot/XROrigin3D/XR_RightHand" to="XREssentialsOriginGodot/XROrigin3D/XR_RightHand/DrawWithRaycast" method="axbutton_press_to_raycast_and_draw"]
+[connection signal="button_released" from="XREssentialsOriginGodot/XROrigin3D/XR_RightHand" to="XREssentialsOriginGodot/XROrigin3D/XR_RightHand/DrawWithRaycast" method="axbutton_release_to_raycast_and_draw"]
+[connection signal="on_draw_called" from="XREssentialsOriginGodot/XROrigin3D/XR_RightHand/DrawWithRaycast" to="Car/KS_4036/KS_4036/RGBFromRaycast" method="set_image"]
 [connection signal="color_changed" from="LEDLeftColorSelection" to="LEDLeftColorSelection/SetMeshInstanceColor" method="set_color"]
 [connection signal="color_changed" from="LEDLeftColorSelection" to="LEDLeftColorSelection/SetLightsColor" method="set_color"]
 [connection signal="color_changed" from="LEDRightColorSelection" to="LEDRightColorSelection/SetMeshInstanceColor" method="set_color"]
@@ -151,7 +177,10 @@ shape = SubResource("BoxShape3D_du1lo")
 [editable path="XREssentialsOriginGodot/XROrigin3D/XR_LeftHand/XRToolsCollisionHand/LeftHand"]
 [editable path="XREssentialsOriginGodot/XROrigin3D/XR_LeftHand/XRToolsCollisionHand/LeftHand/Hand_Nails_L"]
 [editable path="XREssentialsOriginGodot/XROrigin3D/XR_LeftHand/XRToolsCollisionHand/LeftHand/Hand_Nails_L/AnimationPlayer"]
+[editable path="XREssentialsOriginGodot/XROrigin3D/XR_RightHand/DrawWithRaycast"]
 [editable path="Car"]
 [editable path="Car/KS_4036"]
 [editable path="Car/KS_4036/KS_4036/SnapZone"]
+[editable path="Car/KS_4036/KS_4036/RGBFromRaycast"]
+[editable path="Background"]
 [editable path="MicroBit"]
