@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dol2gsstpkkew"]
 
 [ext_resource type="Material" uid="uid://bqub1kemoyfhv" path="res://addons/ToolCarsGodot/CN/Material/MAT_ground.tres" id="1_ndsvm"]
+[ext_resource type="PackedScene" uid="uid://076s1kkcshx4" path="res://addons/ToolCarsGodot/CN/Scene/rgb_from_raycast.tscn" id="3_3oov0"]
 [ext_resource type="PackedScene" uid="uid://bh5rpcsrbcpvb" path="res://addons/ToolCarsGodot/CN/Scene/draw_with_raycast.tscn" id="3_dsljn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vkc1n"]
@@ -17,11 +18,11 @@ tonemap_mode = 2
 
 [sub_resource type="QuadMesh" id="QuadMesh_vkc1n"]
 material = ExtResource("1_ndsvm")
-size = Vector2(5, 5)
+size = Vector2(25, 25)
 orientation = 1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vkc1n"]
-size = Vector3(5, 0.1, 5)
+size = Vector3(25, 0.1, 25)
 
 [node name="DemoScene" type="Node3D" unique_id=1931849418]
 
@@ -44,98 +45,11 @@ collision_layer = 3
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Background/White/StaticBody3D" unique_id=1838173381]
 shape = SubResource("BoxShape3D_vkc1n")
 
-[node name="Green" type="MeshInstance3D" parent="Background" unique_id=218490867]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
-layers = 3
-mesh = SubResource("QuadMesh_vkc1n")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Background/Green" unique_id=248846998]
-collision_layer = 3
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Background/Green/StaticBody3D" unique_id=718742165]
-shape = SubResource("BoxShape3D_vkc1n")
-
-[node name="Yellow" type="MeshInstance3D" parent="Background" unique_id=520984776]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -5)
-layers = 3
-mesh = SubResource("QuadMesh_vkc1n")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Background/Yellow" unique_id=1965387093]
-collision_layer = 3
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Background/Yellow/StaticBody3D" unique_id=1001733993]
-shape = SubResource("BoxShape3D_vkc1n")
-
-[node name="Orange" type="MeshInstance3D" parent="Background" unique_id=1682447536]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
-layers = 3
-mesh = SubResource("QuadMesh_vkc1n")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Background/Orange" unique_id=1574740395]
-collision_layer = 3
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Background/Orange/StaticBody3D" unique_id=550313240]
-shape = SubResource("BoxShape3D_vkc1n")
-
-[node name="Red" type="MeshInstance3D" parent="Background" unique_id=1011513099]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -5)
-layers = 3
-mesh = SubResource("QuadMesh_vkc1n")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Background/Red" unique_id=1681533774]
-collision_layer = 3
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Background/Red/StaticBody3D" unique_id=1615551503]
-shape = SubResource("BoxShape3D_vkc1n")
-
-[node name="Pink" type="MeshInstance3D" parent="Background" unique_id=2058401237]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
-layers = 3
-mesh = SubResource("QuadMesh_vkc1n")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Background/Pink" unique_id=1476833845]
-collision_layer = 3
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Background/Pink/StaticBody3D" unique_id=1132176085]
-shape = SubResource("BoxShape3D_vkc1n")
-
-[node name="Purple" type="MeshInstance3D" parent="Background" unique_id=1295872804]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 5)
-layers = 3
-mesh = SubResource("QuadMesh_vkc1n")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Background/Purple" unique_id=999363083]
-collision_layer = 3
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Background/Purple/StaticBody3D" unique_id=1663344641]
-shape = SubResource("BoxShape3D_vkc1n")
-
-[node name="Blue" type="MeshInstance3D" parent="Background" unique_id=1805288006]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-layers = 3
-mesh = SubResource("QuadMesh_vkc1n")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Background/Blue" unique_id=1083987260]
-collision_layer = 3
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Background/Blue/StaticBody3D" unique_id=2067286011]
-shape = SubResource("BoxShape3D_vkc1n")
-
-[node name="Cyan" type="MeshInstance3D" parent="Background" unique_id=243756211]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5)
-layers = 3
-mesh = SubResource("QuadMesh_vkc1n")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Background/Cyan" unique_id=1561096925]
-collision_layer = 3
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Background/Cyan/StaticBody3D" unique_id=1164805020]
-shape = SubResource("BoxShape3D_vkc1n")
-
 [node name="Camera3D" type="Camera3D" parent="." unique_id=107024022]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 10.382868, 0)
 
 [node name="Draw" parent="." unique_id=2002528441 instance=ExtResource("3_dsljn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47473735, 0)
 
-[editable path="Draw"]
+[node name="RGBFromRaycast" parent="." unique_id=194767905 instance=ExtResource("3_3oov0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13863274, 0)

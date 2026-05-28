@@ -13,15 +13,15 @@ func _physics_process(delta: float) -> void:
 	if raycast.is_colliding() :
 		var collider = raycast.get_collider()
 		var object :Node3D = collider.get_parent()
-		
 		if _result_change(object):
 			_set_image_from_object(object)
+		
 		var mesh_size = object.mesh.size
 		mesh_size = Vector3(mesh_size.x,0,mesh_size.y)
 		var corner_position = object.global_position - mesh_size * 0.5
 		var hit_position =  - corner_position - raycast.get_collision_point()
-		var pixelX : int = remap(hit_position.x,0,mesh_size.x,0,1) * 512
-		var pixelY : int = remap(hit_position.z,0,mesh_size.z,0,1) * 512
+		var pixelX : int = remap(hit_position.x,0,mesh_size.x,0,1) * _image.get_width()
+		var pixelY : int = remap(hit_position.z,0,mesh_size.z,0,1) * _image.get_height()
 		pixel_position = Vector2i(pixelX,pixelY)
 		
 		var color_v4i : Vector4i = _get_RGBA_from_image(pixel_position)
@@ -44,6 +44,10 @@ func _set_image_from_object(object : Node3D) -> void:
 	
 	if texture:
 		_image = texture.get_image()
+		print ("la height "+ str(_image.get_height()))
+		print("la width " + str(_image.get_width()))
+		return
+	print("texture c'est pas une texture")
 
 func _get_RGBA_from_image(pixel : Vector2i) -> Vector4i:
 	var color : Color = Color.from_rgba8(0,0,0,0)
@@ -56,3 +60,6 @@ func _get_RGBA_from_image(pixel : Vector2i) -> Vector4i:
 
 func get_RGBA_from_raycast() -> Vector4i:
 	return _get_RGBA_from_image(pixel_position)
+
+func set_image(image : Image) -> void:
+	_image = image
