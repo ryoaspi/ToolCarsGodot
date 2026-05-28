@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c4p6h6rupud1f"]
+
+[ext_resource type="Texture2D" uid="uid://ejc6ycunovdj" path="res://addons/ToolCarsGodot/ND/content/infra_red_receiver/infra_red_receiver_uv_color.png" id="1_03fbb"]
+[ext_resource type="ArrayMesh" uid="uid://cqjslm2rth1wm" path="res://addons/ToolCarsGodot/ND/content/infra_red_receiver/infra_red_receiver.obj" id="2_noi3u"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n4oni"]
+albedo_texture = ExtResource("1_03fbb")
+
+[node name="InfrarougeReceiverNode" type="Node3D" unique_id=1654538949]
+
+[node name="InfrarougeSize" type="Node3D" parent="." unique_id=1075717410]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="InfrarougeSize" unique_id=417912605]
+material_override = SubResource("StandardMaterial3D_n4oni")
+mesh = ExtResource("2_noi3u")
+
+[node name="Code" type="Node" parent="." unique_id=1081103741]
