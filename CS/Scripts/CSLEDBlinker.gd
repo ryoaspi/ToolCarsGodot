@@ -29,6 +29,10 @@ var target_color: Color
 # Je stocke ici la couleur exacte que je suis en train de calculer à cette image (frame) précise.
 var current_color: Color
 
+func set_blinking():
+	# Cette fonction permet à un autre script d'activer le blink.
+	is_blinking = !is_blinking
+
 func _process(delta):
 	# Je vérifie d'abord si le clignotement est désactivé depuis mon inspecteur.
 	if not is_blinking:
@@ -59,9 +63,9 @@ func _process(delta):
 			# Si mon interrupteur vient de passer sur "allumé" :
 			else:
 				# Je vérifie que l'index de couleur demandé existe bien dans la liste du script principal.
-				if led_to_affect.led_color < led_to_affect.color_selection.size():
+				if led_to_affect.led_color < led_to_affect.color_list.size():
 					# Si oui, je définis cette couleur normale comme ma cible à atteindre.
-					target_color = led_to_affect.color_selection[led_to_affect.led_color]
+					target_color = led_to_affect.color_list[led_to_affect.led_color]
 				else:
 					# Sinon, je prends la couleur par défaut par sécurité.
 					target_color = led_to_affect.default_color

@@ -15,7 +15,7 @@ signal color_changed(new_color: Color)
 			refresh()
 
 ## Tableau dans lequel j'ajoute et je configure toutes mes couleurs personnalisées.
-@export var color_selection: Array[Color]
+@export var color_list: Array[Color]
 
 ## Couleur de sécurité qui s'affiche si je choisis un index qui n'existe pas dans mon tableau.
 @export var default_color: Color = Color(1.0, 0.0, 1.0, 1.0)
@@ -37,9 +37,9 @@ func refresh():
 	var base_color = default_color
 	
 	# Je vérifie que l'index demandé (led_color) est valide (qu'il ne dépasse pas la taille de mon tableau).
-	if led_color >= 0 and led_color < color_selection.size():
+	if led_color >= 0 and led_color < color_list.size():
 		# Si l'index est bon, je récupère la couleur correspondante dans mon tableau.
-		base_color = color_selection[led_color]
+		base_color = color_list[led_color]
 	
 	# J'utilise mon signal pour diffuser la couleur finale à tous les scripts connectés.
 	color_changed.emit(base_color)
