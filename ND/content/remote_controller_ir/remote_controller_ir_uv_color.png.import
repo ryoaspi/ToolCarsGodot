@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://db4maxos2n7wf"
-path.s3tc="res://.godot/imported/remote_controller_ir_uv_color.png-624b0cc3a9f1ceef79fff8e5898803f8.s3tc.ctex"
+path.s3tc="res://.godot/imported/remote_controller_ir_uv_color.png-b89c73c666627ff15bf88eb2a8657a7d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://ToolCarsGodot/ND/content/remote_controller_ir/remote_controller_ir_uv_color.png"
-dest_files=["res://.godot/imported/remote_controller_ir_uv_color.png-624b0cc3a9f1ceef79fff8e5898803f8.s3tc.ctex"]
+source_file="res://addons/ToolCarsGodot/ND/content/remote_controller_ir/remote_controller_ir_uv_color.png"
+dest_files=["res://.godot/imported/remote_controller_ir_uv_color.png-b89c73c666627ff15bf88eb2a8657a7d.s3tc.ctex"]
 
 [params]
 

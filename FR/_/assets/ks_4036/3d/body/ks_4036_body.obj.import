@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://u0w3ju1josaj"
-path="res://.godot/imported/ks_4036_body.obj-91d331eb0c07efe58c50659376dcd67f.mesh"
+path="res://.godot/imported/ks_4036_body.obj-21880b09cab649c25dd8890dbb9de51f.mesh"
 
 [deps]
 
-files=["res://.godot/imported/ks_4036_body.obj-91d331eb0c07efe58c50659376dcd67f.mesh"]
+files=["res://.godot/imported/ks_4036_body.obj-21880b09cab649c25dd8890dbb9de51f.mesh"]
 
-source_file="res://ToolCarsGodot/FR/_/assets/ks_4036/3d/body/ks_4036_body.obj"
-dest_files=["res://.godot/imported/ks_4036_body.obj-91d331eb0c07efe58c50659376dcd67f.mesh", "res://.godot/imported/ks_4036_body.obj-91d331eb0c07efe58c50659376dcd67f.mesh"]
+source_file="res://addons/ToolCarsGodot/FR/_/assets/ks_4036/3d/body/ks_4036_body.obj"
+dest_files=["res://.godot/imported/ks_4036_body.obj-21880b09cab649c25dd8890dbb9de51f.mesh", "res://.godot/imported/ks_4036_body.obj-21880b09cab649c25dd8890dbb9de51f.mesh"]
 
 [params]
 
