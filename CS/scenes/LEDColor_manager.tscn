@@ -1,0 +1,225 @@
+[gd_scene format=3 uid="uid://cw835ge6v17mp"]
+
+[ext_resource type="Material" uid="uid://lqrqj0o4qlp1" path="res://ToolCarsGodot/CS/Materials/LEDFrontMaterial.tres" id="1_bh6ng"]
+[ext_resource type="Script" uid="uid://bkvhvsvykspi5" path="res://ToolCarsGodot/CS/Scripts/CSLEDBlinker.gd" id="1_ntcnl"]
+[ext_resource type="Script" uid="uid://j377ubn6qbm5" path="res://ToolCarsGodot/CS/Scripts/CSLEDColorSelection.gd" id="1_rwhmd"]
+[ext_resource type="Script" uid="uid://dvk3tfoupbwmm" path="res://ToolCarsGodot/CS/Scripts/CSSetMeshIntanceColor.gd" id="3_iuqyd"]
+[ext_resource type="Script" uid="uid://dgxj33piipv14" path="res://ToolCarsGodot/CS/Scripts/CSSetLightsColor.gd" id="3_ntcnl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ntcnl"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bh6ng"]
+bg_color = Color(1, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gy220"]
+bg_color = Color(1, 0.49019608, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l3s03"]
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ntcnl"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rwhmd"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_uydf5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ntcnl"]
+
+[sub_resource type="TorusMesh" id="TorusMesh_ntcnl"]
+
+[node name="Node3D" type="Node3D" unique_id=435053006]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1984350964]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1223646201]
+offset_left = 594.0
+offset_top = 20.0
+offset_right = 633.0
+offset_bottom = 60.0
+color = Color(1, 0, 0, 1)
+
+[node name="White_Button" type="Button" parent="CanvasLayer" unique_id=472653366]
+offset_left = 1036.0
+offset_top = 16.0
+offset_right = 1116.0
+offset_bottom = 52.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0.6, 0.049999956, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_ntcnl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ntcnl")
+text = "White"
+
+[node name="Red_Button" type="Button" parent="CanvasLayer" unique_id=868615962]
+offset_left = 1037.0
+offset_top = 64.0
+offset_right = 1117.0
+offset_bottom = 100.0
+theme_override_colors/font_hover_color = Color(0, 0.6, 0.049999956, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_bh6ng")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bh6ng")
+text = "Red"
+
+[node name="Orange_Button" type="Button" parent="CanvasLayer" unique_id=1933921518]
+offset_left = 1036.0
+offset_top = 114.0
+offset_right = 1116.0
+offset_bottom = 150.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0.6, 0.049999956, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_gy220")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gy220")
+text = "Orange"
+
+[node name="Orange_Button2" type="Button" parent="CanvasLayer" unique_id=678212127]
+offset_left = 1036.0
+offset_top = 221.0
+offset_right = 1116.0
+offset_bottom = 257.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0.6, 0.049999956, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_l3s03")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gy220")
+text = "Blink"
+
+[node name="TextEdit" type="TextEdit" parent="CanvasLayer" unique_id=2091912479]
+anchors_preset = -1
+anchor_left = 0.010000001
+anchor_top = 0.015000001
+anchor_right = 0.38700002
+anchor_bottom = 0.42400002
+offset_left = -0.52000046
+offset_top = 0.27999973
+offset_right = 0.17596436
+offset_bottom = 0.24798584
+theme_override_font_sizes/font_size = 12
+text = "TEST DES LEDS - Directement dans l'éditeur (@tool)
+
+    1. Couleurs : Sélectionner le Node : LEDColorSelection
+		▶ Changer \"Led Color\" dans l'Inspecteur (0, 1, 2,...).
+		▶ Ajouter des couleurs dans \"Color List\" si besoin.
+    2. Clignotement : Sélectionner : LEDBlinker
+		▶ Cocher \"Is Blinking\" puis ajuster \"Blink Speed\" et \"Lerp Speed\".
+    3. Évolutivité : Glisser n'importe quel objet dans les listes des 2 Nodes :
+		SetMeshInstanceColor ou SetLightsColor pour ajouter/associer
+		de nouveaux meshs ou de nouvelles Lights.
+
+Afficher et lire les Tooltips pour plus de détails. ENJOY!"
+editable = false
+
+[node name="TextEdit2" type="TextEdit" parent="CanvasLayer" unique_id=477139720]
+offset_left = 639.0
+offset_top = 27.0
+offset_right = 955.0
+offset_bottom = 122.0
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ntcnl")
+text = "◀ Debug de : \"func set_selection\"
+
+(fonction pour permettre à un autre script de
+changer l'index de la couleur dans LEDColorSelection)"
+
+[node name="ENV_&_LIGHTS" type="Node3D" parent="." unique_id=1905401363]
+
+[node name="Ground" type="MeshInstance3D" parent="ENV_&_LIGHTS" unique_id=1248168855]
+transform = Transform3D(5.3709235, 0, 0, 0, 1.0000006, 0, 0, 0, 7.0912395, 0, -0.5644595, -3.502324)
+mesh = SubResource("PlaneMesh_rwhmd")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="ENV_&_LIGHTS" unique_id=1606806331]
+transform = Transform3D(0.48956883, 0.4564064, -0.7429775, 0, 0.85207295, 0.5234231, 0.87196463, -0.25625163, 0.41714838, 0, 1.4654937, 0)
+light_energy = 0.5
+shadow_opacity = 0.5
+
+[node name="OmniLight3D" type="OmniLight3D" parent="ENV_&_LIGHTS" unique_id=107584070]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+light_energy = 0.25
+omni_range = 4.0
+
+[node name="MESHS" type="Node3D" parent="." unique_id=1002389044]
+
+[node name="SphereTest" type="MeshInstance3D" parent="MESHS" unique_id=1937055449]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39771438, -0.025523424, -7.0942264)
+mesh = SubResource("SphereMesh_uydf5")
+surface_material_override/0 = ExtResource("1_bh6ng")
+
+[node name="CubeTest" type="MeshInstance3D" parent="MESHS" unique_id=854419173]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.54211974, -0.05410862, -3.489221)
+mesh = SubResource("BoxMesh_ntcnl")
+surface_material_override/0 = ExtResource("1_bh6ng")
+
+[node name="DonutTest" type="MeshInstance3D" parent="MESHS" unique_id=95805931]
+transform = Transform3D(0.47811326, 0.14631373, 0, 6.395576e-09, -2.0898995e-08, -0.5, -0.14631373, 0.47811326, -2.1855694e-08, 1.2145717, -0.099042654, -2.2476492)
+mesh = SubResource("TorusMesh_ntcnl")
+surface_material_override/0 = ExtResource("1_bh6ng")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1499211447]
+transform = Transform3D(0.6465321, -0.42260605, 0.63513803, -2.2351742e-08, 0.8325456, 0.5539565, -0.76288676, -0.35815066, 0.5382675, 2.9307902, 2.4633527, -1.2504783)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=661143658]
+light_color = Color(1, 0, 0, 1)
+light_energy = 25.0
+shadow_enabled = true
+shadow_bias = 0.5
+shadow_opacity = 0.5
+spot_range = 6.0
+
+[node name="LEDColorSelection" type="Node" parent="." unique_id=743725000]
+script = ExtResource("1_rwhmd")
+led_color = 1
+color_list = Array[Color]([Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 0.49019608, 0, 1)])
+
+[node name="SetMeshInstanceColor" type="Node" parent="LEDColorSelection" unique_id=2106200951 node_paths=PackedStringArray("meshes")]
+script = ExtResource("3_iuqyd")
+meshes = [NodePath("../../MESHS/SphereTest"), NodePath("../../MESHS/CubeTest"), NodePath("../../MESHS/DonutTest")]
+metadata/_custom_type_script = "uid://dvk3tfoupbwmm"
+
+[node name="SetLightsColor" type="Node" parent="LEDColorSelection" unique_id=1078136554 node_paths=PackedStringArray("spot_lights")]
+script = ExtResource("3_ntcnl")
+spot_lights = [NodePath("../../SpotLight3D")]
+
+[node name="LEDBlinker" type="Node" parent="LEDColorSelection" unique_id=1475735335 node_paths=PackedStringArray("led_to_affect")]
+script = ExtResource("1_ntcnl")
+led_to_affect = NodePath("..")
+
+[connection signal="pressed" from="CanvasLayer/White_Button" to="LEDColorSelection" method="set_selection" binds= [0]]
+[connection signal="pressed" from="CanvasLayer/Red_Button" to="LEDColorSelection" method="set_selection" binds= [1]]
+[connection signal="pressed" from="CanvasLayer/Orange_Button" to="LEDColorSelection" method="set_selection" binds= [2]]
+[connection signal="pressed" from="CanvasLayer/Orange_Button2" to="LEDColorSelection/LEDBlinker" method="set_blinking"]
+[connection signal="color_changed" from="LEDColorSelection" to="CanvasLayer/ColorRect" method="set_color"]
+[connection signal="color_changed" from="LEDColorSelection" to="LEDColorSelection/SetMeshInstanceColor" method="set_color"]
+[connection signal="color_changed" from="LEDColorSelection" to="LEDColorSelection/SetLightsColor" method="set_color"]
