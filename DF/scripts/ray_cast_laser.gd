@@ -13,7 +13,6 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if not laser_enabled:
 		return
-	
 	if is_colliding():
 		var hit = get_collider()
 		print(hit.name)
