@@ -2,19 +2,44 @@
 
 [ext_resource type="Texture2D" uid="uid://db4maxos2n7wf" path="res://addons/ToolCarsGodot/ND/content/remote_controller_ir/remote_controller_ir_uv_color.png" id="1_fpx5x"]
 [ext_resource type="ArrayMesh" uid="uid://bhpt35v5rkiw0" path="res://addons/ToolCarsGodot/ND/content/remote_controller_ir/remote_controller_ir.obj" id="2_vo7mv"]
-[ext_resource type="Script" uid="uid://dh5s78mw1oxpa" path="res://addons/ToolCarsGodot/ND/script/send_data_with_remote.gd" id="3_ydk5h"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="3_48w8m"]
+[ext_resource type="Script" uid="uid://dnd8b2kxn7cvr" path="res://addons/ToolCarsGodot/ND/script/send_data_with_remote.gd" id="3_ydk5h"]
+[ext_resource type="Animation" uid="uid://c8dghcftg1thx" path="res://addons/godot-xr-tools/hands/animations/right/Grip Shaft.res" id="4_8tsjj"]
+[ext_resource type="Script" uid="uid://dvobm6vcfnqe8" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="5_6c6no"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="6_cpbvu"]
+[ext_resource type="Animation" uid="uid://nq3xh1olqipq" path="res://addons/godot-xr-tools/hands/animations/left/Grip Shaft.res" id="7_cas1v"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bxl4q"]
 albedo_texture = ExtResource("1_fpx5x")
+
+[sub_resource type="Resource" id="Resource_3n7ct"]
+script = ExtResource("5_6c6no")
+closed_pose = ExtResource("4_8tsjj")
+metadata/_custom_type_script = "uid://dvobm6vcfnqe8"
+
+[sub_resource type="Resource" id="Resource_31nwo"]
+script = ExtResource("5_6c6no")
+closed_pose = ExtResource("7_cas1v")
+metadata/_custom_type_script = "uid://dvobm6vcfnqe8"
 
 [node name="IRRemoteNode" type="Node3D" unique_id=1940414179]
 
 [node name="IRRemoteSize" type="Node3D" parent="." unique_id=1187355338]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="IRRemoteSize" unique_id=150013756]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.022796027)
 material_override = SubResource("StandardMaterial3D_bxl4q")
 mesh = ExtResource("2_vo7mv")
 
+[node name="GrabPointHandRight" parent="." unique_id=293294328 instance=ExtResource("3_48w8m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.036, -0.029)
+hand_pose = SubResource("Resource_3n7ct")
+
+[node name="GrabPointHandLeft" parent="." unique_id=1646151504 instance=ExtResource("6_cpbvu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0046341326, 0.03566523, -0.02709447)
+hand_pose = SubResource("Resource_31nwo")
+
 [node name="Code" type="Node" parent="." unique_id=1067747813]
 script = ExtResource("3_ydk5h")
+
+[connection signal="action_pressed" from="GrabPointHandRight" to="Code" method="_on_grab_point_hand_right_action_pressed"]
+[connection signal="action_released" from="GrabPointHandRight" to="Code" method="_on_grab_point_hand_right_action_released"]
