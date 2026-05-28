@@ -1,5 +1,7 @@
 @tool
 
+class_name DGScanCodeFromKeyboard
+
 extends Node
 
 signal on_typing_text (text : String)
@@ -14,9 +16,10 @@ func _process(delta: float) -> void:
 	if time_count > 0.0 :
 		time_count -= delta
 		if time_count < 0:
-			new_text.emit(text_scan)
+			new_text.emit( text_scan) # Send the result in text-scan
 			text_scan = "" #Reset the script to blank
 
+# Function to wait 1.5s after each entry to ensure this is a long words or text  
 func _input(event):
 	if event is InputEventKey and event.pressed:
 		var unicode_key_int :int =event.unicode
@@ -24,4 +27,4 @@ func _input(event):
 			time_count = wait_time
 			var unicode = char(event.unicode)
 			text_scan += unicode
-			on_typing_text.emit(text_scan)
+			on_typing_text.emit( text_scan)
