@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dol2gsstpkkew"]
 
-[ext_resource type="Script" uid="uid://b2a5lh0qmhgqk" path="res://addons/ToolCarsGodot/CN/Script/xr_initialise.gd" id="1_3oov0"]
+[ext_resource type="Script" uid="uid://b2a5lh0qmhgqk" path="res://addons/ToolCarsGodot/CN/Script/XRInitialise/xr_initialise.gd" id="1_3oov0"]
 [ext_resource type="Material" uid="uid://bqub1kemoyfhv" path="res://addons/ToolCarsGodot/CN/Material/MAT_ground.tres" id="1_ndsvm"]
 [ext_resource type="PackedScene" uid="uid://076s1kkcshx4" path="res://addons/ToolCarsGodot/CN/Scene/rgb_from_raycast.tscn" id="3_3oov0"]
 [ext_resource type="PackedScene" uid="uid://bh5rpcsrbcpvb" path="res://addons/ToolCarsGodot/CN/Scene/draw_with_raycast.tscn" id="3_dsljn"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ds1t8vc0kxoeo" path="res://addons/godot-xr-tools/hands/model/hand_r.gltf" id="5_o44ui"]
 [ext_resource type="PackedScene" uid="uid://dqhlxe5aotghu" path="res://addons/ToolCarsGodot/CN/Scene/label_debug.tscn" id="6_dq876"]
 [ext_resource type="PackedScene" uid="uid://dhaqth6q5yw4n" path="res://addons/godot-xr-tools/hands/model/hand_l.gltf" id="6_kqgsw"]
+[ext_resource type="Material" uid="uid://di1pk860q0hwn" path="res://addons/ToolCarsGodot/CN/Material/MAT_hand.tres" id="8_bkvgu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vkc1n"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -65,16 +66,26 @@ script = ExtResource("3_kqgsw")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2676824, 0)
 tracker = &"right_hand"
 
+[node name="DebugLabel" parent="XROrigin3D/XRController3DRight" unique_id=1217984513 instance=ExtResource("6_dq876")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13112062, 0)
+
+[node name="Label3D" parent="XROrigin3D/XRController3DRight/DebugLabel" index="0" unique_id=1145424009]
+text = "Press A to paint
+Press B to erase"
+
 [node name="hand_r" parent="XROrigin3D/XRController3DRight" unique_id=1028419849 instance=ExtResource("5_o44ui")]
 
-[node name="Draw" parent="XROrigin3D/XRController3DRight" unique_id=2002528441 instance=ExtResource("3_dsljn")]
+[node name="mesh_Hand_R" parent="XROrigin3D/XRController3DRight/hand_r/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1028419849, 199887281) index="0" unique_id=1618091124]
+surface_material_override/0 = ExtResource("8_bkvgu")
+
+[node name="DrawWithRaycast" parent="XROrigin3D/XRController3DRight" unique_id=2002528441 instance=ExtResource("3_dsljn")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
 pencil_type = 1
 
-[node name="RayCast3D" parent="XROrigin3D/XRController3DRight/Draw/Move" parent_id_path=PackedInt32Array(2002528441, 1513872658) index="0" unique_id=1865566437]
+[node name="RayCast3D" parent="XROrigin3D/XRController3DRight/DrawWithRaycast/Move" parent_id_path=PackedInt32Array(2002528441, 1513872658) index="0" unique_id=1865566437]
 target_position = Vector3(0, -3, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/XRController3DRight" unique_id=33440465]
+[node name="debugRayRight" type="MeshInstance3D" parent="XROrigin3D/XRController3DRight" unique_id=33440465]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -1.5)
 mesh = SubResource("CylinderMesh_o44ui")
 
@@ -82,10 +93,20 @@ mesh = SubResource("CylinderMesh_o44ui")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2676824, 0)
 tracker = &"left_hand"
 
-[node name="DebugLabel" parent="XROrigin3D/XRController3DLeft" unique_id=1217984513 instance=ExtResource("6_dq876")]
+[node name="DebugLabel" parent="XROrigin3D/XRController3DLeft" unique_id=124350547 instance=ExtResource("6_dq876")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10989717, 0)
 
+[node name="DebugTitle" type="Label3D" parent="XROrigin3D/XRController3DLeft/DebugLabel" unique_id=832651263]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.041819155, 0)
+pixel_size = 0.002
+text = "Read RGBA"
+font_size = 16
+outline_size = 8
+
 [node name="hand_l" parent="XROrigin3D/XRController3DLeft" unique_id=227307256 instance=ExtResource("6_kqgsw")]
+
+[node name="mesh_Hand_L" parent="XROrigin3D/XRController3DLeft/hand_l/Armature/Skeleton3D" parent_id_path=PackedInt32Array(227307256, 1247818947) index="0" unique_id=1645868676]
+surface_material_override/0 = ExtResource("8_bkvgu")
 
 [node name="RGBFromRaycast" parent="XROrigin3D/XRController3DLeft" unique_id=194767905 instance=ExtResource("3_3oov0")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
@@ -93,15 +114,18 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0
 [node name="RayCast3D" parent="XROrigin3D/XRController3DLeft/RGBFromRaycast/MoveRaycast" parent_id_path=PackedInt32Array(194767905, 1618982129) index="0" unique_id=1856603597]
 target_position = Vector3(0, -3, 0)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="XROrigin3D/XRController3DLeft" unique_id=2093580700]
+[node name="debugRayLeft" type="MeshInstance3D" parent="XROrigin3D/XRController3DLeft" unique_id=2093580700]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -1.5)
 mesh = SubResource("CylinderMesh_o44ui")
 
-[connection signal="button_pressed" from="XROrigin3D/XRController3DRight" to="XROrigin3D/XRController3DRight/Draw" method="axbutton_press_to_raycast_and_draw"]
-[connection signal="button_released" from="XROrigin3D/XRController3DRight" to="XROrigin3D/XRController3DRight/Draw" method="axbutton_release_to_raycast_and_draw"]
-[connection signal="on_draw_called" from="XROrigin3D/XRController3DRight/Draw" to="XROrigin3D/XRController3DLeft/RGBFromRaycast" method="set_image"]
+[connection signal="button_pressed" from="XROrigin3D/XRController3DRight" to="XROrigin3D/XRController3DRight/DrawWithRaycast" method="axbutton_press_to_raycast_and_draw"]
+[connection signal="button_released" from="XROrigin3D/XRController3DRight" to="XROrigin3D/XRController3DRight/DrawWithRaycast" method="axbutton_release_to_raycast_and_draw"]
+[connection signal="on_draw_called" from="XROrigin3D/XRController3DRight/DrawWithRaycast" to="XROrigin3D/XRController3DLeft/RGBFromRaycast" method="set_image"]
 [connection signal="on_rgba_from_raycast_string" from="XROrigin3D/XRController3DLeft/RGBFromRaycast" to="XROrigin3D/XRController3DLeft/DebugLabel/Label3D" method="set_text"]
 
-[editable path="XROrigin3D/XRController3DRight/Draw"]
+[editable path="XROrigin3D/XRController3DRight/DebugLabel"]
+[editable path="XROrigin3D/XRController3DRight/hand_r"]
+[editable path="XROrigin3D/XRController3DRight/DrawWithRaycast"]
 [editable path="XROrigin3D/XRController3DLeft/DebugLabel"]
+[editable path="XROrigin3D/XRController3DLeft/hand_l"]
 [editable path="XROrigin3D/XRController3DLeft/RGBFromRaycast"]
