@@ -31,21 +31,21 @@ Supply this image to `RGBFromRaycast` to maintain proper behavior between tools.
 
 ## Functions
 
-### `axbutton_press_to_raycast_and_draw(name: String)`
-
 Connect your input signal on press and release.
 
+
+### `axbutton_press_to_raycast_and_draw(name: String)`
 #### On Press
 
 * If supplied with `ax_button`, painting to **Black** starts.
 * If supplied with `by_button`, painting to **White** starts.
 
+### `send_raycast_to_get_pixel_and_draw(color: Color)`
 #### On Release
 
 * If supplied with `ax_button`, painting to **Black** stops.
 * If supplied with `by_button`, painting to **White** stops.
 
-### `send_raycast_to_get_pixel_and_draw(color: Color)`
 
 Draws the specified color at the raycast collision position on the texture.
 
