@@ -80,3 +80,9 @@ func _get_filtered_object_touched(group_name: Array[String]) -> Node3D:
 		if collider_hit_filtered.is_in_group(group):
 			return collider_hit_filtered
 	return null
+	
+func get_distance_in_meter() -> float:
+	return raycast_max_distance
+	
+func get_distance_in_centimeter() -> float:
+	return raycast_max_distance * 100.0
