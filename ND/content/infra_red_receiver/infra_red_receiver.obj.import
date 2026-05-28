@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://cqjslm2rth1wm"
-path="res://.godot/imported/infra_red_receiver.obj-7c66d61a55417e22c66f7730505f8ce5.mesh"
+path="res://.godot/imported/infra_red_receiver.obj-debc3246e95f29c0ad7e3f793a1de4a4.mesh"
 
 [deps]
 
-files=["res://.godot/imported/infra_red_receiver.obj-7c66d61a55417e22c66f7730505f8ce5.mesh"]
+files=["res://.godot/imported/infra_red_receiver.obj-debc3246e95f29c0ad7e3f793a1de4a4.mesh"]
 
-source_file="res://addons/ToolCarsGodot/ND/content/infra_red_receiver/infra_red_receiver.obj"
-dest_files=["res://.godot/imported/infra_red_receiver.obj-7c66d61a55417e22c66f7730505f8ce5.mesh", "res://.godot/imported/infra_red_receiver.obj-7c66d61a55417e22c66f7730505f8ce5.mesh"]
+source_file="res://ToolCarsGodot/ND/content/infra_red_receiver/infra_red_receiver.obj"
+dest_files=["res://.godot/imported/infra_red_receiver.obj-debc3246e95f29c0ad7e3f793a1de4a4.mesh", "res://.godot/imported/infra_red_receiver.obj-debc3246e95f29c0ad7e3f793a1de4a4.mesh"]
 
 [params]
 

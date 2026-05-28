@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dlm4q4s4qv77c"
-path.s3tc="res://.godot/imported/Capture d\'écran 2026-05-27 094238.png-54b2174fe59e2ace516c2f51bbecdf2f.s3tc.ctex"
+path.s3tc="res://.godot/imported/Capture d\'écran 2026-05-27 094238.png-a982b263a089d0499925c7f9a1234e8c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://addons/ToolCarsGodot/EJ/Features/SingleJoystick/Capture d'écran 2026-05-27 094238.png"
-dest_files=["res://.godot/imported/Capture d\\'écran 2026-05-27 094238.png-54b2174fe59e2ace516c2f51bbecdf2f.s3tc.ctex"]
+source_file="res://ToolCarsGodot/EJ/Features/SingleJoystick/Capture d'écran 2026-05-27 094238.png"
+dest_files=["res://.godot/imported/Capture d\\'écran 2026-05-27 094238.png-a982b263a089d0499925c7f9a1234e8c.s3tc.ctex"]
 
 [params]
 
