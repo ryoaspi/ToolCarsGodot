@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://ch1pdea3gd3bx"]
+
+[ext_resource type="Texture2D" uid="uid://dlm4q4s4qv77c" path="res://addons/ToolCarsGodot/EJ/Features/SingleJoystick/Capture d'écran 2026-05-27 094238.png" id="1_w5gfc"]
+[ext_resource type="Script" uid="uid://cp8lvld88cwsr" path="res://addons/ToolCarsGodot/EJ/Features/SingleJoystick/Scripts/ej_demo_car_with_joystick.gd" id="2_d8pdl"]
+[ext_resource type="Script" path="res://addons/ToolCarsGodot/EJ/Features/SingleJoystick/Scripts/ej_menu.gd" id="2_lyf7f"]
+[ext_resource type="Texture2D" uid="uid://d7nlflcl8l13" path="res://addons/ToolCarsGodot/DF/assets/meshes/ks_4036/3d/wheel/ks_4036_wheel_uv_color.png" id="3_lyf7f"]
+[ext_resource type="Texture2D" uid="uid://boqrb1432pf6h" path="res://addons/ToolCarsGodot/DF/assets/meshes/ks_4036/2d/board.png" id="4_y1023"]
+[ext_resource type="ArrayMesh" uid="uid://dfwvieaagj7g0" path="res://addons/ToolCarsGodot/DF/assets/meshes/ks_4036/3d/body/ks_4036_body.obj" id="5_eh65m"]
+[ext_resource type="ArrayMesh" uid="uid://cle2gnxktb1fd" path="res://addons/ToolCarsGodot/DF/assets/meshes/ks_4036/3d/led/ks4036_front_led.obj" id="6_l6qj1"]
+[ext_resource type="ArrayMesh" uid="uid://dyxmwr46idk40" path="res://addons/ToolCarsGodot/DF/assets/meshes/ks_4036/3d/wheel/ks_4036_wheel.obj" id="7_g806y"]
+[ext_resource type="Script" uid="uid://cgtin4r2tkq87" path="res://addons/ToolCarsGodot/EJ/Features/SingleJoystick/Scripts/ej_gamepad_from_joystick.gd" id="8_u6xhj"]
+[ext_resource type="Script" path="res://addons/ToolCarsGodot/EJ/Features/SingleJoystick/Scripts/ej_restart_script.gd" id="9_d8pdl"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_jnwih"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hl61j"]
+albedo_texture = ExtResource("1_w5gfc")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w50kd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q1eug"]
+albedo_texture = ExtResource("3_lyf7f")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sddif"]
+albedo_texture = ExtResource("4_y1023")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6mhmd"]
+albedo_texture = ExtResource("3_lyf7f")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vsp5t"]
+albedo_texture = ExtResource("3_lyf7f")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e6hew"]
+size = Vector3(0.21533203, 0.11828613, 0.29284668)
+
+[node name="my_space" type="Node3D" unique_id=1591758031]
+
+[node name="Floor" type="Node3D" parent="." unique_id=556387421]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.17458487, 0)
+
+[node name="Floor" type="MeshInstance3D" parent="Floor" unique_id=1503346373]
+transform = Transform3D(9.041736, 0, 0, 0, 0.5180942, 0, 0, 0, 10.573692, 0, -0.02774617, 0)
+mesh = SubResource("BoxMesh_jnwih")
+surface_material_override/0 = SubResource("StandardMaterial3D_hl61j")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Floor/Floor" unique_id=1950183808]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
+gravity_scale = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/Floor/RigidBody3D" unique_id=1327648775]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
+shape = SubResource("BoxShape3D_w50kd")
+debug_color = Color(0.66887367, 0.5024584, 0.25345153, 0.41960785)
+
+[node name="Car" type="Node3D" parent="." unique_id=933864590]
+script = ExtResource("2_lyf7f")
+
+[node name="KS_4036" type="CharacterBody3D" parent="Car" unique_id=1800954672]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1494139, 0)
+script = ExtResource("2_d8pdl")
+
+[node name="Camera3D" type="Camera3D" parent="Car/KS_4036" unique_id=386784201]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02012071, 0.06953661, 0.35456532)
+fov = 81.7
+
+[node name="Model" type="MeshInstance3D" parent="Car/KS_4036" unique_id=2113219717]
+material_override = SubResource("StandardMaterial3D_q1eug")
+
+[node name="dimension" type="Node3D" parent="Car/KS_4036/Model" unique_id=2110376124]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="body" type="MeshInstance3D" parent="Car/KS_4036/Model/dimension" unique_id=1926305893]
+material_override = SubResource("StandardMaterial3D_sddif")
+mesh = ExtResource("5_eh65m")
+
+[node name="leds" type="Node3D" parent="Car/KS_4036/Model/dimension" unique_id=1819538448]
+
+[node name="led_right" type="MeshInstance3D" parent="Car/KS_4036/Model/dimension/leds" unique_id=134975877]
+transform = Transform3D(0.8000001, 0, 0, 0, 0.8000001, 0, 0, 0, 0.8000001, 0.020405143, 0.0044392943, -0.042013034)
+mesh = ExtResource("6_l6qj1")
+
+[node name="led_left" type="MeshInstance3D" parent="Car/KS_4036/Model/dimension/leds" unique_id=15975158]
+transform = Transform3D(0.8000001, 0, 0, 0, 0.8000001, 0, 0, 0, 0.8000001, -0.02055996, 0.0044392943, -0.042013034)
+mesh = ExtResource("6_l6qj1")
+
+[node name="wheels" type="Node3D" parent="Car/KS_4036/Model/dimension" unique_id=788633342]
+
+[node name="pivot_left" type="Node3D" parent="Car/KS_4036/Model/dimension/wheels" unique_id=826731653]
+
+[node name="wheel_left" type="MeshInstance3D" parent="Car/KS_4036/Model/dimension/wheels/pivot_left" unique_id=167971049]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.029649928, 0, 0)
+material_override = SubResource("StandardMaterial3D_6mhmd")
+mesh = ExtResource("7_g806y")
+
+[node name="pivot_right" type="Node3D" parent="Car/KS_4036/Model/dimension/wheels" unique_id=948222487]
+
+[node name="wheel_right" type="MeshInstance3D" parent="Car/KS_4036/Model/dimension/wheels/pivot_right" unique_id=904581167]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02957108, 0, 0)
+material_override = SubResource("StandardMaterial3D_vsp5t")
+mesh = ExtResource("7_g806y")
+
+[node name="Collider" type="CollisionShape3D" parent="Car/KS_4036" unique_id=1512332343]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0036621094, 0.0072631836, -0.05316162)
+shape = SubResource("BoxShape3D_e6hew")
+debug_fill = false
+
+[node name="EjGamepadFromJoystick" type="Node" parent="Car/KS_4036" unique_id=1298474844]
+script = ExtResource("8_u6xhj")
+
+[node name="RestartScript" type="Node" parent="Car" unique_id=959022195]
+script = ExtResource("9_d8pdl")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=289932778]
+transform = Transform3D(1, 0, 0, 0, -0.14749865, 0.98906225, 0, -0.98906225, -0.14749865, 0, 4.585331, 0)
+
+[connection signal="jump_with_left_joystick" from="Car/KS_4036/EjGamepadFromJoystick" to="Car/KS_4036" method="_on_jump_with_left_joystick"]
+[connection signal="left_joystick_updated" from="Car/KS_4036/EjGamepadFromJoystick" to="Car/KS_4036" method="set_move_with_joystick"]

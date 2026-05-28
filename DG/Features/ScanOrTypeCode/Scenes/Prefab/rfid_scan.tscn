@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://djmay4ii56hkd"]
+
+[ext_resource type="Script" uid="uid://ogdih81kpr1w" path="res://addons/ToolCarsGodot/DG/Features/ScanOrTypeCode/Script/dg_scan_code_from_keyboard.gd" id="1_l8t7p"]
+
+[node name="RFIDScan2" type="Node" unique_id=882412022]
+script = ExtResource("1_l8t7p")
+wait_time = 0.5

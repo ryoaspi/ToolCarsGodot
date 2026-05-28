@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="DGScanDictionary" format=3 uid="uid://cgasgpnaueok0"]
+
+[ext_resource type="Script" uid="uid://btqocc4e3xral" path="res://addons/ToolCarsGodot/DG/Features/ScanOrTypeCode/Script/dg_scan_dictionary.gd" id="1_gfsnp"]
+
+[resource]
+script = ExtResource("1_gfsnp")
+scan_to_text = Dictionary[String, String]({
+"123456": "https://github.com/EloiStree/Gist/blob/main/Godot/Mod/2026_05_24/hello_world.gd",
+"789456": "https://www.youtube.com/",
+"à\"(('§&&": "https://github.com/ryoaspi",
+"à(à\"é(((": "https://github.com/dheflo",
+"à(à(!ç\"'": "https://github.com/Nos251",
+"à(à(\"&éé": "https://github.com/HakeronXV",
+"à(éàéà(!": "https://github.com/BunyaminB8",
+"é\"!('!(&": "https://github.com/N-Daniele-L",
+"é\"''§(ç§": "Two Of Clubs",
+"é&§(\"é(é": "https://github.com/BunnyBusher",
+"é&ç\"!§§à": "Ten Of Spades",
+"é''é\"((§": "Jack Of Club",
+"é''é&è§'": "Ace Of Clubs",
+"é'(\"&'çé": "Ten Of Diamonds",
+"é'('è&à!": "Ten Of Hearts",
+"é'(éàçç§": "Jack Of Spades",
+"é'(éàéé!": "Ace Of Spades",
+"é'(ééè!!": "Queen Of Spades",
+"é(à'\"'&&": "https://github.com/Eoliusone",
+"éà'''éçé": "Queen Of Diamonds",
+"éà''§\"'à": "Jack Of Diamonds",
+"éà''éé''": "King Of Diamonds",
+"éà('!&\"é": "Ace Of Diamonds",
+"éé!à\"(!!": "Red Joker",
+"éé\"&àè(§": "Jack Of Hearts",
+"éé\"(&é(&": "https://github.com/CStourme",
+"éé\"à!èà!": "Ace Of Hearts",
+"éé\"à§§§à": "King Of Spades",
+"ééé§\"è'!": "King Of Hearts",
+"ééé§&èàà": "Queen Of Hearts",
+"éééààèèé": "Ten Of Clubs"
+})
+metadata/_custom_type_script = "uid://btqocc4e3xral"
