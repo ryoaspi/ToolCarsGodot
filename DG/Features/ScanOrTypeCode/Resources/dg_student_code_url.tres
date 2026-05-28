@@ -1,11 +1,12 @@
 [gd_resource type="Resource" script_class="DGScanDictionary" format=3 uid="uid://cgasgpnaueok0"]
 
-[ext_resource type="Script" uid="uid://btqocc4e3xral" path="res://addons/ToolCarsGodot/DG/Script/scan_dictionary.gd" id="1_gfsnp"]
+[ext_resource type="Script" uid="uid://btqocc4e3xral" path="res://addons/ToolCarsGodot/DG/Features/ScanOrTypeCode/Script/dg_scan_dictionary.gd" id="1_gfsnp"]
 
 [resource]
 script = ExtResource("1_gfsnp")
 scan_to_text = Dictionary[String, String]({
 "123456": "https://github.com/EloiStree/Gist/blob/main/Godot/Mod/2026_05_24/hello_world.gd",
+"789456": "https://www.youtube.com/",
 "à\"(('§&&": "https://github.com/ryoaspi",
 "à(à\"é(((": "https://github.com/dheflo",
 "à(à(!ç\"'": "https://github.com/Nos251",
