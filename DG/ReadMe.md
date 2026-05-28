@@ -1,1 +1,1 @@
-This is property of Degand Gaetan
+This is property of Gaetan Degand
