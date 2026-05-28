@@ -1,4 +1,4 @@
-class_name EJModRunTextBis
+class_name EJModRunText
 extends Node
 
 signal on_destroy_previous_node_start(node: Node)

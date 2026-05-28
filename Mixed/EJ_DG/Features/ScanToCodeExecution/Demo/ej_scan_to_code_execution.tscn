@@ -5,3 +5,6 @@
 [node name="EjScanToCodeExecution" type="Node3D" unique_id=181912887]
 
 [node name="ScanKeyboardToRunModdingCode" parent="." unique_id=844036142 instance=ExtResource("1_x8bnw")]
+
+[editable path="ScanKeyboardToRunModdingCode"]
+[editable path="ScanKeyboardToRunModdingCode/EJModRunTextFromWeb"]
