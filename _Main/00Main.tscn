@@ -5,8 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://duce26bql6smr" path="res://addons/ToolCarsGodot/DF/scenes/move_car.tscn" id="2_omg0t"]
 [ext_resource type="PackedScene" uid="uid://hpc3w72ihfb5" path="res://addons/ToolCarsGodot/FR/_/scenes/micro_bit_pickable_snap.tscn" id="3_30ruo"]
 [ext_resource type="PackedScene" uid="uid://bffprj0yp4qrq" path="res://addons/ToolCarsGodot/_Main/scene/ground.tscn" id="3_qfek0"]
+[ext_resource type="PackedScene" uid="uid://tc0h6ltrcmpx" path="res://addons/ToolCarsGodot/DF/scenes/laser.tscn" id="4_2vjf7"]
 [ext_resource type="PackedScene" uid="uid://duppob6rc0hbq" path="res://addons/ToolCarsGodot/FR/_/scenes/snape_zone.tscn" id="4_p5lgh"]
 [ext_resource type="Material" uid="uid://bqub1kemoyfhv" path="res://addons/ToolCarsGodot/CN/Material/MAT_ground.tres" id="6_eoim2"]
+[ext_resource type="PackedScene" uid="uid://dymdmq4qs3hn8" path="res://addons/ToolCarsGodot/ND/scene/ultra_sonic_sensor_node.tscn" id="7_8qwl6"]
 [ext_resource type="PackedScene" uid="uid://bnsfwvo8e5f28" path="res://addons/ToolCarsGodot/CS/scenes/Prefabs/led_selector_all_eight_color.tscn" id="7_e5i5v"]
 [ext_resource type="Script" uid="uid://j377ubn6qbm5" path="res://addons/ToolCarsGodot/CS/Scripts/CSLEDColorSelection.gd" id="8_du1lo"]
 [ext_resource type="Script" uid="uid://dvk3tfoupbwmm" path="res://addons/ToolCarsGodot/CS/Scripts/CSSetMeshIntanceColor.gd" id="9_21twa"]
@@ -75,11 +77,17 @@ script = null
 [node name="AnimationTree" parent="XREssentialsOriginGodot/XROrigin3D/XR_LeftHand/XRToolsCollisionHand/LeftHand" parent_id_path=PackedInt32Array(291553779, 1415449023) index="1"]
 tree_root = SubResource("AnimationNodeBlendTree_waesh")
 
-[node name="DrawWithRaycast" parent="XREssentialsOriginGodot/XROrigin3D/XR_RightHand" parent_id_path=PackedInt32Array(291553779, 1805883055) index="1" unique_id=2002528441 instance=ExtResource("12_21twa")]
+[node name="XR_RightHand" parent="XREssentialsOriginGodot/XROrigin3D" index="2" unique_id=1805883055]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6972769, 0)
+
+[node name="DrawWithRaycast" parent="XREssentialsOriginGodot/XROrigin3D/XR_RightHand" index="1" unique_id=2002528441 instance=ExtResource("12_21twa")]
 
 [node name="RayCast3D" parent="XREssentialsOriginGodot/XROrigin3D/XR_RightHand/DrawWithRaycast/Move" parent_id_path=PackedInt32Array(2002528441, 1513872658) index="0" unique_id=1865566437]
 target_position = Vector3(0, 0, -3)
 debug_shape_custom_color = Color(0.27969277, 0.5785862, 0.87144154, 1)
+
+[node name="LaserMain" parent="XREssentialsOriginGodot/XROrigin3D/XR_RightHand" index="2" unique_id=1343794851 instance=ExtResource("4_2vjf7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.037746266, -0.025922894, 0.042985797)
 
 [node name="Car" parent="." unique_id=1371747064 instance=ExtResource("2_omg0t")]
 
@@ -104,6 +112,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.029777646, -0.04839491, -0
 
 [node name="RayCast3D" parent="Car/KS_4036/KS_4036/RGBFromRaycast/MoveRaycast" parent_id_path=PackedInt32Array(194767905, 1618982129) index="0" unique_id=1856603597]
 target_position = Vector3(0, -0.15, 0)
+
+[node name="UltraSonicSensorNode" parent="Car/KS_4036/KS_4036" parent_id_path=PackedInt32Array(1371747064, 1781070975, 941570093) index="4" unique_id=171773783 instance=ExtResource("7_8qwl6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.019192494, -0.111197904)
 
 [node name="car_movement" parent="Car/Code" parent_id_path=PackedInt32Array(1371747064, 2145258064) index="0" unique_id=1560538840 node_paths=PackedStringArray("left_controller", "right_controller")]
 left_controller = NodePath("../../../XREssentialsOriginGodot/XROrigin3D/XR_LeftHand")

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://n5kmkxuvtyr7"
 path.s3tc="res://.godot/imported/ks_4036_body_uv_color.png-f42531edde1ec272ed2df61de0fab3a6.s3tc.ctex"
+path.etc2="res://.godot/imported/ks_4036_body_uv_color.png-f42531edde1ec272ed2df61de0fab3a6.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/ToolCarsGodot/DF/assets/meshes/ks_4036/3d/body/ks_4036_body_uv_color.png"
-dest_files=["res://.godot/imported/ks_4036_body_uv_color.png-f42531edde1ec272ed2df61de0fab3a6.s3tc.ctex"]
+dest_files=["res://.godot/imported/ks_4036_body_uv_color.png-f42531edde1ec272ed2df61de0fab3a6.s3tc.ctex", "res://.godot/imported/ks_4036_body_uv_color.png-f42531edde1ec272ed2df61de0fab3a6.etc2.ctex"]
 
 [params]
 
