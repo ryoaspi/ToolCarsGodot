@@ -22,3 +22,7 @@ Git Commit:
 - main and dev: [First Name] context + feature + explanation
 
 Keep up to date with the main and dev branches
+
+Tool design for XR project, required:   
+[<img width="594" height="112" alt="image" src="https://github.com/user-attachments/assets/4b1982a8-7e2c-41c1-8555-a9467d922ae8" />](https://github.com/GodotVR/godot-xr-tools)   
+https://github.com/GodotVR/godot-xr-tools   
