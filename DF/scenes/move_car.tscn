@@ -1,8 +1,6 @@
 [gd_scene format=3 uid="uid://duce26bql6smr"]
 
 [ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="1_c5qqj"]
-[ext_resource type="Script" uid="uid://ces1j6plojyra" path="res://addons/godot-xr-tools/xr/start_xr.gd" id="1_utcj0"]
-[ext_resource type="Script" uid="uid://crjg6vnknvxdh" path="res://addons/godot-xr-tools/xr/xr_setup.gd" id="2_e2mqp"]
 [ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="2_puupq"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="3_puupq"]
 [ext_resource type="PackedScene" uid="uid://dwrdxl1ubyl5i" path="res://addons/ToolCarsGodot/DF/scenes/KS_4036.tscn" id="4_e2mqp"]
@@ -32,7 +30,6 @@ albedo_color = Color(0.3628292, 0.3628296, 0.36282927, 1)
 size = Vector3(1, 0.01, 1)
 
 [node name="Main" type="Node3D" unique_id=1371747064]
-script = ExtResource("1_utcj0")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=659769082]
 environment = SubResource("Environment_c5qqj")
@@ -77,21 +74,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.029777646, -0.0016297922, 0
 [node name="Code" type="Node" parent="." unique_id=2145258064]
 
 [node name="xr_setup" parent="Code" unique_id=1327407391 instance=ExtResource("3_puupq")]
-script = ExtResource("2_e2mqp")
 
 [node name="car_movement" type="Node" parent="Code" unique_id=1560538840 node_paths=PackedStringArray("character", "left_controller", "right_controller")]
 script = ExtResource("6_utcj0")
 character = NodePath("../../KS_4036/KS_4036")
 left_controller = NodePath("../../XROrigin3D/XRController_Left_Hand")
 right_controller = NodePath("../../XROrigin3D/XRController_Right_Hand")
+max_speed_forward_in_mps = 10.0
+rotation_speed_in_degrees = 45.0
 
 [node name="xr_inputs" type="Node" parent="Code" unique_id=665007475 node_paths=PackedStringArray("left_controller", "right_controller")]
 script = ExtResource("8_konn1")
 left_controller = NodePath("../../XROrigin3D/XRController_Left_Hand")
 right_controller = NodePath("../../XROrigin3D/XRController_Right_Hand")
 
-[node name="wheels_rotation" type="Node" parent="Code" unique_id=891045571]
+[node name="wheels_rotation" type="Node" parent="Code" unique_id=891045571 node_paths=PackedStringArray("pivot")]
 script = ExtResource("9_1vatx")
+pivot = NodePath("../../KS_4036/KS_4036")
 
 [connection signal="left_wheel_rotation" from="Code/car_movement" to="Code/wheels_rotation" method="set_rotation_with_degrees"]
 [connection signal="right_wheel_rotation" from="Code/car_movement" to="Code/wheels_rotation" method="set_rotation_with_degrees"]

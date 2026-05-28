@@ -17,6 +17,7 @@ func _ready() -> void:
 		push_warning("There is no CharacterBody3D")
 	
 func _process(delta: float) -> void:
+	handle_car_state()
 	match car_state:
 		0:
 			set_joystick_move(0)
@@ -38,7 +39,6 @@ func _process(delta: float) -> void:
 			set_joystick_move(0)
 		8:
 			set_joystick_move(0)
-
 func handle_car_state() -> void:
 	var left_joystick = left_controller.get_vector2("primary")
 	var right_joystick = right_controller.get_vector2("primary")
@@ -61,7 +61,6 @@ func handle_car_state() -> void:
 		car_state = 8
 	else:
 		car_state = 9
-	handle_car_state()
 
 func set_joystick_inputs_vector2(joystick: Vector2) :
 	joystick_move_intensity = joystick.y
