@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://d1rnmnm8ty32v"]
+
+[ext_resource type="PackedScene" uid="uid://dojvni3sphnxy" path="res://addons/ToolCarsGodot/PL/_/Features/ArrowsToVector2/Scene/Prefab/arrow_to_joystick.tscn" id="1_11ktb"]
+[ext_resource type="Script" uid="uid://buuy4ty1l0iep" path="res://addons/ToolCarsGodot/PL/_/Features/ArrowsToVector2/Script/pl_cube_test.gd" id="2_bwuyc"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wwsow"]
+
+[node name="Node3D" type="Node3D" unique_id=490690257]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=384105089]
+mesh = SubResource("BoxMesh_wwsow")
+
+[node name="ArrowToJoystick" parent="MeshInstance3D" unique_id=1721895914 instance=ExtResource("1_11ktb")]
+
+[node name="DebugCubeScript" type="Node" parent="MeshInstance3D" unique_id=432551739]
+script = ExtResource("2_bwuyc")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1142835891]
+transform = Transform3D(1, 0, 0, 0, 0.8334859, 0.5525408, 0, -0.5525408, 0.8334859, 0, 1.8600771, 2.3799407)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1545970374]
+transform = Transform3D(1, 0, 0, 0, 0.8987903, 0.43837884, 0, -0.43837884, 0.8987903, 0, 3.6671844, 4.6676707)
+spot_range = 4.625134
+spot_angle = 55.292892
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1417458437]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1708803497]
+anchors_preset = -1
+anchor_right = 0.27
+anchor_bottom = 0.179
+offset_right = -0.040008545
+offset_bottom = 0.0079956055
+
+[node name="Label2" type="Label" parent="CanvasLayer" unique_id=135186369]
+anchors_preset = -1
+anchor_left = 0.381
+anchor_top = 0.091000006
+anchor_right = 0.81700003
+anchor_bottom = 0.62200004
+offset_left = 0.08798218
+offset_top = -10.968002
+offset_right = -0.184021
+offset_bottom = -0.056030273
+text = "To test this demo, you can push on the arrows of the keyboard.
+It's generate a Vector2 with the signal."
+
+[connection signal="joystick_updated" from="MeshInstance3D/ArrowToJoystick" to="MeshInstance3D/DebugCubeScript" method="set_input"]
+[connection signal="joystick_debug_as_string" from="MeshInstance3D/DebugCubeScript" to="CanvasLayer/Label" method="set_text"]

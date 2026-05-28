@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dwrdxl1ubyl5i"]
 
-[ext_resource type="Texture2D" uid="uid://d7nlflcl8l13" path="res://_/assets/meshes/ks_4036/3d/wheel/ks_4036_wheel_uv_color.png" id="2_4w6fu"]
-[ext_resource type="Texture2D" uid="uid://boqrb1432pf6h" path="res://_/assets/meshes/ks_4036/2d/board.png" id="4_6ojxs"]
-[ext_resource type="ArrayMesh" uid="uid://dfwvieaagj7g0" path="res://_/assets/meshes/ks_4036/3d/body/ks_4036_body.obj" id="5_l2xli"]
-[ext_resource type="ArrayMesh" uid="uid://dyxmwr46idk40" path="res://_/assets/meshes/ks_4036/3d/wheel/ks_4036_wheel.obj" id="6_e0em5"]
-[ext_resource type="ArrayMesh" uid="uid://cle2gnxktb1fd" path="res://_/assets/meshes/ks_4036/3d/led/ks4036_front_led.obj" id="12_6ojxs"]
+[ext_resource type="Texture2D" uid="uid://d7nlflcl8l13" path="res://addons/ToolCarsGodot/DF/assets/meshes/ks_4036/3d/wheel/ks_4036_wheel_uv_color.png" id="2_4w6fu"]
+[ext_resource type="Texture2D" uid="uid://boqrb1432pf6h" path="res://addons/ToolCarsGodot/DF/assets/meshes/ks_4036/2d/board.png" id="4_6ojxs"]
+[ext_resource type="ArrayMesh" uid="uid://dfwvieaagj7g0" path="res://addons/ToolCarsGodot/DF/assets/meshes/ks_4036/3d/body/ks_4036_body.obj" id="5_l2xli"]
+[ext_resource type="ArrayMesh" uid="uid://dyxmwr46idk40" path="res://addons/ToolCarsGodot/DF/assets/meshes/ks_4036/3d/wheel/ks_4036_wheel.obj" id="6_e0em5"]
+[ext_resource type="ArrayMesh" uid="uid://cle2gnxktb1fd" path="res://addons/ToolCarsGodot/DF/assets/meshes/ks_4036/3d/led/ks4036_front_led.obj" id="12_6ojxs"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ojxs"]
 albedo_texture = ExtResource("2_4w6fu")
