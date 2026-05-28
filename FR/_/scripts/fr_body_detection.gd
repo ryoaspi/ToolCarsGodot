@@ -5,9 +5,12 @@ signal rigid_body_found(body_found : RigidBody3D)
 signal character_body_found(body_found : CharacterBody3D)
 signal vehicle_body_found(body_found : VehicleBody3D)
 signal other_found(node_found : Node)
+signal any_found(node_found : Node)
+signal  any_found_changed(node_found : Node)
 
 @export var body_detected : Node
 @export var target_area : Area3D
+var last_node_received : Node
 
 func _ready() -> void:
 	target_area.body_entered.connect(_on_body_entered)
@@ -37,7 +40,7 @@ func body_detection(node: Node) -> void:
 		# VehicleBody3D must be checked BEFORE RigidBody3D
 		# because VehicleBody3D extends RigidBody3D
 		body_detected = node
-		emit_signal("vehicle_body_found", node as VehicleBody3D)
+		vehicle_body_found.emit(node)
 		if node is RigidBody3D:
 			body_detected = node
 			rigid_body_found.emit(node)
@@ -49,3 +52,7 @@ func body_detection(node: Node) -> void:
 			rigid_body_found.emit(node)
 	else: 
 		other_found.emit(node)
+	any_found.emit(node)
+	if node != last_node_received:
+		last_node_received = node
+		any_found_changed.emit(node)
