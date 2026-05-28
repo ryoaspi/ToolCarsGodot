@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cw835ge6v17mp"]
 
+[ext_resource type="Material" uid="uid://lqrqj0o4qlp1" path="res://ToolCarsGodot/CS/Materials/LEDFrontMaterial.tres" id="1_bh6ng"]
 [ext_resource type="Script" uid="uid://bkvhvsvykspi5" path="res://ToolCarsGodot/CS/Scripts/CSLEDBlinker.gd" id="1_ntcnl"]
 [ext_resource type="Script" uid="uid://j377ubn6qbm5" path="res://ToolCarsGodot/CS/Scripts/CSLEDColorSelection.gd" id="1_rwhmd"]
 [ext_resource type="Script" uid="uid://dvk3tfoupbwmm" path="res://ToolCarsGodot/CS/Scripts/CSSetMeshIntanceColor.gd" id="3_iuqyd"]
@@ -58,21 +59,9 @@ corner_radius_bottom_left = 5
 
 [sub_resource type="SphereMesh" id="SphereMesh_uydf5"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ntcnl"]
-shading_mode = 0
-albedo_color = Color(1, 0.49019608, 0, 1)
-
 [sub_resource type="BoxMesh" id="BoxMesh_ntcnl"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bh6ng"]
-shading_mode = 0
-albedo_color = Color(1, 0.49019608, 0, 1)
-
 [sub_resource type="TorusMesh" id="TorusMesh_ntcnl"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gy220"]
-shading_mode = 0
-albedo_color = Color(1, 0.49019608, 0, 1)
 
 [node name="Node3D" type="Node3D" unique_id=435053006]
 
@@ -83,7 +72,7 @@ offset_left = 594.0
 offset_top = 20.0
 offset_right = 633.0
 offset_bottom = 60.0
-color = Color(1, 0.49019608, 0, 1)
+color = Color(1, 0, 0, 1)
 
 [node name="White_Button" type="Button" parent="CanvasLayer" unique_id=472653366]
 offset_left = 1036.0
@@ -186,23 +175,23 @@ omni_range = 4.0
 [node name="SphereTest" type="MeshInstance3D" parent="MESHS" unique_id=1937055449]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39771438, -0.025523424, -7.0942264)
 mesh = SubResource("SphereMesh_uydf5")
-surface_material_override/0 = SubResource("StandardMaterial3D_ntcnl")
+surface_material_override/0 = ExtResource("1_bh6ng")
 
 [node name="CubeTest" type="MeshInstance3D" parent="MESHS" unique_id=854419173]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.54211974, -0.05410862, -3.489221)
 mesh = SubResource("BoxMesh_ntcnl")
-surface_material_override/0 = SubResource("StandardMaterial3D_bh6ng")
+surface_material_override/0 = ExtResource("1_bh6ng")
 
 [node name="DonutTest" type="MeshInstance3D" parent="MESHS" unique_id=95805931]
 transform = Transform3D(0.47811326, 0.14631373, 0, 6.395576e-09, -2.0898995e-08, -0.5, -0.14631373, 0.47811326, -2.1855694e-08, 1.2145717, -0.099042654, -2.2476492)
 mesh = SubResource("TorusMesh_ntcnl")
-surface_material_override/0 = SubResource("StandardMaterial3D_gy220")
+surface_material_override/0 = ExtResource("1_bh6ng")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1499211447]
 transform = Transform3D(0.6465321, -0.42260605, 0.63513803, -2.2351742e-08, 0.8325456, 0.5539565, -0.76288676, -0.35815066, 0.5382675, 2.9307902, 2.4633527, -1.2504783)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=661143658]
-light_color = Color(1, 0.49019608, 0, 1)
+light_color = Color(1, 0, 0, 1)
 light_energy = 25.0
 shadow_enabled = true
 shadow_bias = 0.5
@@ -211,7 +200,7 @@ spot_range = 6.0
 
 [node name="LEDColorSelection" type="Node" parent="." unique_id=743725000]
 script = ExtResource("1_rwhmd")
-led_color = 2
+led_color = 1
 color_list = Array[Color]([Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 0.49019608, 0, 1)])
 
 [node name="SetMeshInstanceColor" type="Node" parent="LEDColorSelection" unique_id=2106200951 node_paths=PackedStringArray("meshes")]
