@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cb6mfbbcyocdj"]
 
-[ext_resource type="PackedScene" uid="uid://bxlf13yg4c5eq" path="res://addons/ToolCarsGodot/EJ/Scenes/Prefabs/ej_mod_run_text_from_web.tscn" id="1_j7724"]
+[ext_resource type="PackedScene" uid="uid://bxlf13yg4c5eq" path="res://addons/ToolCarsGodot/IEJ/Features/Scenes/Prefabs/iej_mod_run_text_from_web.tscn" id="1_j7724"]
+
 
 [node name="Node3D" type="Node3D" unique_id=1665640123]
 

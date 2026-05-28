@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cx7lft3rjag1u"]
 
-[ext_resource type="PackedScene" uid="uid://bknlofe8dmwj8" path="res://addons/ToolCarsGodot/Mixed/EJ_DG/Features/ScanToCodeExecution/Prefab/scan_keyboard_to_run_modding_code.tscn" id="1_x8bnw"]
+[ext_resource type="PackedScene" uid="uid://bknlofe8dmwj8" path="res://addons/ToolCarsGodot/Mixed/IEJ_DG/Features/ScanToCodeExecution/Prefab/scan_keyboard_to_run_modding_code.tscn" id="1_x8bnw"]
 
 [node name="EjScanToCodeExecution" type="Node3D" unique_id=181912887]
 

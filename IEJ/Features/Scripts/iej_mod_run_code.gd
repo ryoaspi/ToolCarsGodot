@@ -1,5 +1,5 @@
+class_name IEJCarCodeRunner
 extends Node
-class_name EJCarCodeRunner
 
 signal on_destroy_previous_node_start(node: Node)
 signal on_destroy_previous_node_end()

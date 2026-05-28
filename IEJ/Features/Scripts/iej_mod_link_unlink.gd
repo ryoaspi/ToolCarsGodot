@@ -1,4 +1,4 @@
-class_name EJModLinkUnlinkNodesAsChildren
+class_name IEJModLinkUnlinkNodesAsChildren
 extends Node
 
 @export var what_to_link: Array[Node]

@@ -1,4 +1,4 @@
-class_name EJDownloadWebPage
+class_name IEJDownloadWebPage
 extends Node
 
 signal on_text_downloaded(text:String)

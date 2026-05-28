@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://ftb6m2ule82h"]
 
-[ext_resource type="Script" uid="uid://c4rcortqj7ls2" path="res://addons/ToolCarsGodot/EJ/Scripts/ej_mod_run_text.gd" id="1_wfjwg"]
-[ext_resource type="Script" uid="uid://cgkslvpde17h1" path="res://addons/ToolCarsGodot/EJ/Scripts/ej_mod_link_unlink.gd" id="2_tu0gi"]
-[ext_resource type="Script" uid="uid://bsscmt8e2mxab" path="res://addons/ToolCarsGodot/EJ/Scripts/ej_mode_code_edit_load.gd" id="3_xrx2x"]
-[ext_resource type="Script" uid="uid://b51glfoehsjb6" path="res://addons/ToolCarsGodot/EJ/Scripts/ej_default_user_code.gd" id="4_syoau"]
-[ext_resource type="Script" uid="uid://dlvpoqteqpym0" path="res://addons/ToolCarsGodot/EJ/Scripts/ej_mod_code_edit_and_submit_button.gd" id="5_4c4k1"]
+[ext_resource type="Script" uid="uid://6g3nq85g6e06" path="res://addons/ToolCarsGodot/IEJ/Features/Scripts/iej_mod_run_text.gd" id="1_qonpt"]
+[ext_resource type="Script" uid="uid://n1pngbicffa3" path="res://addons/ToolCarsGodot/IEJ/Features/Scripts/iej_mod_link_unlink.gd" id="2_qnant"]
+[ext_resource type="Script" uid="uid://3cj41wm8gwgt" path="res://addons/ToolCarsGodot/IEJ/Features/Scripts/iej_mode_code_edit_load.gd" id="3_2wm6t"]
+[ext_resource type="Script" uid="uid://biayvxrdo3yex" path="res://addons/ToolCarsGodot/IEJ/Features/Scripts/iej_default_user_code.gd" id="4_twwme"]
+[ext_resource type="Script" uid="uid://c47j47gnibklo" path="res://addons/ToolCarsGodot/IEJ/Features/Scripts/iej_mod_code_edit_and_submit_button.gd" id="5_75bq0"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_yic1b"]
 
@@ -44,7 +44,7 @@ transform = Transform3D(1, 0, 0, 0, 0.5025221, 0.86456436, 0, -0.86456436, 0.502
 transform = Transform3D(0.89711964, -0.11382909, 0.42687157, 0, 0.9662368, 0.25765562, -0.44178772, -0.23114792, 0.86683005, 1.2618235, 1.3670052, 2.2243636)
 
 [node name="ModRunner" type="Node" parent="." unique_id=1204837242 node_paths=PackedStringArray("where_to_create_node", "last_car_received")]
-script = ExtResource("1_wfjwg")
+script = ExtResource("1_qonpt")
 default_code_to_execute = "
 extends Node
 
@@ -62,16 +62,16 @@ unique_code_file_name = "car_code.gd"
 last_car_received = NodePath("../Car")
 
 [node name="Linker" type="Node" parent="." unique_id=733718719 node_paths=PackedStringArray("where_to_store_when_unlink")]
-script = ExtResource("2_tu0gi")
+script = ExtResource("2_qnant")
 where_to_store_when_unlink = NodePath("..")
 
 [node name="DefaultCodeLoader" type="Node" parent="." unique_id=570789166 node_paths=PackedStringArray("text_editors_to_affect")]
-script = ExtResource("3_xrx2x")
-script_to_load = ExtResource("4_syoau")
+script = ExtResource("3_2wm6t")
+script_to_load = ExtResource("4_twwme")
 text_editors_to_affect = [NodePath("../CanvasLayer/Control/CodeEdit")]
 
 [node name="SubmitCodebutton" type="Node" parent="." unique_id=568570431 node_paths=PackedStringArray("code_editor", "submit_button")]
-script = ExtResource("5_4c4k1")
+script = ExtResource("5_75bq0")
 code_editor = NodePath("../CanvasLayer/Control/CodeEdit")
 submit_button = NodePath("../CanvasLayer/Control/Button")
 

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bxlf13yg4c5eq"]
 
-[ext_resource type="Script" uid="uid://6g3nq85g6e06" path="res://addons/ToolCarsGodot/EJ/Scripts/ej_mod_run_text.gd" id="1_cdb1j"]
-[ext_resource type="Script" uid="uid://bvp60wjo7xkg3" path="res://addons/ToolCarsGodot/EJ/Scripts/ej_download_web_page.gd" id="2_25pk4"]
+[ext_resource type="Script" uid="uid://6g3nq85g6e06" path="res://addons/ToolCarsGodot/IEJ/Features/Scripts/iej_mod_run_text.gd" id="1_cdb1j"]
+[ext_resource type="Script" uid="uid://bvp60wjo7xkg3" path="res://addons/ToolCarsGodot/IEJ/Features/Scripts/iej_download_web_page.gd" id="2_25pk4"]
 
 [node name="EJModRunTextFromWeb" type="Node" unique_id=76904508]
 script = ExtResource("1_cdb1j")

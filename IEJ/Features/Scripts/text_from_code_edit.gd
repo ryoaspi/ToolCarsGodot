@@ -1,4 +1,4 @@
-class_name EJTextFromCodeEdit
+class_name IEJTextFromCodeEdit
 extends Node
 
 

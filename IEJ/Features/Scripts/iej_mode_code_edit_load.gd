@@ -1,4 +1,4 @@
-class_name EJModCodeEditLoadDefaultScript
+class_name IEJModCodeEditLoadDefaultScript
 extends Node
 
 signal on_code_loaded_as_text(text: String)

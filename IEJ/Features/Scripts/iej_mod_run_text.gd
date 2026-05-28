@@ -1,4 +1,4 @@
-class_name EJModRunText
+class_name IEJModRunText
 extends Node
 
 signal on_destroy_previous_node_start(node: Node)
@@ -29,10 +29,17 @@ func _process(delta: float) -> void:
 @export var last_car_received: Node
 @export var last_code_received: String
 
-func give_car_and_set_node_has_parent_and_run(node: Node):
+
+func set_where_to_execute(node: Node):
 	where_to_create_node = node
+	
+func set_target_car(node: Node):
+	notify_car_received(node)
+	
+func set_target_car_and_reload(node: Node):
 	load_and_run_text_as_godot_script(last_code_received)
 	notify_car_received(node)
+
 
 func notify_car_received(node: Node):
 	last_car_received= node

@@ -1,4 +1,4 @@
-class_name EJModCodeEditAndSubmitButton
+class_name IEJModCodeEditAndSubmitButton
 extends Node
 
 signal on_code_submit(text: String)
