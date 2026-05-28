@@ -16,43 +16,44 @@
 [ext_resource type="Script" uid="uid://bkvhvsvykspi5" path="res://addons/ToolCarsGodot/CS/Scripts/CSLEDBlinker.gd" id="11_8qwl6"]
 [ext_resource type="PackedScene" path="res://addons/ToolCarsGodot/CN/Scene/draw_with_raycast.tscn" id="12_21twa"]
 [ext_resource type="PackedScene" uid="uid://076s1kkcshx4" path="res://addons/ToolCarsGodot/CN/Scene/rgb_from_raycast.tscn" id="13_eoim2"]
+[ext_resource type="PackedScene" uid="uid://bknlofe8dmwj8" path="res://addons/ToolCarsGodot/Mixed/IEJ_DG/Features/ScanToCodeExecution/Prefab/scan_keyboard_to_run_modding_code.tscn" id="17_yi6q0"]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2vjf7"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7q5qn"]
 animation = &"Grip"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yi6q0"]
-animation = &"Grip"
-
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_7q5qn"]
-filter_enabled = true
-filters = ["Armature/Skeleton3D:Little_Distal_L", "Armature/Skeleton3D:Little_Intermediate_L", "Armature/Skeleton3D:Little_Metacarpal_L", "Armature/Skeleton3D:Little_Proximal_L", "Armature/Skeleton3D:Middle_Distal_L", "Armature/Skeleton3D:Middle_Intermediate_L", "Armature/Skeleton3D:Middle_Metacarpal_L", "Armature/Skeleton3D:Middle_Proximal_L", "Armature/Skeleton3D:Ring_Distal_L", "Armature/Skeleton3D:Ring_Intermediate_L", "Armature/Skeleton3D:Ring_Metacarpal_L", "Armature/Skeleton3D:Ring_Proximal_L", "Armature/Skeleton3D:Thumb_Distal_L", "Armature/Skeleton3D:Thumb_Metacarpal_L", "Armature/Skeleton3D:Thumb_Proximal_L", "Armature/Skeleton:Little_Distal_L", "Armature/Skeleton:Little_Intermediate_L", "Armature/Skeleton:Little_Proximal_L", "Armature/Skeleton:Middle_Distal_L", "Armature/Skeleton:Middle_Intermediate_L", "Armature/Skeleton:Middle_Proximal_L", "Armature/Skeleton:Ring_Distal_L", "Armature/Skeleton:Ring_Intermediate_L", "Armature/Skeleton:Ring_Proximal_L", "Armature/Skeleton:Thumb_Distal_L", "Armature/Skeleton:Thumb_Proximal_L"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a5nn1"]
-animation = &"Grip 5"
+animation = &"Grip"
 
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_kow3r"]
 filter_enabled = true
+filters = ["Armature/Skeleton3D:Little_Distal_L", "Armature/Skeleton3D:Little_Intermediate_L", "Armature/Skeleton3D:Little_Metacarpal_L", "Armature/Skeleton3D:Little_Proximal_L", "Armature/Skeleton3D:Middle_Distal_L", "Armature/Skeleton3D:Middle_Intermediate_L", "Armature/Skeleton3D:Middle_Metacarpal_L", "Armature/Skeleton3D:Middle_Proximal_L", "Armature/Skeleton3D:Ring_Distal_L", "Armature/Skeleton3D:Ring_Intermediate_L", "Armature/Skeleton3D:Ring_Metacarpal_L", "Armature/Skeleton3D:Ring_Proximal_L", "Armature/Skeleton3D:Thumb_Distal_L", "Armature/Skeleton3D:Thumb_Metacarpal_L", "Armature/Skeleton3D:Thumb_Proximal_L", "Armature/Skeleton:Little_Distal_L", "Armature/Skeleton:Little_Intermediate_L", "Armature/Skeleton:Little_Proximal_L", "Armature/Skeleton:Middle_Distal_L", "Armature/Skeleton:Middle_Intermediate_L", "Armature/Skeleton:Middle_Proximal_L", "Armature/Skeleton:Ring_Distal_L", "Armature/Skeleton:Ring_Intermediate_L", "Armature/Skeleton:Ring_Proximal_L", "Armature/Skeleton:Thumb_Distal_L", "Armature/Skeleton:Thumb_Proximal_L"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_waesh"]
+animation = &"Grip 5"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_dp4yp"]
+filter_enabled = true
 filters = ["Armature/Skeleton3D:Index_Distal_L", "Armature/Skeleton3D:Index_Intermediate_L", "Armature/Skeleton3D:Index_Metacarpal_L", "Armature/Skeleton3D:Index_Proximal_L", "Armature/Skeleton:Index_Distal_L", "Armature/Skeleton:Index_Intermediate_L", "Armature/Skeleton:Index_Proximal_L"]
 
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_waesh"]
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_cypgu"]
 graph_offset = Vector2(-536, 11)
-nodes/ClosedHand1/node = SubResource("AnimationNodeAnimation_2vjf7")
+nodes/ClosedHand1/node = SubResource("AnimationNodeAnimation_7q5qn")
 nodes/ClosedHand1/position = Vector2(-600, 300)
-nodes/ClosedHand2/node = SubResource("AnimationNodeAnimation_yi6q0")
+nodes/ClosedHand2/node = SubResource("AnimationNodeAnimation_a5nn1")
 nodes/ClosedHand2/position = Vector2(-360, 300)
-nodes/Grip/node = SubResource("AnimationNodeBlend2_7q5qn")
+nodes/Grip/node = SubResource("AnimationNodeBlend2_kow3r")
 nodes/Grip/position = Vector2(0, 20)
-nodes/OpenHand/node = SubResource("AnimationNodeAnimation_a5nn1")
+nodes/OpenHand/node = SubResource("AnimationNodeAnimation_waesh")
 nodes/OpenHand/position = Vector2(-600, 100)
-nodes/Trigger/node = SubResource("AnimationNodeBlend2_kow3r")
+nodes/Trigger/node = SubResource("AnimationNodeBlend2_dp4yp")
 nodes/Trigger/position = Vector2(-360, 20)
 node_connections = [&"output", 0, &"Grip", &"Grip", 0, &"Trigger", &"Grip", 1, &"ClosedHand2", &"Trigger", 0, &"OpenHand", &"Trigger", 1, &"ClosedHand1"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dp4yp"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4yk52"]
 resource_name = "Steel_-_Satin"
 albedo_color = Color(1, 0, 1, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cypgu"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s0ppa"]
 resource_name = "Steel_-_Satin"
 albedo_color = Color(1, 0, 0, 1)
 
@@ -74,7 +75,7 @@ script = ExtResource("1_e5i5v")
 script = null
 
 [node name="AnimationTree" parent="XREssentialsOriginGodot/XROrigin3D/XR_LeftHand/XRToolsCollisionHand/LeftHand" parent_id_path=PackedInt32Array(291553779, 1415449023) index="1"]
-tree_root = SubResource("AnimationNodeBlendTree_waesh")
+tree_root = SubResource("AnimationNodeBlendTree_cypgu")
 
 [node name="XR_RightHand" parent="XREssentialsOriginGodot/XROrigin3D" index="2" unique_id=1805883055]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6972769, 0)
@@ -91,14 +92,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.037746266, -0.025922894, 0
 [node name="Car" parent="." unique_id=1371747064 instance=ExtResource("2_omg0t")]
 
 [node name="led_right" parent="Car/KS_4036/KS_4036/Model/dimension/leds" parent_id_path=PackedInt32Array(1371747064, 1781070975, 1989343734) index="0" unique_id=970662410]
-surface_material_override/0 = SubResource("StandardMaterial3D_dp4yp")
+surface_material_override/0 = SubResource("StandardMaterial3D_4yk52")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Car/KS_4036/KS_4036/Model/dimension/leds/led_right" index="0" unique_id=871138897]
 transform = Transform3D(0.41666663, 0, 0, 0, 0.41666663, 0, 0, 0, 0.41666663, 0, 0, 0)
 light_color = Color(1, 0, 1, 1)
 
 [node name="led_left" parent="Car/KS_4036/KS_4036/Model/dimension/leds" parent_id_path=PackedInt32Array(1371747064, 1781070975, 1989343734) index="1" unique_id=1795093362]
-surface_material_override/0 = SubResource("StandardMaterial3D_cypgu")
+surface_material_override/0 = SubResource("StandardMaterial3D_s0ppa")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Car/KS_4036/KS_4036/Model/dimension/leds/led_left" index="0" unique_id=1271600543]
 light_color = Color(1, 0, 0, 1)
@@ -171,6 +172,8 @@ spot_lights = [NodePath("../../Car/KS_4036/KS_4036/Model/dimension/leds/led_righ
 script = ExtResource("11_8qwl6")
 led_to_affect = NodePath("..")
 
+[node name="ScanKeyboardToRunModdingCode" parent="." unique_id=844036142 instance=ExtResource("17_yi6q0")]
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=122427792]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3232968, 0.56980336, 0)
 mesh = SubResource("BoxMesh_e5i5v")
@@ -197,3 +200,5 @@ shape = SubResource("BoxShape3D_du1lo")
 [editable path="Car/KS_4036/KS_4036/RGBFromRaycast"]
 [editable path="Background"]
 [editable path="MicroBit"]
+[editable path="ScanKeyboardToRunModdingCode"]
+[editable path="ScanKeyboardToRunModdingCode/EJModRunTextFromWeb"]
