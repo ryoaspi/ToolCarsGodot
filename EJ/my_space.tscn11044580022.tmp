@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://ch1pdea3gd3bx"]
+
+[ext_resource type="Script" uid="uid://cgtin4r2tkq87" path="res://addons/ToolCarsGodot/EJ/Scripts/controler_keys.gd" id="1_huxsf"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_jnwih"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w50kd"]
+
+[node name="my_space" type="Node3D" unique_id=1591758031]
+
+[node name="Floor" type="Node3D" parent="." unique_id=556387421]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.17458487, 0)
+
+[node name="Floor" type="MeshInstance3D" parent="Floor" unique_id=1503346373]
+transform = Transform3D(9.041736, 0, 0, 0, 0.5180942, 0, 0, 0, 10.573692, 0, 0, 0)
+mesh = SubResource("BoxMesh_jnwih")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Floor/Floor" unique_id=1950183808]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
+gravity_scale = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/Floor/RigidBody3D" unique_id=1327648775]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
+shape = SubResource("BoxShape3D_w50kd")
+
+[node name="Car" type="Node3D" parent="." unique_id=933864590]
+script = ExtResource("1_huxsf")

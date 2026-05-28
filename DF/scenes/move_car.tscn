@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://duce26bql6smr"]
+
+[ext_resource type="PackedScene" uid="uid://dwrdxl1ubyl5i" path="res://addons/ToolCarsGodot/DF/scenes/KS_4036.tscn" id="4_e2mqp"]
+[ext_resource type="Script" uid="uid://bdpn67jc75y0y" path="res://addons/ToolCarsGodot/DF/scripts/car_movement.gd" id="6_utcj0"]
+[ext_resource type="Script" uid="uid://co1niehwd3nvm" path="res://addons/ToolCarsGodot/DF/scenes/xr_inputs.gd" id="8_konn1"]
+[ext_resource type="Script" uid="uid://kt004hmwmtln" path="res://addons/ToolCarsGodot/DF/scenes/wheels_rotation.gd" id="9_1vatx"]
+
+[node name="Main" type="Node3D" unique_id=1371747064]
+
+[node name="KS_4036" parent="." unique_id=1781070975 instance=ExtResource("4_e2mqp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.029777646, -0.0016297922, 0.030339003)
+
+[node name="Code" type="Node" parent="." unique_id=2145258064]
+
+[node name="car_movement" type="Node" parent="Code" unique_id=1560538840 node_paths=PackedStringArray("character", "left_controller", "right_controller")]
+script = ExtResource("6_utcj0")
+character = NodePath("../../KS_4036/KS_4036")
+left_controller = NodePath("")
+right_controller = NodePath("")
+
+[node name="xr_inputs" type="Node" parent="Code" unique_id=665007475 node_paths=PackedStringArray("left_controller", "right_controller")]
+script = ExtResource("8_konn1")
+left_controller = NodePath("")
+right_controller = NodePath("")
+
+[node name="wheels_rotation" type="Node" parent="Code" unique_id=891045571 node_paths=PackedStringArray("pivot")]
+script = ExtResource("9_1vatx")
+pivot = NodePath("../../KS_4036/KS_4036")
+
+[connection signal="left_wheel_rotation" from="Code/car_movement" to="Code/wheels_rotation" method="set_rotation_with_degrees"]
+[connection signal="right_wheel_rotation" from="Code/car_movement" to="Code/wheels_rotation" method="set_rotation_with_degrees"]
+[connection signal="left_hand_joystick_update" from="Code/xr_inputs" to="Code/car_movement" method="set_joystick_inputs_vector2"]
+[connection signal="right_hand_joystick_update" from="Code/xr_inputs" to="Code/car_movement" method="set_joystick_inputs_vector2"]
+
+[editable path="KS_4036"]

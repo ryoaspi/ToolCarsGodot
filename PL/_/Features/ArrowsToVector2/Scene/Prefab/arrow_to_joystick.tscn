@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dojvni3sphnxy"]
+
+[ext_resource type="Script" uid="uid://clmp2d5os0s0q" path="res://addons/ToolCarsGodot/PL/_/Features/ArrowsToVector2/Script/pl_arrow_to_joystick.gd" id="1_0x455"]
+
+[node name="ArrowToJoystick" type="Node" unique_id=1721895914]
+script = ExtResource("1_0x455")

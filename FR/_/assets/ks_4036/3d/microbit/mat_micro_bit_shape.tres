@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c81g7nwtek3x3"]
+
+[ext_resource type="Texture2D" path="res://addons/2026_04_11_gdp_learn_with_sensors/feature/micro_bit_shape/3d/micro_bit_shape_uv_textured.png" id="1_qhkny"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_qhkny")

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bh5rpcsrbcpvb"]
+
+[ext_resource type="Script" uid="uid://caqw7h2bxv82" path="res://addons/ToolCarsGodot/CN/Script/RGBFromRaycast/draw_with_raycast.gd" id="1_hptux"]
+
+[node name="DrawWithRaycast" type="Node3D" unique_id=2002528441]
+script = ExtResource("1_hptux")
+
+[node name="Move" type="Node3D" parent="." unique_id=1513872658]
+
+[node name="RayCast3D" type="RayCast3D" parent="Move" unique_id=1865566437]
+collision_mask = 2

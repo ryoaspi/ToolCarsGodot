@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://blnueo2qghq51"]
+
+[ext_resource type="Script" uid="uid://dedilnv25s2fm" path="res://addons/ToolCarsGodot/DG/Features/ScanOrTypeCode/Script/dg_open_url.gd" id="1_s4v8f"]
+[ext_resource type="Resource" uid="uid://cgasgpnaueok0" path="res://addons/ToolCarsGodot/DG/Features/ScanOrTypeCode/Resources/dg_student_code_url.tres" id="2_si04q"]
+
+[node name="OpenURLorText2" type="Node" unique_id=61960323]
+script = ExtResource("1_s4v8f")
+my_dict = ExtResource("2_si04q")

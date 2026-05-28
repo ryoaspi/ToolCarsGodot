@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cvi8a4mbxaofg"]
+
+[ext_resource type="Texture2D" uid="uid://dlm4q4s4qv77c" path="res://addons/ToolCarsGodot/EJ/Features/SingleJoystick/Capture d'écran 2026-05-27 094238.png" id="1_getbc"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_bjtg7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_csst0"]
+albedo_texture = ExtResource("1_getbc")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y7x8e"]
+
+[node name="DoubleVerticalAxis" type="Node3D" unique_id=168493150]
+
+[node name="Floor" type="Node3D" parent="." unique_id=3370141]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.17458487, 0)
+
+[node name="Floor" type="MeshInstance3D" parent="Floor" unique_id=912432257]
+transform = Transform3D(9.041736, 0, 0, 0, 0.5180942, 0, 0, 0, 10.573692, 0, 0, 0)
+mesh = SubResource("BoxMesh_bjtg7")
+surface_material_override/0 = SubResource("StandardMaterial3D_csst0")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Floor/Floor" unique_id=1231762911]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
+gravity_scale = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/Floor/RigidBody3D" unique_id=600514376]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
+shape = SubResource("BoxShape3D_y7x8e")
+debug_color = Color(0.66887367, 0.5024584, 0.25345153, 0.41960785)

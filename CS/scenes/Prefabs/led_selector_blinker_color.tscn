@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://buatu2yg00rm6"]
+
+[ext_resource type="Script" uid="uid://j377ubn6qbm5" path="res://ToolCarsGodot/CS/Scripts/CSLEDColorSelection.gd" id="1_pt4lo"]
+
+[node name="LEDSelectorBlinkerColor" type="Node" unique_id=693284710]
+script = ExtResource("1_pt4lo")
+color_list = Array[Color]([Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 0.49019608, 0, 1)])
