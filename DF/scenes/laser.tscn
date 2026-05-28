@@ -1,19 +1,24 @@
-[gd_scene format=3 uid="uid://bfelgdxlf0ifj"]
+[gd_scene format=3 uid="uid://tc0h6ltrcmpx"]
 
 [ext_resource type="ArrayMesh" uid="uid://d3bmgs7kv81ob" path="res://addons/ToolCarsGodot/DF/assets/meshes/laser_module/laser_module.obj" id="1_hqhql"]
-[ext_resource type="Script" uid="uid://dejjh37picvmb" path="res://addons/ToolCarsGodot/DF/scripts/ray_cast_laser.gd" id="2_b26v5"]
+[ext_resource type="Script" path="res://addons/ToolCarsGodot/DF/scripts/ray_cast_laser.gd" id="2_b26v5"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_b26v5"]
+top_radius = 0.01
+bottom_radius = 0.01
+height = 3.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6jxtd"]
 albedo_color = Color(1, 0, 0, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_b26v5"]
+radius = 0.06
+height = 0.015
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b26v5"]
 albedo_color = Color(1, 0, 0, 1)
 
-[node name="Main" type="Node3D" unique_id=1343794851]
+[node name="LaserMain" type="Node3D" unique_id=1343794851]
 
 [node name="Laser" type="Node3D" parent="." unique_id=520112747]
 
@@ -22,16 +27,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03, 0)
 mesh = ExtResource("1_hqhql")
 
 [node name="RayCast3D" type="RayCast3D" parent="Laser" unique_id=787719735]
-transform = Transform3D(0.25, 0, 0, 0, -4.371139e-08, 0.252, 0, -1, -1.101527e-08, 0, 0.032, 0)
-target_position = Vector3(0, -4, 0)
+transform = Transform3D(0.25, 0, 0, 0, -4.371139e-08, -0.252, 0, 1, -1.101527e-08, 0, 0.032, 0)
+target_position = Vector3(0, -3, 0)
+debug_shape_thickness = 1
 script = ExtResource("2_b26v5")
 
 [node name="LaserRay" type="MeshInstance3D" parent="Laser/RayCast3D" unique_id=2084839643]
-transform = Transform3D(0.01, 0, 0, 0, 2, 0, 0, 0, 0.01, 0, -2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, -1.7763568e-15, 0, 0, 1, 0, -1.5986608, -4.4703484e-08)
 mesh = SubResource("CylinderMesh_b26v5")
 surface_material_override/0 = SubResource("StandardMaterial3D_6jxtd")
 
 [node name="PointerSphere" type="MeshInstance3D" parent="Laser/RayCast3D" unique_id=2096644333]
-transform = Transform3D(0.06, 0, 0, 0, 0.015, 0, 0, 0, 0.06, 0, -4, -4.0000305e-07)
+transform = Transform3D(1, 0, 0, 0, 1, -2.6645353e-15, 0, 0, 1, 0, -3.1001692, -5.364418e-07)
 mesh = SubResource("SphereMesh_b26v5")
 surface_material_override/0 = SubResource("StandardMaterial3D_b26v5")
