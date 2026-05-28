@@ -70,8 +70,8 @@ tracker = &"right_hand"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13112062, 0)
 
 [node name="Label3D" parent="XROrigin3D/XRController3DRight/DebugLabel" index="0" unique_id=1145424009]
-text = "Press A to paint
-Press B to erase"
+text = "Press B to erase
+Press A to paint"
 
 [node name="hand_r" parent="XROrigin3D/XRController3DRight" unique_id=1028419849 instance=ExtResource("5_o44ui")]
 
