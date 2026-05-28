@@ -29,7 +29,7 @@ albedo_color = Color(0.3628292, 0.3628296, 0.36282927, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_c5qqj"]
 size = Vector3(1, 0.01, 1)
 
-[node name="Main" type="Node3D" unique_id=1371747064]
+[node name="Main2" type="Node3D" unique_id=1371747064]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=659769082]
 environment = SubResource("Environment_c5qqj")
