@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://dt57r6ha2xl7k"]
+
+[ext_resource type="Script" path="res://addons/ToolCarsGodot/EJ/scripts/programmable_car.gd" id="1_wxuru"]
+[ext_resource type="Texture2D" path="res://addons/ToolCarsGodot/EJ/addons/godot-xr-tools/hands/textures/cleaning_glove_baseColor.png" id="2_vlerj"]
+[ext_resource type="Texture2D" path="res://addons/ToolCarsGodot/EJ/addons/godot-xr-tools/hands/textures/glove_normal.png" id="3_58ocf"]
+[ext_resource type="Texture2D" path="res://addons/ToolCarsGodot/EJ/addons/godot-xr-tools/hands/textures/glove_occlusionRoughnessMetallic.png" id="4_qvb1o"]
+[ext_resource type="Script" uid="uid://c4rcortqj7ls2" path="res://addons/ToolCarsGodot/EJ/Scripts/ej_mod_run_text.gd" id="6_58ocf"]
+[ext_resource type="Script" uid="uid://bm6hiebi2nnw5" path="res://addons/ToolCarsGodot/EJ/Scripts/text_from_code_edit.gd" id="7_qvb1o"]
+[ext_resource type="Script" path="res://addons/ToolCarsGodot/EJ/scripts/CarCodeRunner.gd" id="8_27cbg"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_27cbg"]
+albedo_texture = ExtResource("2_vlerj")
+orm_texture = ExtResource("4_qvb1o")
+normal_enabled = true
+normal_scale = 0.1
+normal_texture = ExtResource("3_58ocf")
+clearcoat_enabled = true
+ao_light_affect = 1.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_fkpta"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ursu"]
+albedo_color = Color(0.98055214, 0.57451737, 7.70092e-07, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_r7dq3"]
+
+[node name="ModdingToTheCar" type="Node3D" unique_id=1866622193]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1883030899]
+transform = Transform3D(0.48744816, -0.49419445, 0.7198376, 1.04063574e-07, 0.8244128, 0.565989, -0.87315196, -0.27589023, 0.40185854, 1.7859896, 1.3087825, -0.97008055)
+
+[node name="ProgrammableCar" type="Node3D" parent="." unique_id=798803037 groups=["player"]]
+transform = Transform3D(0.166, 0, 0, 0, 0.166, 0, 0, 0, 0.166, 0.62675905, 0.52065015, -1.1408098)
+script = ExtResource("1_wxuru")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ProgrammableCar" unique_id=523093057]
+transform = Transform3D(-0.5904541, 0, 0, 0, 0.50932586, 0, 0, 0, 0.946226, -0.123090744, 0.80583644, 0.9512644)
+material_override = SubResource("ORMMaterial3D_27cbg")
+mesh = SubResource("CapsuleMesh_fkpta")
+
+[node name="Floor" type="Node3D" parent="." unique_id=167100068]
+transform = Transform3D(0.166, 0, 0, 0, 0.166, 0, 0, 0, 0.166, 0.62675905, 0.52065015, -1.1408098)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=32693384]
+transform = Transform3D(19.297132, 0, 0, 0, 0.21852708, 0, 0, 0, 19.238333, 0, 0, -1.29)
+material_override = SubResource("StandardMaterial3D_4ursu")
+mesh = SubResource("BoxMesh_r7dq3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1972852882]
+transform = Transform3D(1, 0, 0, 0, 0.23442954, 0.9721331, 0, -0.9721331, 0.23442954, 0, 2.8150663, -1.333591)
+
+[node name="Node" type="Node" parent="." unique_id=1525860174]
+
+[node name="EJModRunText" type="Node" parent="Node" unique_id=273878679 node_paths=PackedStringArray("where_to_create_node")]
+script = ExtResource("6_58ocf")
+given_godot_code_to_execute = "
+extends Node
+func _ready():
+	print(\"Hello Bizou\")
+
+func _process(delta: float) -> void:
+	pass
+"
+where_to_create_node = NodePath("../../Node3DMyCode")
+load_code_inspector_at_ready = false
+unique_code_file_name = "hey_hey.gd"
+create_node_as_node_3d = true
+metadata/_custom_type_script = "uid://c4rcortqj7ls2"
+
+[node name="TextFromCodeEdit" type="Node" parent="Node" unique_id=219214148 node_paths=PackedStringArray("text_editors")]
+script = ExtResource("7_qvb1o")
+text_editors = [NodePath("../../CanvasLayer/TextEdit")]
+metadata/_custom_type_script = "uid://bm6hiebi2nnw5"
+
+[node name="CarCodeRunner" type="Node" parent="Node" unique_id=1029443696 node_paths=PackedStringArray("screen_coding", "programmable_car")]
+script = ExtResource("8_27cbg")
+screen_coding = NodePath("")
+programmable_car = NodePath("../../ProgrammableCar")
+
+[node name="Node3DMyCode" type="Node3D" parent="." unique_id=1871124015]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1261444745]
+
+[node name="TextEdit" type="TextEdit" parent="CanvasLayer" unique_id=964214388]
+anchors_preset = -1
+anchor_right = 0.266
+anchor_bottom = 0.628
+offset_right = -0.43200684
+offset_bottom = 0.055999756
+
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=51476727]
+anchors_preset = -1
+anchor_left = 0.187
+anchor_top = 0.549
+anchor_right = 0.26000002
+anchor_bottom = 0.61700004
+offset_left = 0.57598877
+offset_top = 1.2479858
+offset_right = -0.52001953
+offset_bottom = 0.18395996
+text = "Run"
+
+[connection signal="on_combined_text_requested" from="Node/TextFromCodeEdit" to="Node/EJModRunText" method="load_and_run_text_as_godot_script"]
+[connection signal="button_down" from="CanvasLayer/Button" to="Node/TextFromCodeEdit" method="combine_and_emit"]

@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://ftb6m2ule82h"]
+
+[ext_resource type="Script" uid="uid://c4rcortqj7ls2" path="res://addons/ToolCarsGodot/EJ/Scripts/ej_mod_run_text.gd" id="1_wfjwg"]
+[ext_resource type="Script" uid="uid://cgkslvpde17h1" path="res://addons/ToolCarsGodot/EJ/Scripts/ej_mod_link_unlink.gd" id="2_tu0gi"]
+[ext_resource type="Script" uid="uid://bsscmt8e2mxab" path="res://addons/ToolCarsGodot/EJ/Scripts/ej_mode_code_edit_load.gd" id="3_xrx2x"]
+[ext_resource type="Script" uid="uid://b51glfoehsjb6" path="res://addons/ToolCarsGodot/EJ/Scripts/ej_default_user_code.gd" id="4_syoau"]
+[ext_resource type="Script" uid="uid://dlvpoqteqpym0" path="res://addons/ToolCarsGodot/EJ/Scripts/ej_mod_code_edit_and_submit_button.gd" id="5_4c4k1"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_yic1b"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yngh1"]
+radius = 2.640625
+height = 10.517822
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c8vfr"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_k5cfr"]
+
+[node name="MainModding" type="Node3D" unique_id=1956153319]
+
+[node name="Car" type="CharacterBody3D" parent="." unique_id=775545489]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Car" unique_id=1585819064]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.5, 0)
+mesh = SubResource("CapsuleMesh_yic1b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Car" unique_id=1819804732]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.45953372, 0)
+shape = SubResource("CapsuleShape3D_yngh1")
+
+[node name="Ground" type="StaticBody3D" parent="." unique_id=679603636]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=18184277]
+shape = SubResource("BoxShape3D_c8vfr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=667929881]
+transform = Transform3D(12.13473, 0, 0, 0, 0.2716925, 0, 0, 0, 9.723934, -0.20408738, -0.13125277, -2.168727)
+mesh = SubResource("BoxMesh_k5cfr")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1062899203]
+transform = Transform3D(1, 0, 0, 0, 0.5025221, 0.86456436, 0, -0.86456436, 0.5025221, 0, 7.499467, 2.3194656)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=382407538]
+transform = Transform3D(0.89711964, -0.11382909, 0.42687157, 0, 0.9662368, 0.25765562, -0.44178772, -0.23114792, 0.86683005, 1.2618235, 1.3670052, 2.2243636)
+
+[node name="ModRunner" type="Node" parent="." unique_id=1204837242 node_paths=PackedStringArray("where_to_create_node", "last_car_received")]
+script = ExtResource("1_wfjwg")
+default_code_to_execute = "
+extends Node
+
+func _ready() -> void:
+	print(\"Hello World\")
+
+func _process(delta: float) -> void:
+	pass
+
+func _on_car_received(car: Node):
+	print(car)
+"
+where_to_create_node = NodePath("../Car")
+unique_code_file_name = "car_code.gd"
+last_car_received = NodePath("../Car")
+
+[node name="Linker" type="Node" parent="." unique_id=733718719 node_paths=PackedStringArray("where_to_store_when_unlink")]
+script = ExtResource("2_tu0gi")
+where_to_store_when_unlink = NodePath("..")
+
+[node name="DefaultCodeLoader" type="Node" parent="." unique_id=570789166 node_paths=PackedStringArray("text_editors_to_affect")]
+script = ExtResource("3_xrx2x")
+script_to_load = ExtResource("4_syoau")
+text_editors_to_affect = [NodePath("../CanvasLayer/Control/CodeEdit")]
+
+[node name="SubmitCodebutton" type="Node" parent="." unique_id=568570431 node_paths=PackedStringArray("code_editor", "submit_button")]
+script = ExtResource("5_4c4k1")
+code_editor = NodePath("../CanvasLayer/Control/CodeEdit")
+submit_button = NodePath("../CanvasLayer/Control/Button")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=765722728]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=754965269]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 0.99700004
+offset_left = -2.0
+offset_right = 1.0
+offset_bottom = -0.056030273
+
+[node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=374085372]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.46500003
+anchor_right = 1.0
+anchor_bottom = 1.0020001
+offset_left = -577.5
+offset_top = -300.39
+offset_bottom = -0.29205322
+
+[node name="CodeEdit" type="CodeEdit" parent="CanvasLayer/Control" unique_id=826929952]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47900003
+anchor_top = 0.45800003
+anchor_right = 0.99700004
+anchor_bottom = 1.005
+offset_left = -0.24505615
+offset_top = 0.13198853
+offset_right = 0.46496582
+offset_bottom = -0.22998047
+
+[node name="Button" type="Button" parent="CanvasLayer/Control" unique_id=1452777162]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.822
+anchor_top = 0.86500007
+anchor_right = 0.99700004
+anchor_bottom = 1.0
+offset_left = -0.41003418
+offset_top = 0.20996094
+offset_right = 0.46496582
+offset_bottom = 3.0
+text = "Run"
+
+[connection signal="on_created_node" from="ModRunner" to="Linker" method="_on_mod_runner_on_created_node"]
+[connection signal="on_destroy_previous_node_start" from="ModRunner" to="Linker" method="_on_mod_runner_on_destroy_previous_node_start"]
+[connection signal="on_code_submit" from="SubmitCodebutton" to="ModRunner" method="load_and_run_text_as_godot_script"]

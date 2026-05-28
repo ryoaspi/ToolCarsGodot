@@ -1,68 +1,91 @@
 class_name EJModRunText
 extends Node
 
-signal on_destroy_previous_node_start(node:Node)
+signal on_destroy_previous_node_start(node: Node)
 signal on_destroy_previous_node_end()
-signal on_created_node(node_created:Node)
-signal on_created_node_with_code(node_created:Node, code:String)
-signal on_fail_to_load_code(code:String)
+signal on_created_node(node_created: Node)
+signal on_created_node_with_code(node_created: Node, code: String)
+signal on_fail_to_load_code(code: String)
 
 @export_multiline()
-var given_godot_code_to_execute:String="""
+var default_code_to_execute: String = """
 extends Node
-func _ready():
+
+func _ready() -> void:
 	print("Hello World")
 
 func _process(delta: float) -> void:
 	pass
 """
 
-@export var where_to_create_node:Node3D
-@export var load_code_inspector_at_ready:bool=true
-@export var unique_code_file_name:String ="change_my_name.gd"
-@export var create_node_as_node_3d:bool=false
+@export var where_to_create_node: Node
+@export var run_code_at_ready: bool = false
+@export var unique_code_file_name: String = "user_free_code.gd"
+
+@export var method_name_to_send_car_info: String = "_on_car_received" 
 
 @export_group("Debug")
-@export var created_node_holding_code:Node
+@export var created_node_holding_code: Node
+@export var last_car_received: Node
+@export var last_code_received: String
 
+func give_car_and_set_node_has_parent_and_run(node: Node):
+	where_to_create_node = node
+	load_and_run_text_as_godot_script(last_code_received)
+	notify_car_received(node)
 
+func notify_car_received(node: Node):
+	last_car_received= node
+	if created_node_holding_code: 
+		if created_node_holding_code.has_method(method_name_to_send_car_info):
+			created_node_holding_code.call(method_name_to_send_car_info, node)
 
 func _ready() -> void:
-	if  load_code_inspector_at_ready:
+	if run_code_at_ready:
 		await get_tree().create_timer(0.1).timeout
-		load_and_run_text_as_godot_script(given_godot_code_to_execute)
+		load_and_run_text_as_godot_script(default_code_to_execute)
 
-func load_and_run_code_from_godot_script(script: Script):
-	var local_path = script.resource_path
-	var text = FileAccess.get_file_as_string(local_path)
-	load_and_run_text_as_godot_script(text)
 
-func unload_current_code():
+func unload_current_code() -> void:
 	on_destroy_previous_node_start.emit(created_node_holding_code)
+
 	if created_node_holding_code:
-		## if it existe. kill it. I means... lets is free 
 		created_node_holding_code.queue_free()
 		created_node_holding_code = null
-	on_destroy_previous_node_end.emit()		
 
-func load_and_run_text_as_godot_script(code:String):
-	## When we start we need to destroy the previous one.
+	on_destroy_previous_node_end.emit()
+
+
+
+func load_and_run_text_as_godot_script(code: String) -> void:
+	if code.strip_edges() == "":
+		push_error("The CodeEdit is empty.")
+		on_fail_to_load_code.emit(code)
+		return
+
+	last_code_received = code
 	unload_current_code()
-	## code cant be loaded like that. you need to load from file
-	## we can create the file in folde of our application
-	var script_path: String = "user://"+unique_code_file_name
-	## print(script_path)
-	## to see where it is store in the end
+
+	var final_code: String = code
+
+	if not final_code.contains("extends "):
+		final_code = "extends Node\n\n" + final_code
+
+	var script_path: String = "user://" + unique_code_file_name
+
+	print("Generated user script path:")
 	print(ProjectSettings.globalize_path(script_path))
-	var file_connection =FileAccess.open(script_path, FileAccess.WRITE)
+
+	var file_connection := FileAccess.open(script_path, FileAccess.WRITE)
+
 	if file_connection:
-		file_connection.store_string(code)
+		file_connection.store_string(final_code)
 		file_connection.close()
 	else:
-		push_error("File was not created")
+		push_error("The user script file could not be created.")
+		on_fail_to_load_code.emit(final_code)
 		return
-	
-	# lets try to execute it now.
+
 	var script: Script = ResourceLoader.load(
 		script_path,
 		"GDScript",
@@ -70,30 +93,29 @@ func load_and_run_text_as_godot_script(code:String):
 	)
 
 	if not script is GDScript:
-		push_error("That not a Godot Script")
-		on_fail_to_load_code.emit(code)
+		push_error("The provided text is not a valid GDScript.")
+		on_fail_to_load_code.emit(final_code)
 		return
-	
-	## we need for that a node
-	var node :Node =  Node3D.new() if create_node_as_node_3d else Node.new()
-	# we have a new node but not yet in the scene
+
+	var node := Node.new()
+
 	node.set_script(script)
-	# he has our code 
 	node.set_process(true)
-	# he now use _process(delta)
 	node.set_physics_process(true)
-	# in case we need it later
-	
-	## now we add it in the scene
+
 	created_node_holding_code = node
+
 	if where_to_create_node:
 		where_to_create_node.add_child(node)
 	else:
 		add_child(node)
-	on_created_node.emit(node)
-	on_created_node_with_code.emit(node,code)
-	
-	
 
-	
-	
+	print("User code is now running.")
+
+	notify_car_received(last_car_received)
+	on_created_node.emit(node)
+	on_created_node_with_code.emit(node, final_code)
+
+
+func _on_submit_codebutton_on_code_submit(text: String) -> void:
+	pass # Replace with function body.

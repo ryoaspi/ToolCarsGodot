@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bxlf13yg4c5eq"]
+
+[ext_resource type="Script" uid="uid://c4rcortqj7ls2" path="res://addons/ToolCarsGodot/EJ/Scripts/ej_mod_run_text.gd" id="1_4d4di"]
+[ext_resource type="Script" uid="uid://cmndxxabauge8" path="res://addons/ToolCarsGodot/EJ/Scripts/ej_download_web_page.gd" id="2_k2qan"]
+
+[node name="EJModRunTextFromWeb" type="Node" unique_id=76904508]
+script = ExtResource("1_4d4di")
+unique_code_file_name = "web_page_code.gd"
+metadata/_custom_type_script = "uid://c4rcortqj7ls2"
+
+[node name="EJDownloadWebPage" type="Node" parent="." unique_id=1292773356]
+script = ExtResource("2_k2qan")
+metadata/_custom_type_script = "uid://cmndxxabauge8"
+
+[connection signal="on_text_downloaded" from="EJDownloadWebPage" to="." method="load_and_run_text_as_godot_script"]
