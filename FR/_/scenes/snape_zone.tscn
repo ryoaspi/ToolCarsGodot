@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://duppob6rc0hbq"]
+
+[ext_resource type="PackedScene" uid="uid://ce7vysyvondf8" path="res://addons/godot-xr-tools/objects/snap_zone.tscn" id="1_wvab2"]
+
+[node name="SlotSpot" type="Node3D" unique_id=1188029589]
+
+[node name="SizeAndOffset" type="Node3D" parent="." unique_id=1049680381]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="MicroBitSnapZone" parent="SizeAndOffset" unique_id=1476957998 instance=ExtResource("1_wvab2")]
+transform = Transform3D(1, 0, 4.2632564e-14, 0, 1, 0, -4.2632564e-14, 0, 1, -0.0044215694, 0, -9.313226e-10)
+grab_distance = 0.15
+snap_require = "MicroBit"
