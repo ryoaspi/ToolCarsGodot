@@ -12,7 +12,6 @@ signal jump_with_right_joystick(pressed : bool)
 @export var right_joystick_button : bool
 
 func _physics_process(_delta: float) -> void:
-	# --- Gestion des Axes (Inchangé) ---
 	var forward_back = -Input.get_joy_axis(0, JOY_AXIS_LEFT_Y)
 	var left_right = Input.get_joy_axis(0, JOY_AXIS_LEFT_X)
 	var new_joystick_value : Vector2 = Vector2(forward_back, left_right)
@@ -27,15 +26,11 @@ func _physics_process(_delta: float) -> void:
 	right_joystick_updated.emit(new_joystick_value)
 	right_joystick = new_joystick_value
 	
-	# --- Correction : Détection du clic sur les Joysticks (L3 / R3) ---
-	# On utilise "is_joy_button_pressed(device_id, button_index)"
 	var jump_left = Input.is_joy_button_pressed(0, JOY_BUTTON_LEFT_STICK)
 	var jump_right = Input.is_joy_button_pressed(0, JOY_BUTTON_RIGHT_STICK)
 	
-	# Mise à jour des variables exportées (booléens)
 	left_joystick_button = jump_left
 	right_joystick_button = jump_right
 	
-	# Envoi des signaux
 	jump_with_left_joystick.emit(jump_left)
 	jump_with_right_joystick.emit(jump_right)

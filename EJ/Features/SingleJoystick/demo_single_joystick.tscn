@@ -113,18 +113,5 @@ script = ExtResource("9_d8pdl")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=289932778]
 transform = Transform3D(1, 0, 0, 0, -0.14749865, 0.98906225, 0, -0.98906225, -0.14749865, 0, 4.585331, 0)
 
-[node name="menu" type="Control" parent="." unique_id=53436410]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 4.0
-offset_top = 34.0
-offset_right = 4.0
-offset_bottom = 34.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-
 [connection signal="jump_with_left_joystick" from="Car/KS_4036/EjGamepadFromJoystick" to="Car/KS_4036" method="_on_jump_with_left_joystick"]
 [connection signal="left_joystick_updated" from="Car/KS_4036/EjGamepadFromJoystick" to="Car/KS_4036" method="set_move_with_joystick"]
