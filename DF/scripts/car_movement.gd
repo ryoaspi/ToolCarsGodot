@@ -28,43 +28,50 @@ func _process(delta: float) -> void:
 			set_joystick_move(-1)
 			car_move(delta)
 		3:
+			set_joystick_rotation(1)
 			character.rotate_y(deg_to_rad(rotation_speed_in_degrees) * delta * -joystick_rotation_intensity)
 		4:
+			set_joystick_rotation(1)
 			character.rotate_y(deg_to_rad(rotation_speed_in_degrees) * delta * joystick_rotation_intensity)
 		5:
+			set_joystick_rotation(-1)
 			character.rotate_y(deg_to_rad(rotation_speed_in_degrees) * delta * -joystick_rotation_intensity)
 		6:
+			set_joystick_rotation(-1)
 			character.rotate_y(deg_to_rad(rotation_speed_in_degrees) * delta * joystick_rotation_intensity)
 		7:
 			set_joystick_move(0)
 		8:
 			set_joystick_move(0)
+		9: 
+			set_joystick_move(0)
+			
 func handle_car_state() -> void:
 	var left_joystick = left_controller.get_vector2("primary")
 	var right_joystick = right_controller.get_vector2("primary")
 	
 	if left_joystick.y > 0.1 and right_joystick.y > 0.1:
-		car_state = 1
+		car_state = 1 #Avance - Avance
 	elif left_joystick.y < -0.1 and right_joystick.y < -0.1:
-		car_state = 2
+		car_state = 2 #Recule - Recule
 	elif left_joystick.y > 0.1 and right_joystick.y == 0:
-		car_state = 3
+		car_state = 3 #Avance - Immobile
 	elif left_joystick.y == 0 and right_joystick.y > 0.1:
-		car_state = 4
+		car_state = 4  #Immobile - Avance
 	elif left_joystick.y < -0.1 and right_joystick.y == 0:
-		car_state = 5
-	elif left_joystick.y > 0.1 and right_joystick.y < -0.1:
-		car_state = 6
-	elif left_joystick.y < -0.1 and right_joystick.y > 0.1:
-		car_state = 7
+		car_state = 5  #Recule - Immobile
 	elif left_joystick.y == 0 and right_joystick.y < -0.1:
-		car_state = 8
+		car_state = 6 #Immobile - Recule
+	elif left_joystick.y < -0.1 and right_joystick.y > 0.1:
+		car_state = 7 #Recule - Avance
+	elif left_joystick.y > 0.1 and right_joystick.y < -0.1:
+		car_state = 8 #Avance - Recule
 	else:
-		car_state = 9
+		car_state = 9 #Immobile - Immobile
 
 func set_joystick_inputs_vector2(joystick: Vector2) :
 	joystick_move_intensity = joystick.y
-	joystick_rotation_intensity = joystick.x
+	joystick_rotation_intensity = joystick.y
 
 func set_joystick_move(percentage : float) :
 	joystick_move_intensity = percentage

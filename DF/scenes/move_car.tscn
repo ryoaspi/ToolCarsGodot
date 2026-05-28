@@ -39,7 +39,7 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=814516700]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.9053935)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2346352, 0.9053935)
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=2000549239]
 
@@ -80,8 +80,6 @@ script = ExtResource("6_utcj0")
 character = NodePath("../../KS_4036/KS_4036")
 left_controller = NodePath("../../XROrigin3D/XRController_Left_Hand")
 right_controller = NodePath("../../XROrigin3D/XRController_Right_Hand")
-max_speed_forward_in_mps = 10.0
-rotation_speed_in_degrees = 45.0
 
 [node name="xr_inputs" type="Node" parent="Code" unique_id=665007475 node_paths=PackedStringArray("left_controller", "right_controller")]
 script = ExtResource("8_konn1")
