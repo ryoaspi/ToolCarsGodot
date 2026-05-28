@@ -1,3 +1,4 @@
+class_name DFCarMovement
 extends Node
 
 signal left_wheel_rotation(degree: float)
@@ -10,14 +11,30 @@ signal right_wheel_rotation(degree: float)
 @export var rotation_speed_in_degrees: float = 360
 @export_range(-1,1,0.01) var joystick_move_intensity : float = 0
 @export_range(-1,1,0.01) var joystick_rotation_intensity : float = 0
+@export var override_input_with_xr:bool =false
+@export var wheel_left: float
+@export var wheel_right: float
 var car_state : int = 0
+
+func set_xr_input_on(isOn: bool):
+	override_input_with_xr = isOn
+
+func set_wheel_left(percentage : float):
+	wheel_left = percentage
+	
+func set_wheel_right(percentage : float):
+	wheel_right = percentage
+
+func set_wheel_left_and_right(percentage_left : float, percentage_right: float):
+	wheel_right = percentage_right
+	wheel_left = percentage_left
 
 func _ready() -> void:
 	if character == null:
 		push_warning("There is no CharacterBody3D")
 	
 func _process(delta: float) -> void:
-	handle_car_state()
+	handle_car_state(wheel_left, wheel_right)
 	match car_state:
 		0:
 			set_joystick_move(0)
@@ -46,9 +63,12 @@ func _process(delta: float) -> void:
 		9: 
 			set_joystick_move(0)
 			
-func handle_car_state() -> void:
-	var left_joystick = left_controller.get_vector2("primary")
-	var right_joystick = right_controller.get_vector2("primary")
+func handle_car_state(left_joystick_percent:float,right_joystick_percent:float) -> void:
+	var left_joystick :Vector2 = Vector2(0,left_joystick_percent)
+	var right_joystick :Vector2 = Vector2(0,right_joystick_percent)
+	if override_input_with_xr:
+		left_joystick = left_controller.get_vector2("primary")
+		right_joystick = right_controller.get_vector2("primary")
 	
 	if left_joystick.y > 0.1 and right_joystick.y > 0.1:
 		car_state = 1 #Avance - Avance
