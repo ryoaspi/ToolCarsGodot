@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://dh8grd7s3n8kg" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_snap.tscn" id="9_xojan"]
 [ext_resource type="Script" uid="uid://0b7wkxi4vymb" path="res://addons/godot-xr-tools/objects/highlight/highlight_visible.gd" id="10_gxyle"]
 [ext_resource type="Material" uid="uid://j0quuwu256v7" path="res://addons/ToolCarsGodot/FR/_/assets/Materials/material_hightlight_car.tres" id="11_1aegh"]
-[ext_resource type="Script" uid="uid://ds65qrn8hkrys" path="res://addons/ToolCarsGodot/FR/_/scripts/fr_snap_with_node.gd" id="12_1oiv4"]
 [ext_resource type="Script" uid="uid://mt8up87jk6nb" path="res://addons/ToolCarsGodot/FR/_/scripts/fr_body_detection.gd" id="13_el70v"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uis1x"]
@@ -65,16 +64,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7969849e-11, 0, 0.00015996
 mesh = SubResource("BoxMesh_2cjgh")
 surface_material_override/0 = ExtResource("11_1aegh")
 
-[node name="FrSnapWithNode" type="Node" parent="." index="6" unique_id=940688650]
-script = ExtResource("12_1oiv4")
-metadata/_custom_type_script = "uid://ds65qrn8hkrys"
-
-[node name="FrBodyDetection" type="Node" parent="." index="7" unique_id=753059514 node_paths=PackedStringArray("target_area")]
+[node name="FrBodyDetection" type="Node" parent="." index="6" unique_id=753059514 node_paths=PackedStringArray("target_area")]
 script = ExtResource("13_el70v")
 target_area = NodePath("../Area3D")
 metadata/_custom_type_script = "uid://mt8up87jk6nb"
 
-[node name="Area3D" type="Area3D" parent="." index="8" unique_id=276306165]
+[node name="Area3D" type="Area3D" parent="." index="7" unique_id=276306165]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=1920707457]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.062933825, 0)
