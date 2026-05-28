@@ -2,14 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://dlm4q4s4qv77c" path="res://addons/ToolCarsGodot/EJ/Features/SingleJoystick/Capture d'écran 2026-05-27 094238.png" id="1_w5gfc"]
 [ext_resource type="Script" uid="uid://cp8lvld88cwsr" path="res://addons/ToolCarsGodot/EJ/Features/SingleJoystick/Scripts/ej_demo_car_with_joystick.gd" id="2_d8pdl"]
-[ext_resource type="Script" path="res://addons/ToolCarsGodot/EJ/Features/SingleJoystick/Scripts/ej_menu.gd" id="2_lyf7f"]
+[ext_resource type="Script" uid="uid://bkl3jnv5dfpq7" path="res://addons/ToolCarsGodot/EJ/Features/SingleJoystick/Scripts/ej_menu.gd" id="2_lyf7f"]
 [ext_resource type="Texture2D" uid="uid://d7nlflcl8l13" path="res://addons/ToolCarsGodot/DF/assets/meshes/ks_4036/3d/wheel/ks_4036_wheel_uv_color.png" id="3_lyf7f"]
 [ext_resource type="Texture2D" uid="uid://boqrb1432pf6h" path="res://addons/ToolCarsGodot/DF/assets/meshes/ks_4036/2d/board.png" id="4_y1023"]
 [ext_resource type="ArrayMesh" uid="uid://dfwvieaagj7g0" path="res://addons/ToolCarsGodot/DF/assets/meshes/ks_4036/3d/body/ks_4036_body.obj" id="5_eh65m"]
 [ext_resource type="ArrayMesh" uid="uid://cle2gnxktb1fd" path="res://addons/ToolCarsGodot/DF/assets/meshes/ks_4036/3d/led/ks4036_front_led.obj" id="6_l6qj1"]
 [ext_resource type="ArrayMesh" uid="uid://dyxmwr46idk40" path="res://addons/ToolCarsGodot/DF/assets/meshes/ks_4036/3d/wheel/ks_4036_wheel.obj" id="7_g806y"]
 [ext_resource type="Script" uid="uid://cgtin4r2tkq87" path="res://addons/ToolCarsGodot/EJ/Features/SingleJoystick/Scripts/ej_gamepad_from_joystick.gd" id="8_u6xhj"]
-[ext_resource type="Script" path="res://addons/ToolCarsGodot/EJ/Features/SingleJoystick/Scripts/ej_restart_script.gd" id="9_d8pdl"]
+[ext_resource type="Script" uid="uid://ci71dtpghm7h1" path="res://addons/ToolCarsGodot/EJ/Features/SingleJoystick/Scripts/ej_restart_script.gd" id="9_d8pdl"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_jnwih"]
 
