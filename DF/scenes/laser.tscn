@@ -20,6 +20,11 @@ tonemap_mode = 2
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6jxtd"]
 albedo_color = Color(1, 0, 0, 1)
 
+[sub_resource type="SphereMesh" id="SphereMesh_b26v5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b26v5"]
+albedo_color = Color(1, 0, 0, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_b26v5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6jxtd"]
@@ -52,16 +57,21 @@ transform = Transform3D(0.25, 0, 0, 0, -4.371139e-08, 0.252, 0, -1, -1.101527e-0
 target_position = Vector3(0, -4, 0)
 script = ExtResource("2_b26v5")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Laser/RayCast3D" unique_id=2084839643]
+[node name="LaserRay" type="MeshInstance3D" parent="Laser/RayCast3D" unique_id=2084839643]
 transform = Transform3D(0.01, 0, 0, 0, 2, 0, 0, 0, 0.01, 0, -2, 0)
 mesh = SubResource("CylinderMesh_b26v5")
 surface_material_override/0 = SubResource("StandardMaterial3D_6jxtd")
 
+[node name="PointerSphere" type="MeshInstance3D" parent="Laser/RayCast3D" unique_id=2096644333]
+transform = Transform3D(0.06, 0, 0, 0, 0.015, 0, 0, 0, 0.06, 0, -4, -4.0000305e-07)
+mesh = SubResource("SphereMesh_b26v5")
+surface_material_override/0 = SubResource("StandardMaterial3D_b26v5")
+
 [node name="BoxCollidingTest" type="RigidBody3D" parent="." unique_id=851729922]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23614049, 0.5000001, 2.1746469)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.210587, 0.5, 1.8324268)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="BoxCollidingTest" unique_id=786698586]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.72043943, 2.3841858e-07, -0.17368126)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5783525, 0, 0)
 mesh = SubResource("BoxMesh_b26v5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BoxCollidingTest" unique_id=1192800302]

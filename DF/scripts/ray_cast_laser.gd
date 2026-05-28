@@ -1,14 +1,14 @@
 extends RayCast3D
 
-@export var laser_enabled : bool = false :
+@export var laser_enabled : bool = true:
 	set(value):
 		laser_enabled = value
 		enabled = value
-		$MeshInstance3D.visible = value
-
+		$LaserRay.visible = value
+		
 func _ready() -> void:
 	enabled = laser_enabled
-	$MeshInstance3D.visible = laser_enabled
+	$LaserRay.visible = laser_enabled
 
 func _physics_process(delta: float) -> void:
 	if not laser_enabled:
