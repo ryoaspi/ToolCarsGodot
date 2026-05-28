@@ -7,9 +7,15 @@
 
 [sub_resource type="SphereMesh" id="SphereMesh_uydf5"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uydf5"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ntcnl"]
+shading_mode = 0
+albedo_color = Color(0.94610137, 0.94610137, 0.94610137, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ntcnl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bh6ng"]
+shading_mode = 0
+albedo_color = Color(0.94610137, 0.94610137, 0.94610137, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_rwhmd"]
 
@@ -17,12 +23,12 @@
 
 [node name="SphereTest" type="MeshInstance3D" parent="." unique_id=1937055449]
 mesh = SubResource("SphereMesh_uydf5")
-surface_material_override/0 = SubResource("StandardMaterial3D_uydf5")
+surface_material_override/0 = SubResource("StandardMaterial3D_ntcnl")
 
 [node name="SphereTest2" type="MeshInstance3D" parent="." unique_id=854419173]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2913744, 0, 0)
 mesh = SubResource("BoxMesh_ntcnl")
-surface_material_override/0 = SubResource("StandardMaterial3D_uydf5")
+surface_material_override/0 = SubResource("StandardMaterial3D_bh6ng")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1499211447]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.7455171)
@@ -47,7 +53,7 @@ omni_range = 4.0
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1223646201]
 offset_right = 40.0
 offset_bottom = 40.0
-color = Color(1, 0, 1, 1)
+color = Color(0.94610137, 0.94610137, 0.94610137, 1)
 
 [node name="Button" type="Button" parent="CanvasLayer" unique_id=472653366]
 offset_left = 170.0
@@ -55,13 +61,12 @@ offset_right = 250.0
 offset_bottom = 36.0
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=661143658]
-light_color = Color(0.8107799, 0.40979996, 1.92523e-07, 1)
+light_color = Color(0.94610137, 0.94610137, 0.94610137, 1)
 light_energy = 50.0
 spot_range = 8.0
 
 [node name="Light" type="Node" parent="." unique_id=743725000]
 script = ExtResource("1_rwhmd")
-led_color = 3
 color_selection = Array[Color]([Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 0.49019608, 0, 1)])
 
 [node name="CSSetMeshInstanceColor" type="Node" parent="Light" unique_id=2106200951 node_paths=PackedStringArray("meshes")]
@@ -76,7 +81,6 @@ spot_lights = [NodePath("../../SpotLight3D")]
 [node name="CSLEDBlinker" type="Node" parent="Light" unique_id=1475735335 node_paths=PackedStringArray("led_to_affect")]
 script = ExtResource("1_ntcnl")
 led_to_affect = NodePath("..")
-is_blinking = true
 
 [connection signal="color_changed" from="Light" to="CanvasLayer/ColorRect" method="set_color"]
 [connection signal="color_changed" from="Light" to="Light/CSSetMeshInstanceColor" method="set_color"]

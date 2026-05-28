@@ -1,3 +1,4 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://lqrqj0o4qlp1"]
 
 [resource]
+shading_mode = 0
