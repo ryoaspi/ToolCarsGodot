@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c0ride3mr50ie"]
+
+[ext_resource type="PackedScene" uid="uid://djmay4ii56hkd" path="res://addons/ToolCarsGodot/DG/Features/ScanOrTypeCode/Scenes/Prefab/rfid_scan.tscn" id="1_4dgnw"]
+[ext_resource type="PackedScene" uid="uid://blnueo2qghq51" path="res://addons/ToolCarsGodot/DG/Features/ScanOrTypeCode/Scenes/Prefab/open_ur_lor_text.tscn" id="2_uoj5a"]
+
+[node name="Node3D" type="Node3D" unique_id=314301567]
+
+[node name="RFIDScanWithOpenUrl" parent="." unique_id=882412022 instance=ExtResource("1_4dgnw")]
+
+[node name="OpenURLorText" parent="RFIDScanWithOpenUrl" unique_id=61960323 instance=ExtResource("2_uoj5a")]
+
+[node name="Label3D" type="Label3D" parent="." unique_id=320667273]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43629313, -1.4099793)
+text = "..."
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=81882145]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.9915613)
+
+[connection signal="new_text" from="RFIDScanWithOpenUrl" to="RFIDScanWithOpenUrl/OpenURLorText" method="emit_value_of_the_given_key"]
+[connection signal="find_a_valid_text" from="RFIDScanWithOpenUrl/OpenURLorText" to="Label3D" method="set_text"]
