@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://17c2ht60cjxk"
 path.s3tc="res://.godot/imported/infra_red_receiver_uv.png-c1019bc82f0f40aef729dbbb113dffa5.s3tc.ctex"
-path.etc2="res://.godot/imported/infra_red_receiver_uv.png-c1019bc82f0f40aef729dbbb113dffa5.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/ToolCarsGodot/ND/content/infra_red_receiver/infra_red_receiver_uv.png"
-dest_files=["res://.godot/imported/infra_red_receiver_uv.png-c1019bc82f0f40aef729dbbb113dffa5.s3tc.ctex", "res://.godot/imported/infra_red_receiver_uv.png-c1019bc82f0f40aef729dbbb113dffa5.etc2.ctex"]
+dest_files=["res://.godot/imported/infra_red_receiver_uv.png-c1019bc82f0f40aef729dbbb113dffa5.s3tc.ctex"]
 
 [params]
 
