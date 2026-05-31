@@ -1,28 +1,19 @@
 extends Node
+var car: Node
+func _ready():
+	print("Hello World")
+func _on_received_target(target: Node):
+	print("Target:", target)
+	car = target
+	while true:
+		await get_tree().create_timer(1.0).timeout
+		if !car:
+			continue
+		var left_color: Color = car.get_left_line_sensor_color()
+		var right_color: Color = car.get_right_line_sensor_color()
+		var left_green := is_green(left_color)
+		var right_green := is_green(right_color)
+		car.set_wheels(randf(),randf())
 
-
-func _ready() -> void:
-	pass 
-
-
-func _process(delta: float) -> void:
-	pass
-
-
-func _on_car_received(car_node: Node):
-	print("🚗 Car connected to KS4036 node!")
-	print("📦 Attached node: ", car_node)
-	print("")
-	print("📖 Tip:")
-	print("   Open the game manual and explore the scripts")
-	print("   to discover how to control the vehicle.")
-	print("")
-	print("🛠 Available hardware:")
-	print("   • Distance sensor (front)")
-	print("   • 2 line-tracking color sensors")
-	print("   • 2 RGB LEDs")
-	print("   • 2 motorized wheels")
-	print("")
-	print("🎮 Control:")
-	print("   Use Vector2 value to drive and steer the car.")
-	print("   Use Input System if you plan to drive the car as a human.")
+func is_green(c: Color) -> bool:
+	return c.g > 0.6 and c.g > c.r and c.g > c.b
