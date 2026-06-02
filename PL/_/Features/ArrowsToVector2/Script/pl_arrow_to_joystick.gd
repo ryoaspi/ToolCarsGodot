@@ -1,4 +1,5 @@
 class_name PLArrowToJoystick
+
 extends Node
 
 signal joystick_updated(joystick: Vector2)
