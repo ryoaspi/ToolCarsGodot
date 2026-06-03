@@ -27,6 +27,19 @@ func _ready():
 func set_selection(index: int):
 	# Cette fonction permet à un autre script de changer l'index de ma couleur simplement.
 	led_color = index
+	
+func set_default_color(defaultcolor: Color):
+	# Cette fonction permet à un autre script de changer la couleur par default.
+	default_color = defaultcolor
+	refresh()
+	
+func set_color_with_percent(red: float, green: float, blue: float):
+	push_error("not implemented")
+	pass
+	
+func set_color_with_bytes(red_255: int, green_255: int, blue_255: int):
+	push_error("not implemented")
+	pass
 
 func set_forced_color(custom_color: Color):
 	# Cette fonction est appelée par mon clignoteur. Elle me permet de diffuser une couleur d'urgence sans modifier mon index normal.

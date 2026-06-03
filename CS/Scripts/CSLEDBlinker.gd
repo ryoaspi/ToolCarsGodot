@@ -30,8 +30,14 @@ var target_color: Color
 var current_color: Color
 
 func set_blinking():
-	# Cette fonction permet à un autre script d'activer le blink.
+	# Cette fonction permet à un autre script d'activer/désactiver le booléen du blink.
 	is_blinking = !is_blinking
+
+func set_blink_speed(blinkspeed: float):
+	blink_speed = blinkspeed
+	
+func set_lerp_speed(lerpspeed: float):
+	lerp_speed = lerpspeed
 
 func _process(delta):
 	# Je vérifie d'abord si le clignotement est désactivé depuis mon inspecteur.
