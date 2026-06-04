@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ce1u67xnodovo"
 path.s3tc="res://.godot/imported/micro_bit_shape_uv_textured.png-d85edee7d152a37dad8a8102d7ac7840.s3tc.ctex"
+path.etc2="res://.godot/imported/micro_bit_shape_uv_textured.png-d85edee7d152a37dad8a8102d7ac7840.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/ToolCarsGodot/FR/_/assets/ks_4036/3d/microbit/micro_bit_shape_uv_textured.png"
-dest_files=["res://.godot/imported/micro_bit_shape_uv_textured.png-d85edee7d152a37dad8a8102d7ac7840.s3tc.ctex"]
+dest_files=["res://.godot/imported/micro_bit_shape_uv_textured.png-d85edee7d152a37dad8a8102d7ac7840.s3tc.ctex", "res://.godot/imported/micro_bit_shape_uv_textured.png-d85edee7d152a37dad8a8102d7ac7840.etc2.ctex"]
 
 [params]
 

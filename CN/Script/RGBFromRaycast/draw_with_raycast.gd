@@ -59,8 +59,10 @@ signal on_draw_called(image:Image)
 func axbutton_press_to_raycast_and_draw(name : String)-> void:
 	if name == "ax_button":
 		draw = true
+		erase = false
 	if name == "by_button":
 		erase = true
+		draw = false
 
 func axbutton_release_to_raycast_and_draw(name : String)-> void:
 	if name == "ax_button":

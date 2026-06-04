@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cb6mfbbcyocdj"]
+
+[ext_resource type="PackedScene" uid="uid://bxlf13yg4c5eq" path="res://addons/ToolCarsGodot/IEJ/Features/Scenes/Prefabs/iej_mod_run_text_from_web.tscn" id="1_j7724"]
+
+
+[node name="Node3D" type="Node3D" unique_id=1665640123]
+
+[node name="EJModRunTextFromWeb" parent="." unique_id=76904508 instance=ExtResource("1_j7724")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=327008445]
+
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer" unique_id=1397950283]
+anchors_preset = -1
+anchor_right = 0.998
+anchor_bottom = 0.201
+offset_right = 0.30395508
+offset_bottom = -0.2480011
+text = "https://github.com/ryoaspi/ToolCarsGodot/blob/DEV/_Main/Gist/EJ/hello_world.gd"
+
+[connection signal="text_submitted" from="CanvasLayer/LineEdit" to="EJModRunTextFromWeb/EJDownloadWebPage" method="set_webpage_and_download_directly"]
+
+[editable path="EJModRunTextFromWeb"]

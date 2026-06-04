@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bffprj0yp4qrq"]
+
+[ext_resource type="Material" uid="uid://bqub1kemoyfhv" path="res://addons/ToolCarsGodot/CN/Material/MAT_ground.tres" id="1_pijb2"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_vkc1n"]
+material = ExtResource("1_pijb2")
+size = Vector2(25, 25)
+orientation = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vkc1n"]
+size = Vector3(25, 0.1, 25)
+
+[node name="Background" type="Node3D" unique_id=1075719900]
+
+[node name="White" type="MeshInstance3D" parent="." unique_id=1344825906]
+layers = 3
+mesh = SubResource("QuadMesh_vkc1n")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="White" unique_id=493094918]
+collision_layer = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="White/StaticBody3D" unique_id=944602235]
+shape = SubResource("BoxShape3D_vkc1n")

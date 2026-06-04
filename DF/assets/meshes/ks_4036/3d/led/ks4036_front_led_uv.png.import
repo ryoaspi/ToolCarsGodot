@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://tc28pq226ktx"
 path.s3tc="res://.godot/imported/ks4036_front_led_uv.png-fa96b50771d6adf5fbed92dbaa540a4c.s3tc.ctex"
+path.etc2="res://.godot/imported/ks4036_front_led_uv.png-fa96b50771d6adf5fbed92dbaa540a4c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/ToolCarsGodot/DF/assets/meshes/ks_4036/3d/led/ks4036_front_led_uv.png"
-dest_files=["res://.godot/imported/ks4036_front_led_uv.png-fa96b50771d6adf5fbed92dbaa540a4c.s3tc.ctex"]
+dest_files=["res://.godot/imported/ks4036_front_led_uv.png-fa96b50771d6adf5fbed92dbaa540a4c.s3tc.ctex", "res://.godot/imported/ks4036_front_led_uv.png-fa96b50771d6adf5fbed92dbaa540a4c.etc2.ctex"]
 
 [params]
 

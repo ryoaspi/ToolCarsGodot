@@ -1,103 +1,193 @@
 [gd_scene format=3 uid="uid://dkva8wqh1d5it"]
 
-[ext_resource type="Texture2D" uid="uid://dlm4q4s4qv77c" path="res://addons/ToolCarsGodot/EJ/Features/SingleJoystick/Capture d'écran 2026-05-27 094238.png" id="1_p5lgh"]
-[ext_resource type="Texture2D" uid="uid://d7nlflcl8l13" path="res://addons/ToolCarsGodot/DF/assets/meshes/ks_4036/3d/wheel/ks_4036_wheel_uv_color.png" id="2_smlmp"]
-[ext_resource type="Texture2D" uid="uid://boqrb1432pf6h" path="res://addons/ToolCarsGodot/DF/assets/meshes/ks_4036/2d/board.png" id="3_5tyv7"]
-[ext_resource type="ArrayMesh" uid="uid://dfwvieaagj7g0" path="res://addons/ToolCarsGodot/DF/assets/meshes/ks_4036/3d/body/ks_4036_body.obj" id="4_xk46b"]
-[ext_resource type="ArrayMesh" uid="uid://cle2gnxktb1fd" path="res://addons/ToolCarsGodot/DF/assets/meshes/ks_4036/3d/led/ks4036_front_led.obj" id="5_cmufd"]
-[ext_resource type="ArrayMesh" uid="uid://dyxmwr46idk40" path="res://addons/ToolCarsGodot/DF/assets/meshes/ks_4036/3d/wheel/ks_4036_wheel.obj" id="6_e5i5v"]
+[ext_resource type="Script" uid="uid://b2a5lh0qmhgqk" path="res://addons/ToolCarsGodot/CN/Script/XRInitialise/xr_initialise.gd" id="1_e5i5v"]
+[ext_resource type="PackedScene" uid="uid://dbl3ucrlcrj1a" path="res://addons/ToolCarsGodot/FR/_/Demo/Prefabs/xr_essentials_origin_godot.tscn" id="1_hqv82"]
+[ext_resource type="PackedScene" uid="uid://duce26bql6smr" path="res://addons/ToolCarsGodot/DF/scenes/move_car.tscn" id="2_omg0t"]
+[ext_resource type="PackedScene" uid="uid://hpc3w72ihfb5" path="res://addons/ToolCarsGodot/FR/_/scenes/micro_bit_pickable_snap.tscn" id="3_30ruo"]
+[ext_resource type="PackedScene" uid="uid://bffprj0yp4qrq" path="res://addons/ToolCarsGodot/_Main/scene/ground.tscn" id="3_qfek0"]
+[ext_resource type="PackedScene" path="res://addons/ToolCarsGodot/DF/scenes/laser.tscn" id="4_2vjf7"]
+[ext_resource type="PackedScene" uid="uid://duppob6rc0hbq" path="res://addons/ToolCarsGodot/FR/_/scenes/snape_zone.tscn" id="4_p5lgh"]
+[ext_resource type="Material" uid="uid://bqub1kemoyfhv" path="res://addons/ToolCarsGodot/CN/Material/MAT_ground.tres" id="6_eoim2"]
+[ext_resource type="PackedScene" uid="uid://bnsfwvo8e5f28" path="res://addons/ToolCarsGodot/CS/scenes/Prefabs/led_selector_all_eight_color.tscn" id="7_e5i5v"]
+[ext_resource type="Script" uid="uid://j377ubn6qbm5" path="res://addons/ToolCarsGodot/CS/Scripts/CSLEDColorSelection.gd" id="8_du1lo"]
+[ext_resource type="PackedScene" path="res://addons/ToolCarsGodot/ND/scene/ultra_sonic_sensor_node.tscn" id="8_yi6q0"]
+[ext_resource type="Script" uid="uid://dvk3tfoupbwmm" path="res://addons/ToolCarsGodot/CS/Scripts/CSSetMeshIntanceColor.gd" id="9_21twa"]
+[ext_resource type="Script" uid="uid://dgxj33piipv14" path="res://addons/ToolCarsGodot/CS/Scripts/CSSetLightsColor.gd" id="10_eoim2"]
+[ext_resource type="Script" uid="uid://bkvhvsvykspi5" path="res://addons/ToolCarsGodot/CS/Scripts/CSLEDBlinker.gd" id="11_8qwl6"]
+[ext_resource type="PackedScene" path="res://addons/ToolCarsGodot/CN/Scene/draw_with_raycast.tscn" id="12_21twa"]
+[ext_resource type="PackedScene" uid="uid://076s1kkcshx4" path="res://addons/ToolCarsGodot/CN/Scene/rgb_from_raycast.tscn" id="13_eoim2"]
+[ext_resource type="PackedScene" uid="uid://bknlofe8dmwj8" path="res://addons/ToolCarsGodot/Mixed/IEJ_DG/Features/ScanToCodeExecution/Prefab/scan_keyboard_to_run_modding_code.tscn" id="17_yi6q0"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_du1lo"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yi6q0"]
+animation = &"Grip"
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_21twa"]
-albedo_texture = ExtResource("1_p5lgh")
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7q5qn"]
+animation = &"Grip"
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_eoim2"]
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_a5nn1"]
+filter_enabled = true
+filters = ["Armature/Skeleton3D:Little_Distal_L", "Armature/Skeleton3D:Little_Intermediate_L", "Armature/Skeleton3D:Little_Metacarpal_L", "Armature/Skeleton3D:Little_Proximal_L", "Armature/Skeleton3D:Middle_Distal_L", "Armature/Skeleton3D:Middle_Intermediate_L", "Armature/Skeleton3D:Middle_Metacarpal_L", "Armature/Skeleton3D:Middle_Proximal_L", "Armature/Skeleton3D:Ring_Distal_L", "Armature/Skeleton3D:Ring_Intermediate_L", "Armature/Skeleton3D:Ring_Metacarpal_L", "Armature/Skeleton3D:Ring_Proximal_L", "Armature/Skeleton3D:Thumb_Distal_L", "Armature/Skeleton3D:Thumb_Metacarpal_L", "Armature/Skeleton3D:Thumb_Proximal_L", "Armature/Skeleton:Little_Distal_L", "Armature/Skeleton:Little_Intermediate_L", "Armature/Skeleton:Little_Proximal_L", "Armature/Skeleton:Middle_Distal_L", "Armature/Skeleton:Middle_Intermediate_L", "Armature/Skeleton:Middle_Proximal_L", "Armature/Skeleton:Ring_Distal_L", "Armature/Skeleton:Ring_Intermediate_L", "Armature/Skeleton:Ring_Proximal_L", "Armature/Skeleton:Thumb_Distal_L", "Armature/Skeleton:Thumb_Proximal_L"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8qwl6"]
-albedo_texture = ExtResource("2_smlmp")
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kow3r"]
+animation = &"Grip 5"
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2vjf7"]
-albedo_texture = ExtResource("3_5tyv7")
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_waesh"]
+filter_enabled = true
+filters = ["Armature/Skeleton3D:Index_Distal_L", "Armature/Skeleton3D:Index_Intermediate_L", "Armature/Skeleton3D:Index_Metacarpal_L", "Armature/Skeleton3D:Index_Proximal_L", "Armature/Skeleton:Index_Distal_L", "Armature/Skeleton:Index_Intermediate_L", "Armature/Skeleton:Index_Proximal_L"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yi6q0"]
-albedo_texture = ExtResource("2_smlmp")
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_dp4yp"]
+graph_offset = Vector2(-536, 11)
+nodes/ClosedHand1/node = SubResource("AnimationNodeAnimation_yi6q0")
+nodes/ClosedHand1/position = Vector2(-600, 300)
+nodes/ClosedHand2/node = SubResource("AnimationNodeAnimation_7q5qn")
+nodes/ClosedHand2/position = Vector2(-360, 300)
+nodes/Grip/node = SubResource("AnimationNodeBlend2_a5nn1")
+nodes/Grip/position = Vector2(0, 20)
+nodes/OpenHand/node = SubResource("AnimationNodeAnimation_kow3r")
+nodes/OpenHand/position = Vector2(-600, 100)
+nodes/Trigger/node = SubResource("AnimationNodeBlend2_waesh")
+nodes/Trigger/position = Vector2(-360, 20)
+node_connections = [&"output", 0, &"Grip", &"Grip", 0, &"Trigger", &"Grip", 1, &"ClosedHand2", &"Trigger", 0, &"OpenHand", &"Trigger", 1, &"ClosedHand1"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7q5qn"]
-albedo_texture = ExtResource("2_smlmp")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cypgu"]
+resource_name = "Steel_-_Satin"
+albedo_color = Color(1, 0, 1, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_a5nn1"]
-size = Vector3(0.21533203, 0.11828613, 0.29284668)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4yk52"]
+resource_name = "Steel_-_Satin"
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_8qwl6"]
+material = ExtResource("6_eoim2")
+size = Vector2(25, 25)
+orientation = 1
 
 [node name="00Main" type="Node3D" unique_id=1478093040]
+script = ExtResource("1_e5i5v")
 
-[node name="ReplaceMeByRichard" type="Node3D" parent="." unique_id=836353758]
+[node name="XREssentialsOriginGodot" parent="." unique_id=291553779 instance=ExtResource("1_hqv82")]
 
-[node name="XROrigin3D" type="XROrigin3D" parent="ReplaceMeByRichard" unique_id=236213834]
+[node name="XROrigin3D" parent="XREssentialsOriginGodot" index="0" unique_id=846924311]
+script = null
 
-[node name="XRCamera3D" type="XRCamera3D" parent="ReplaceMeByRichard/XROrigin3D" unique_id=1569311839]
+[node name="AnimationTree" parent="XREssentialsOriginGodot/XROrigin3D/XR_LeftHand/XRToolsCollisionHand/LeftHand" parent_id_path=PackedInt32Array(291553779, 1415449023) index="1"]
+tree_root = SubResource("AnimationNodeBlendTree_dp4yp")
 
-[node name="Floor" type="Node3D" parent="." unique_id=1408244073]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.17458487, 0)
+[node name="XR_RightHand" parent="XREssentialsOriginGodot/XROrigin3D" index="2" unique_id=1805883055]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6972769, 0)
 
-[node name="Floor" type="MeshInstance3D" parent="Floor" unique_id=602213903]
-transform = Transform3D(9.041736, 0, 0, 0, 0.5180942, 0, 0, 0, 10.573692, 0, -0.02774617, 0)
-mesh = SubResource("BoxMesh_du1lo")
-surface_material_override/0 = SubResource("StandardMaterial3D_21twa")
+[node name="DrawWithRaycast" parent="XREssentialsOriginGodot/XROrigin3D/XR_RightHand" index="1" unique_id=2002528441 instance=ExtResource("12_21twa")]
 
-[node name="RigidBody3D" type="StaticBody3D" parent="Floor/Floor" unique_id=574606598]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
+[node name="RayCast3D" parent="XREssentialsOriginGodot/XROrigin3D/XR_RightHand/DrawWithRaycast/Move" parent_id_path=PackedInt32Array(2002528441, 1513872658) index="0" unique_id=1865566437]
+target_position = Vector3(0, 0, -3)
+debug_shape_custom_color = Color(0.27969277, 0.5785862, 0.87144154, 1)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/Floor/RigidBody3D" unique_id=942849590]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
-shape = SubResource("BoxShape3D_eoim2")
-debug_color = Color(0.66887367, 0.5024584, 0.25345153, 0.41960785)
+[node name="LaserMain" parent="XREssentialsOriginGodot/XROrigin3D/XR_RightHand" index="2" unique_id=1343794851 instance=ExtResource("4_2vjf7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.037746266, -0.025922894, 0.042985797)
 
-[node name="Car" type="Node3D" parent="." unique_id=345694193]
+[node name="Car" parent="." unique_id=1371747064 instance=ExtResource("2_omg0t")]
 
-[node name="KS_4036" type="CharacterBody3D" parent="Car" unique_id=2136344868]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1494139, 0)
+[node name="led_right" parent="Car/KS_4036/KS_4036/Model/dimension/leds" parent_id_path=PackedInt32Array(1371747064, 1781070975, 1989343734) index="0" unique_id=970662410]
+surface_material_override/0 = SubResource("StandardMaterial3D_cypgu")
 
-[node name="Model" type="MeshInstance3D" parent="Car/KS_4036" unique_id=1343616647]
-material_override = SubResource("StandardMaterial3D_8qwl6")
+[node name="SpotLight3D" type="SpotLight3D" parent="Car/KS_4036/KS_4036/Model/dimension/leds/led_right" index="0" unique_id=871138897]
+transform = Transform3D(0.41666663, 0, 0, 0, 0.41666663, 0, 0, 0, 0.41666663, 0, 0, 0)
+light_color = Color(1, 0, 1, 1)
 
-[node name="dimension" type="Node3D" parent="Car/KS_4036/Model" unique_id=1458629269]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+[node name="led_left" parent="Car/KS_4036/KS_4036/Model/dimension/leds" parent_id_path=PackedInt32Array(1371747064, 1781070975, 1989343734) index="1" unique_id=1795093362]
+surface_material_override/0 = SubResource("StandardMaterial3D_4yk52")
 
-[node name="body" type="MeshInstance3D" parent="Car/KS_4036/Model/dimension" unique_id=376896294]
-material_override = SubResource("StandardMaterial3D_2vjf7")
-mesh = ExtResource("4_xk46b")
+[node name="SpotLight3D" type="SpotLight3D" parent="Car/KS_4036/KS_4036/Model/dimension/leds/led_left" index="0" unique_id=1271600543]
+light_color = Color(1, 0, 0, 1)
 
-[node name="leds" type="Node3D" parent="Car/KS_4036/Model/dimension" unique_id=1391607972]
+[node name="SnapZone" parent="Car/KS_4036/KS_4036" parent_id_path=PackedInt32Array(1371747064, 1781070975, 941570093) index="2" unique_id=1188029589 instance=ExtResource("4_p5lgh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.10600464)
 
-[node name="led_right" type="MeshInstance3D" parent="Car/KS_4036/Model/dimension/leds" unique_id=1498952765]
-transform = Transform3D(0.8000001, 0, 0, 0, 0.8000001, 0, 0, 0, 0.8000001, 0.020405143, 0.0044392943, -0.042013034)
-mesh = ExtResource("5_cmufd")
+[node name="RGBFromRaycast" parent="Car/KS_4036/KS_4036" parent_id_path=PackedInt32Array(1371747064, 1781070975, 941570093) index="3" unique_id=194767905 instance=ExtResource("13_eoim2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.029777646, -0.04839491, -0.030339003)
 
-[node name="led_left" type="MeshInstance3D" parent="Car/KS_4036/Model/dimension/leds" unique_id=941864359]
-transform = Transform3D(0.8000001, 0, 0, 0, 0.8000001, 0, 0, 0, 0.8000001, -0.02055996, 0.0044392943, -0.042013034)
-mesh = ExtResource("5_cmufd")
+[node name="RayCast3D" parent="Car/KS_4036/KS_4036/RGBFromRaycast/MoveRaycast" parent_id_path=PackedInt32Array(194767905, 1618982129) index="0" unique_id=1856603597]
+target_position = Vector3(0, -0.15, 0)
 
-[node name="wheels" type="Node3D" parent="Car/KS_4036/Model/dimension" unique_id=742803271]
+[node name="UltraSonicSensorNode" parent="Car/KS_4036/KS_4036" parent_id_path=PackedInt32Array(1371747064, 1781070975, 941570093) index="4" unique_id=171773783 instance=ExtResource("8_yi6q0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1088427)
 
-[node name="pivot_left" type="Node3D" parent="Car/KS_4036/Model/dimension/wheels" unique_id=1915855636]
+[node name="car_movement" parent="Car/Code" parent_id_path=PackedInt32Array(1371747064, 2145258064) index="0" unique_id=1560538840 node_paths=PackedStringArray("left_controller", "right_controller")]
+left_controller = NodePath("../../../XREssentialsOriginGodot/XROrigin3D/XR_LeftHand")
+right_controller = NodePath("../../../XREssentialsOriginGodot/XROrigin3D/XR_RightHand")
+override_input_with_xr = true
 
-[node name="wheel_left" type="MeshInstance3D" parent="Car/KS_4036/Model/dimension/wheels/pivot_left" unique_id=1554813330]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.029649928, 0, 0)
-material_override = SubResource("StandardMaterial3D_yi6q0")
-mesh = ExtResource("6_e5i5v")
+[node name="xr_inputs" parent="Car/Code" parent_id_path=PackedInt32Array(1371747064, 2145258064) index="1" unique_id=665007475 node_paths=PackedStringArray("left_controller", "right_controller")]
+left_controller = NodePath("../../../XREssentialsOriginGodot/XROrigin3D/XR_LeftHand")
+right_controller = NodePath("../../../XREssentialsOriginGodot/XROrigin3D/XR_RightHand")
 
-[node name="pivot_right" type="Node3D" parent="Car/KS_4036/Model/dimension/wheels" unique_id=247711364]
+[node name="Background" parent="." unique_id=1075719900 instance=ExtResource("3_qfek0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0031535625, 0, -0.0005135536)
 
-[node name="wheel_right" type="MeshInstance3D" parent="Car/KS_4036/Model/dimension/wheels/pivot_right" unique_id=222998934]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02957108, 0, 0)
-material_override = SubResource("StandardMaterial3D_7q5qn")
-mesh = ExtResource("6_e5i5v")
+[node name="White" parent="Background" index="0" unique_id=1344825906]
+mesh = SubResource("QuadMesh_8qwl6")
 
-[node name="Collider" type="CollisionShape3D" parent="Car/KS_4036" unique_id=476903770]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0036621094, 0.0072631836, -0.05316162)
-shape = SubResource("BoxShape3D_a5nn1")
-debug_fill = false
+[node name="MicroBit" parent="." unique_id=480497665 instance=ExtResource("3_30ruo")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.6723043, 0, 0)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=602106541]
-transform = Transform3D(1, 0, 0, 0, -0.14749865, 0.98906225, 0, -0.98906225, -0.14749865, 0, 4.585331, 0)
+[node name="LEDSelectAllEightColor" parent="." unique_id=1145040916 instance=ExtResource("7_e5i5v")]
+
+[node name="LEDLeftColorSelection" type="Node" parent="." unique_id=22932287]
+script = ExtResource("8_du1lo")
+led_color = 1
+color_list = Array[Color]([Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 0.49019608, 0, 1)])
+
+[node name="SetMeshInstanceColor" type="Node" parent="LEDLeftColorSelection" unique_id=890014625 node_paths=PackedStringArray("meshes")]
+script = ExtResource("9_21twa")
+meshes = [NodePath("../../Car/KS_4036/KS_4036/Model/dimension/leds/led_left")]
+metadata/_custom_type_script = "uid://dvk3tfoupbwmm"
+
+[node name="SetLightsColor" type="Node" parent="LEDLeftColorSelection" unique_id=480988124 node_paths=PackedStringArray("spot_lights")]
+script = ExtResource("10_eoim2")
+spot_lights = [NodePath("../../Car/KS_4036/KS_4036/Model/dimension/leds/led_left/SpotLight3D")]
+
+[node name="LEDBlinker" type="Node" parent="LEDLeftColorSelection" unique_id=1096178287 node_paths=PackedStringArray("led_to_affect")]
+script = ExtResource("11_8qwl6")
+led_to_affect = NodePath("..")
+
+[node name="LEDRightColorSelection" type="Node" parent="." unique_id=261039627]
+script = ExtResource("8_du1lo")
+led_color = 5
+color_list = Array[Color]([Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 0.49019608, 0, 1)])
+
+[node name="SetMeshInstanceColor" type="Node" parent="LEDRightColorSelection" unique_id=206432512 node_paths=PackedStringArray("meshes")]
+script = ExtResource("9_21twa")
+meshes = [NodePath("../../Car/KS_4036/KS_4036/Model/dimension/leds/led_right")]
+metadata/_custom_type_script = "uid://dvk3tfoupbwmm"
+
+[node name="SetLightsColor" type="Node" parent="LEDRightColorSelection" unique_id=784533915 node_paths=PackedStringArray("spot_lights")]
+script = ExtResource("10_eoim2")
+spot_lights = [NodePath("../../Car/KS_4036/KS_4036/Model/dimension/leds/led_right/SpotLight3D")]
+
+[node name="LEDBlinker" type="Node" parent="LEDRightColorSelection" unique_id=1315864735 node_paths=PackedStringArray("led_to_affect")]
+script = ExtResource("11_8qwl6")
+led_to_affect = NodePath("..")
+
+[node name="ScanKeyboardToRunModdingCode" parent="." unique_id=844036142 instance=ExtResource("17_yi6q0")]
+
+[connection signal="button_pressed" from="XREssentialsOriginGodot/XROrigin3D/XR_RightHand" to="XREssentialsOriginGodot/XROrigin3D/XR_RightHand/DrawWithRaycast" method="axbutton_press_to_raycast_and_draw"]
+[connection signal="button_released" from="XREssentialsOriginGodot/XROrigin3D/XR_RightHand" to="XREssentialsOriginGodot/XROrigin3D/XR_RightHand/DrawWithRaycast" method="axbutton_release_to_raycast_and_draw"]
+[connection signal="on_draw_called" from="XREssentialsOriginGodot/XROrigin3D/XR_RightHand/DrawWithRaycast" to="Car/KS_4036/KS_4036/RGBFromRaycast" method="set_image"]
+[connection signal="color_changed" from="LEDLeftColorSelection" to="LEDLeftColorSelection/SetMeshInstanceColor" method="set_color"]
+[connection signal="color_changed" from="LEDLeftColorSelection" to="LEDLeftColorSelection/SetLightsColor" method="set_color"]
+[connection signal="color_changed" from="LEDRightColorSelection" to="LEDRightColorSelection/SetMeshInstanceColor" method="set_color"]
+[connection signal="color_changed" from="LEDRightColorSelection" to="LEDRightColorSelection/SetLightsColor" method="set_color"]
+
+[editable path="XREssentialsOriginGodot"]
+[editable path="XREssentialsOriginGodot/XROrigin3D/XR_LeftHand/XRToolsCollisionHand/LeftHand"]
+[editable path="XREssentialsOriginGodot/XROrigin3D/XR_LeftHand/XRToolsCollisionHand/LeftHand/Hand_Nails_L"]
+[editable path="XREssentialsOriginGodot/XROrigin3D/XR_LeftHand/XRToolsCollisionHand/LeftHand/Hand_Nails_L/AnimationPlayer"]
+[editable path="XREssentialsOriginGodot/XROrigin3D/XR_RightHand/DrawWithRaycast"]
+[editable path="Car"]
+[editable path="Car/KS_4036"]
+[editable path="Car/KS_4036/KS_4036/SnapZone"]
+[editable path="Car/KS_4036/KS_4036/RGBFromRaycast"]
+[editable path="Background"]
+[editable path="MicroBit"]
+[editable path="ScanKeyboardToRunModdingCode"]
+[editable path="ScanKeyboardToRunModdingCode/EJModRunTextFromWeb"]
