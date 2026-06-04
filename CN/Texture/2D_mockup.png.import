@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b60e8y2fg0s77"
 path.s3tc="res://.godot/imported/2D_mockup.png-c22580d5416af437699c6212e5cded6c.s3tc.ctex"
+path.etc2="res://.godot/imported/2D_mockup.png-c22580d5416af437699c6212e5cded6c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/ToolCarsGodot/CN/Texture/2D_mockup.png"
-dest_files=["res://.godot/imported/2D_mockup.png-c22580d5416af437699c6212e5cded6c.s3tc.ctex"]
+dest_files=["res://.godot/imported/2D_mockup.png-c22580d5416af437699c6212e5cded6c.s3tc.ctex", "res://.godot/imported/2D_mockup.png-c22580d5416af437699c6212e5cded6c.etc2.ctex"]
 
 [params]
 
