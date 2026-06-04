@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cgpfx4fidnm6o"
-path="res://.godot/imported/ks_4036_body_uv_color.png-a78f4ec5b1faf964d3322691c5adfe68.ctex"
+path="res://.godot/imported/ks_4036_body_uv_color.png-86f33921f8c2c19a976063d9eb351af5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ToolCarsGodot/FR/_/assets/ks_4036/3d/body/ks_4036_body_uv_color.png"
-dest_files=["res://.godot/imported/ks_4036_body_uv_color.png-a78f4ec5b1faf964d3322691c5adfe68.ctex"]
+source_file="res://addons/ToolCarsGodot/FR/_/assets/ks_4036/3d/body/ks_4036_body_uv_color.png"
+dest_files=["res://.godot/imported/ks_4036_body_uv_color.png-86f33921f8c2c19a976063d9eb351af5.ctex"]
 
 [params]
 
